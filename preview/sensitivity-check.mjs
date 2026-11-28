@@ -1,4 +1,4 @@
-// Prove the publication checks fail when the guarded behavior is removed.
+// Prove the checks fail when the guarded behavior is removed.
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, copyFile, readFile, writeFile, symlink, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -12,6 +12,7 @@ try {
   for (const file of [
     'adopt.mjs',
     'app.js',
+    'browser-check.mjs',
     'publish.mjs',
     'publisher-check.mjs',
     'fixtures/snapshot.json',
@@ -32,7 +33,8 @@ try {
     const source = await readFile(new URL(file, root), 'utf8');
     assert(source.includes(before), `Mutation no longer matches ${file}`);
     await writeFile(join(dir, file), source.replace(before, after));
-    const result = spawnSync(process.execPath, [join(dir, 'publisher-check.mjs')], {
+    const check = file === 'app.js' ? 'browser-check.mjs' : 'publisher-check.mjs';
+    const result = spawnSync(process.execPath, [join(dir, check)], {
       env: {
         ...process.env,
         HN_BIN: process.env.HN_BIN || fileURLToPath(new URL('../target/debug/hn', root)),
@@ -43,7 +45,7 @@ try {
     assert.equal(result.error, undefined);
     assert.notEqual(result.status, 0, `Checks accepted removed behavior in ${file}`);
     assert.match(result.stderr, /AssertionError/);
-    console.log(`PASS regression detected in ${file}`);
+    console.log(`PASS ${check} detected regression in ${file}`);
     await writeFile(join(dir, file), source);
   }
 } finally {

@@ -4,7 +4,7 @@
   "scripts": {
     "start": "node server.mjs",
     "build": "node build-ui.mjs",
-    "test": "node publisher-check.mjs",
+    "test": "node publisher-check.mjs && node browser-check.mjs",
     "test:update": "node tools/update-check.mjs",
     "test:rollout": "node tools/rollout-check.mjs",
     "test:sandbox": "node verify.mjs",
