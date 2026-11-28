@@ -142,8 +142,8 @@ pub(super) fn on_key(s: &mut App, ev: &KeyEvent, tx: &mut Tx) -> bool {
                 let start = if right { (column + 1) * per_column } else { (column - 1) * per_column };
                 s.feed.selected = (start + s.feed.selected % per_column).min(shown - 1);
             } else if !right || s.feed.display_cursor + shown < s.feed.id_snapshot.len() {
-                let mut action = if right { feed_state::next_page(&s.feed.state(), s.cells().get()) }
-                    else { feed_state::prev_page(&s.feed.state(), s.cells().get()) };
+                let mut action = if right { feed_state::next_page(s.feed.feed_navigation(), s.cells().get()) }
+                    else { feed_state::prev_page(s.feed.feed_navigation(), s.cells().get()) };
                 if let feed_state::FeedAction::TurnPage { landing, .. } = &mut action {
                     *landing = Some(if right { hn_lib::app::PageLanding::Start } else { hn_lib::app::PageLanding::End });
                     s.apply(action);
@@ -156,7 +156,6 @@ pub(super) fn on_key(s: &mut App, ev: &KeyEvent, tx: &mut Tx) -> bool {
         return true;
     }
     let cells = s.cells().get();
-    // Build the feed snapshot only for the keys that use it: it clones the shown and cached stories.
     let action = match keys::story_action(ev) {
         StoryAction::None => return false,
         StoryAction::Quit => {
@@ -168,17 +167,18 @@ pub(super) fn on_key(s: &mut App, ev: &KeyEvent, tx: &mut Tx) -> bool {
             tx.quit();
             return true;
         }
-        StoryAction::NextStory => feed_state::next_story(&s.feed.state(), cells),
-        StoryAction::PrevStory => feed_state::prev_story(&s.feed.state(), cells),
+        StoryAction::NextStory => feed_state::next_story(s.feed.feed_navigation(), cells),
+        StoryAction::PrevStory => feed_state::prev_story(s.feed.feed_navigation(), cells),
         StoryAction::FirstStory => feed_state::FeedAction::Move { selected: 0 },
         StoryAction::LastStory => feed_state::FeedAction::Move {
             selected: s.feed.stories.len().saturating_sub(1),
         },
-        StoryAction::NextPage => feed_state::next_page(&s.feed.state(), cells),
-        StoryAction::PrevPage => feed_state::prev_page(&s.feed.state(), cells),
+        StoryAction::NextPage => feed_state::next_page(s.feed.feed_navigation(), cells),
+        StoryAction::PrevPage => feed_state::prev_page(s.feed.feed_navigation(), cells),
         StoryAction::SetType(tab) => {
             tx.blur();
-            feed_state::switch_tab(&s.feed.state(), tab)
+            let remembered_page = s.feed.feed_positions.get(&tab).map(|p| p.page);
+            feed_state::switch_tab(s.feed.feed_navigation(), tab, remembered_page)
         },
         StoryAction::ToggleBookmark => {
             s.toggle_saved();

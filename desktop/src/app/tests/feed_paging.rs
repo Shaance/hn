@@ -241,7 +241,7 @@ fn a_page_turn_pages_against_the_snapshot_and_only_a_refresh_re_ranks() {
     }
     // A page turn keeps the ranks the reader was shown.
     s.feed.selected = 10;
-    s.apply(feed_state::next_story(&s.feed.state(), 11));
+    s.apply(feed_state::next_story(s.feed.feed_navigation(), 11));
     assert_eq!(s.feed.id_snapshot, snapshot, "a page turn does not re-snapshot");
     assert_eq!(s.feed.stories[0].id, 12, "rank 12 of the snapshot it was shown");
     // A refresh is the one action that takes a new ranking.

@@ -1,14 +1,14 @@
 //! The feed's state machine: `hn_lib::feed_state`'s pure transitions, applied to owned fields.
 //!
-//! [`FeedModel::state`] hands the frozen contract a snapshot, the contract returns a
-//! [`FeedAction`], and [`FeedModel::apply`] writes it back. The positive grid uses the same
+//! [`FeedModel::feed_navigation`] supplies the inputs for a transition, and
+//! [`FeedModel::apply`] applies the resulting [`FeedAction`]. The positive grid uses the same
 //! saturating capacity as `feed_state::fill_grid`; the stepper remains the shared one.
 
 use std::collections::{HashMap, HashSet};
 use std::num::NonZeroUsize;
 
 use hn_lib::app::{FeedPosition, PageLanding, StoryType};
-use hn_lib::feed_state::{self, FeedAction, FeedState, FeedStatus};
+use hn_lib::feed_state::{self, FeedAction, FeedNavigation};
 use hn_lib::HNCLIItem;
 
 /// The title a rank whose item failed to load renders with. The rank keeps its slot, so the
@@ -162,25 +162,16 @@ impl FeedModel {
         }
     }
 
-    /// The frozen contract's view of this feed.
-    pub fn state(&self) -> FeedState {
-        FeedState {
+    pub fn feed_navigation(&self) -> FeedNavigation {
+        FeedNavigation {
             tab: self.tab,
-            id_snapshot: self.id_snapshot.clone(),
-            stories: self.stories.clone(),
-            story_cache: self.story_cache.clone(),
-            page_size: feed_state::API_PAGE_SIZE,
             display_cursor: self.display_cursor,
             selected: self.selected,
-            status: FeedStatus {
-                loading: self.request.is_loading(),
-                error: self.error.clone(),
-                stale: self.stale,
-            },
+            story_count: self.stories.len(),
+            page_size: feed_state::API_PAGE_SIZE,
+            loading: self.request.is_loading(),
+            stale: self.stale,
             stories_for: self.stories_for,
-            feed_positions: self.feed_positions.clone(),
-            page_landing: self.page_landing,
-            bookmark_notice: self.bookmark_notice.clone(),
         }
     }
 
@@ -292,20 +283,6 @@ impl FeedModel {
                 self.page_landing = None;
                 self.stale = false;
                 Some(self.establish(self.fill(grid), Ranking::Fresh, grid, None))
-            }
-            FeedAction::ToggleSaved { id, saved } => {
-                self.bookmark_notice = Some(if saved {
-                    format!("Saved · Press 4 for Saved")
-                } else {
-                    format!("Removed from Saved")
-                });
-                let _ = id;
-                None
-            }
-            FeedAction::ApplyPage { tab, page, .. } => {
-                self.stories_for = Some((tab, page));
-                self.request.settle();
-                None
             }
             FeedAction::Resize { .. } => Some(self.start_request(grid, Ranking::Keep)),
         };
@@ -496,7 +473,7 @@ mod tests {
     fn the_grid_is_the_shared_fill_formula() {
         let feed = FeedModel::new();
         assert_eq!(feed.request, RequestLifecycle::BeforeFirst);
-        assert!(!feed.state().status.loading);
+        assert!(!feed.request.is_loading());
         for (rows, columns) in [(11, 1), (14, 2), (19, 2)] {
             let fill = feed.fill(grid(rows, columns));
             let (from_rank, count, _) = feed_state::fill_grid(rows, columns, feed_state::API_PAGE_SIZE, 0);
@@ -541,7 +518,7 @@ mod tests {
     fn j_past_the_last_story_turns_the_page_by_the_visible_cell_count() {
         let mut feed = loaded(11, 1);
         feed.selected = 10;
-        let action = feed_state::next_story(&feed.state(), 11);
+        let action = feed_state::next_story(feed.feed_navigation(), 11);
         let applied = feed.apply(action, grid(11, 1));
         assert_eq!(feed.target_cursor(), 11, "the page being loaded");
         assert_eq!(feed.display_cursor, 0, "the page on screen until it lands");
@@ -567,7 +544,7 @@ mod tests {
         feed.display_cursor = 11;
         feed.apply_fill(filled(StoryType::Top, 11, 11));
         feed.selected = 0;
-        let action = feed_state::prev_story(&feed.state(), 11);
+        let action = feed_state::prev_story(feed.feed_navigation(), 11);
         feed.apply(action, grid(11, 1));
         assert_eq!(feed.target_cursor(), 0);
         feed.apply_fill(filled(StoryType::Top, 0, 11));
@@ -596,7 +573,8 @@ mod tests {
         feed.display_cursor = 30;
         feed.apply_fill(filled(StoryType::Top, 30, 0));
         assert_eq!(feed.stepper(), 2);
-        let action = feed_state::switch_tab(&feed.state(), StoryType::New);
+        let remembered_page = feed.feed_positions.get(&StoryType::New).map(|p| p.page);
+        let action = feed_state::switch_tab(feed.feed_navigation(), StoryType::New, remembered_page);
         let applied = feed.apply(action, grid(11, 1));
         assert_eq!(feed.tab, StoryType::New);
         assert_eq!(feed.display_cursor, 0);
@@ -609,7 +587,8 @@ mod tests {
             })
         );
         // Back to Top: the remembered page 2.
-        let action = feed_state::switch_tab(&feed.state(), StoryType::Top);
+        let remembered_page = feed.feed_positions.get(&StoryType::Top).map(|p| p.page);
+        let action = feed_state::switch_tab(feed.feed_navigation(), StoryType::Top, remembered_page);
         feed.apply(action, grid(11, 1));
         assert_eq!(feed.display_cursor, 30);
         assert_eq!(feed.stepper(), 2);
@@ -620,7 +599,7 @@ mod tests {
         let mut feed = loaded(11, 1);
         feed.tab = StoryType::Saved;
         assert_eq!(
-            feed_state::next_page(&feed.state(), 11),
+            feed_state::next_page(feed.feed_navigation(), 11),
             FeedAction::None,
             "Saved is one list, not a paged feed"
         );
@@ -629,7 +608,7 @@ mod tests {
     #[test]
     fn a_resize_keeps_the_cursor_and_asks_for_more_pages() {
         let mut feed = loaded(11, 1);
-        let action = feed_state::resize(&feed.state(), 19, 2);
+        let action = feed_state::resize(feed.feed_navigation(), 19, 2);
         let applied = feed.apply(action, grid(19, 2));
         assert_eq!(feed.display_cursor, 0, "resize keeps the first visible rank");
         assert_eq!(
@@ -641,7 +620,7 @@ mod tests {
             })
         );
         // Shrinking back asks for fewer cells but never drops what it holds.
-        let action = feed_state::resize(&feed.state(), 11, 1);
+        let action = feed_state::resize(feed.feed_navigation(), 11, 1);
         let applied = feed.apply(action, grid(11, 1));
         assert_eq!(applied.request.unwrap().0.count.get(), 11);
         assert_eq!(feed.stories.len(), 11, "the held window is untouched");
@@ -726,7 +705,7 @@ mod tests {
     fn a_page_turn_keeps_the_shown_page_until_the_new_one_lands() {
         let mut feed = loaded(11, 1);
         feed.selected = 10;
-        let action = feed_state::next_story(&feed.state(), 11);
+        let action = feed_state::next_story(feed.feed_navigation(), 11);
         feed.apply(action, grid(11, 1));
         // The rows on screen are still page 1, so they keep page 1's ranks and stepper.
         assert_eq!(feed.display_cursor, 0);
@@ -742,7 +721,7 @@ mod tests {
         assert_eq!(feed.selected, 10, "the selection did not move");
         // A second page turn is refused while the first is in flight.
         assert_eq!(
-            feed.apply(feed_state::next_page(&feed.state(), 11), grid(11, 1)),
+            feed.apply(feed_state::next_page(feed.feed_navigation(), 11), grid(11, 1)),
             Applied::default()
         );
         assert_eq!(feed.target_cursor(), 11);
@@ -758,15 +737,14 @@ mod tests {
     fn a_rejected_fill_does_not_leave_the_feed_loading_forever() {
         let mut feed = loaded(11, 1);
         feed.selected = 10;
-        feed.apply(feed_state::next_story(&feed.state(), 11), grid(11, 1));
+        feed.apply(feed_state::next_story(feed.feed_navigation(), 11), grid(11, 1));
         assert!(feed.request.is_loading());
         let request = feed.fill(grid(11, 1));
         assert_eq!(feed.request, RequestLifecycle::Loading(request, Ranking::Keep, grid(11, 1), None));
         feed.error = Some("independent error".into());
         feed.stale = true;
-        let state = feed.state();
-        assert!(state.status.loading && state.status.stale);
-        assert_eq!(state.status.error.as_deref(), Some("independent error"));
+        assert!(feed.request.is_loading() && feed.stale);
+        assert_eq!(feed.error.as_deref(), Some("independent error"));
         // A fill for the page being left is stale and dropped.
         assert!(!feed.apply_fill(filled(StoryType::Top, 0, 11)));
         assert!(feed.request.is_loading(), "the newest request is still in flight");
@@ -776,7 +754,7 @@ mod tests {
         assert_eq!(feed.poll_timeout(10.0, 10.0), Some(true));
         assert!(!feed.request.is_loading());
         assert_eq!(feed.request, RequestLifecycle::Settled(request, Ranking::Keep, grid(11, 1)));
-        assert!(!feed.state().status.loading && feed.state().status.stale);
+        assert!(!feed.request.is_loading() && feed.stale);
         assert!(feed.error.is_some(), "the feed says it did not load");
         assert_eq!(feed.pending_cursor, None, "the pending turn is dropped");
         assert_eq!(feed.display_cursor, 0, "the page on screen is still page 1");
@@ -819,7 +797,7 @@ mod tests {
         let mut feed = loaded(19, 2);
         assert_eq!(feed.stories.len(), 30, "the whole 30-id snapshot");
         // Shrinking asks for fewer cells; the window shrinks with the viewport.
-        let action = feed_state::resize(&feed.state(), 11, 1);
+        let action = feed_state::resize(feed.feed_navigation(), 11, 1);
         let applied = feed.apply(action, grid(11, 1));
         assert_eq!(applied.request.unwrap().0.count.get(), 11);
         feed.apply_fill(filled(StoryType::Top, 0, 11));
