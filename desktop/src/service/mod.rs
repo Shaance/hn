@@ -148,24 +148,15 @@ impl Source {
     /// The captured sources a summary is written from: the same comments, with the excerpt the
     /// model sees and the full text the citation viewer shows.
     ///
-    /// This is the desktop's own capture, not the reader's: `sources::discussion` (the terminal
-    /// reader's 60-comment round-robin sampler) is `pub(super)` at `src/reader/sources.rs:55`,
+    /// The selection is the desktop's own, not the reader's: `sources::discussion` (the terminal
+    /// reader's 60-comment round-robin sampler) is `pub(super)` at `src/reader/sources.rs:150`,
     /// so it is not reachable from here. A top-level capture is what the milestone-2 discussion
     /// pane shows anyway; the coverage string says so rather than implying the whole tree.
     pub fn capture(&self, comments: &[Comment]) -> Vec<CapturedSource> {
         comments
             .iter()
             .filter(|comment| hn_lib::comments::readable(comment))
-            .map(|comment| {
-                let text = reader::sources::clean(&comment.text);
-                CapturedSource {
-                    id: comment.id,
-                    parent: None,
-                    author: reader::sources::clean(&comment.author),
-                    excerpt: text.chars().take(1800).collect(),
-                    text,
-                }
-            })
+            .map(|comment| CapturedSource::from_comment(comment.id, None, &comment.author, &comment.text))
             .collect()
     }
 
@@ -187,12 +178,7 @@ impl Source {
                 if config.key().is_empty() {
                     return Err(SummaryError::new("No summary API key. M opens settings.", true));
                 }
-                let captured = DiscussionCapture {
-                    title: reader::sources::clean(&story.title),
-                    post: reader::sources::clean(&story.text).chars().take(6000).collect(),
-                    sources: sources.to_vec(),
-                    coverage: coverage.into(),
-                };
+                let captured = DiscussionCapture::from_story(story, sources.to_vec(), coverage.into());
                 network
                     .discussion(config.provider, config.key(), config.profile, &captured)
                     .await

@@ -69,6 +69,20 @@ pub struct Source {
     pub text: String,
     pub excerpt: String,
 }
+impl Source {
+    /// Clean the selected comment text and author, and derive the model's excerpt.
+    pub fn from_comment(id: i32, parent: Option<i32>, author: &str, text: &str) -> Self {
+        let text = sources::clean(text);
+        let excerpt = text.chars().take(1800).collect();
+        Self {
+            id,
+            parent,
+            author: sources::clean(author),
+            text,
+            excerpt,
+        }
+    }
+}
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Point {
     pub text: String,
@@ -95,6 +109,17 @@ pub struct DiscussionCapture {
     pub post: String,
     pub sources: Vec<Source>,
     pub coverage: String,
+}
+impl DiscussionCapture {
+    /// Clean the story title and bound the post sent with the selected sources.
+    pub fn from_story(story: &HNCLIItem, sources: Vec<Source>, coverage: String) -> Self {
+        Self {
+            title: sources::clean(&story.title),
+            post: sources::clean(&story.text).chars().take(6000).collect(),
+            sources,
+            coverage,
+        }
+    }
 }
 #[derive(Debug)]
 struct Capture<T> {

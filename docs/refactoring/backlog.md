@@ -76,7 +76,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** Both clean comment text and apply the 1,800 and 6,000 character limits (`src/reader/sources.rs:201`, `desktop/src/service/mod.rs:155`).
 - **Benefit.** Each limit has one owner; selection stays per app.
 - **Risk.** Needs additive public methods on reader types.
-- **Status.** open
+- **Status.** done (batch 5). New pub constructors `reader::Source::from_comment` and `reader::DiscussionCapture::from_story` (additive; no existing item changed). Both apps use them; selection, ordering, deleted-comment handling and coverage stay per app.
 
 ### C10. Operator runbook still describes the retired image owner
 - **Problem.** `preview/deploy/README.md:13` and `:32` assign `PREVIEW_IMAGE` to `gateway.env` and tell operators to restore the old pin; the updater writes it to `current/release.env` (`tools/update.mjs:116`) and requires `PREVIEW_ROLE` (`:191`), which the instructions omit.
@@ -116,7 +116,8 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 | 1 | C1 | `60f61d0` | 11 lines added, 14 removed in 4 files; two duplicated rules now have one owner each |
 | 2 | C2, C8 | `15e677b` | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
 | 3 | C3 | `0a593d3` | 33 added, 47 removed in 2 files; settings no longer writes summary progress; three paired branches became `Section` operations |
-| 4 | C5 | the commit that adds this row | 84 added, 86 removed in 3 desktop files; fill computed and `Loading` written once per request (were twice), ranking decided once, reflow decision moved from `poll.rs` into the model |
+| 4 | C5 | `8d84b32` | 84 added, 86 removed in 3 desktop files; fill computed and `Loading` written once per request (were twice), ranking decided once, reflow decision moved from `poll.rs` into the model |
+| 5 | C9 | the commit that adds this row | 39 added, 41 removed in 3 files across both crates; the 1,800 and 6,000 char limits and the cleaning rules have one owner; adds two pub constructors to `hn_lib` |
 
 ## Active transitions
 
@@ -124,4 +125,5 @@ None.
 
 ## Justified exceptions
 
+- **Fixture excerpt in `desktop/src/fixtures.rs:268`.** The headless fixture builds `Source` values by hand with its own `take(1800)`. It is fixture data for goldens, not a capture path; both live capture paths use `Source::from_comment`.
 - **Two credential checks before a desktop summary call.** The window's `configured()` (`desktop/src/app/mod.rs:224`, `headless || key`) and the bridge's `should_summarize` (`!source.is_live() || key`) agree in production, where headless means the fixture source. The test constructor `desktop/src/app/tests/support.rs:57` always uses the fixture source and some tests set `headless = false` (`feed_paging.rs:125`, `story_lifecycle.rs:259`), so dropping the window gate would change those tests' behavior. Removing it would need the test harness to pair source and headless the way `init` does; not worth a batch on its own.

@@ -201,20 +201,10 @@ pub(super) async fn discussion(
         for comment in comments {
             let &(thread, parent, _) = batch.iter().find(|(_, _, id)| *id == comment.id).unwrap();
             threads[thread].extend(comment.child_ids.iter().map(|id| (Some(comment.id), *id)));
-            let text = if comment.deleted {
-                String::new()
-            } else {
-                clean(&comment.text)
-            };
-            let excerpt: String = text.chars().take(1800).collect();
-            partial |= excerpt.is_empty() || excerpt.len() < text.len();
-            sources.push(Source {
-                id: comment.id,
-                parent,
-                author: clean(&comment.author),
-                text,
-                excerpt,
-            });
+            let text = if comment.deleted { "" } else { &comment.text };
+            let source = Source::from_comment(comment.id, parent, &comment.author, text);
+            partial |= source.excerpt.is_empty() || source.excerpt.len() < source.text.len();
+            sources.push(source);
         }
     }
     let count = sources.iter().filter(|s| !s.excerpt.is_empty()).count();
@@ -228,12 +218,9 @@ pub(super) async fn discussion(
         "{count} comment excerpts{}",
         if partial { " (partial)" } else { "" }
     );
-    Ok(Capture::new(DiscussionCapture {
-        title: clean(&story.title),
-        post: clean(&story.text).chars().take(6000).collect(),
-        sources,
-        coverage,
-    }))
+    Ok(Capture::new(DiscussionCapture::from_story(
+        &story, sources, coverage,
+    )))
 }
 
 #[cfg(test)]
