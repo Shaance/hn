@@ -334,8 +334,8 @@ pub(super) fn on_story_key(s: &mut App, ev: &KeyEvent, tx: &mut Tx) -> bool {
             let changed = story.with_thread(|thread| match key {
                 StoryKey::NextComment => thread.next(),
                 StoryKey::PrevComment => thread.prev(),
-                StoryKey::NextSibling if !in_source || cursor != root => thread.next_sibling(),
-                StoryKey::PrevSibling if !in_source || cursor != root => thread.prev_sibling(),
+                StoryKey::NextSibling => thread.next_sibling(),
+                StoryKey::PrevSibling => thread.prev_sibling(),
                 StoryKey::Parent if cursor != source_root => thread.to_parent(),
                 StoryKey::Fold if matches!(&ev.key, rune::Key::Text(text) if text == "c") && !loading => thread.collapse(),
                 StoryKey::Fold => thread.fold(),
