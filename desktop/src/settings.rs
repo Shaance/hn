@@ -101,13 +101,13 @@ impl Settings {
         let typed = self.typed_key().to_owned();
         match config.provider {
             Provider::OpenRouter => {
-                if typed != config.api_key {
+                if typed != config.key() {
                     config.api_key = typed;
                     config.environment_key.clear();
                 }
             }
             Provider::Anthropic => {
-                if typed != config.anthropic_api_key {
+                if typed != config.key() {
                     config.anthropic_api_key = typed;
                     config.anthropic_environment_key.clear();
                 }
