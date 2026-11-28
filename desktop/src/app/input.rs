@@ -156,7 +156,7 @@ pub(super) fn on_key(s: &mut App, ev: &KeyEvent, tx: &mut Tx) -> bool {
         return true;
     }
     let cells = s.cells().get();
-    let state = s.feed.state();
+    // Build the feed snapshot only for the keys that use it: it clones the shown and cached stories.
     let action = match keys::story_action(ev) {
         StoryAction::None => return false,
         StoryAction::Quit => {
@@ -168,17 +168,17 @@ pub(super) fn on_key(s: &mut App, ev: &KeyEvent, tx: &mut Tx) -> bool {
             tx.quit();
             return true;
         }
-        StoryAction::NextStory => feed_state::next_story(&state, cells),
-        StoryAction::PrevStory => feed_state::prev_story(&state, cells),
+        StoryAction::NextStory => feed_state::next_story(&s.feed.state(), cells),
+        StoryAction::PrevStory => feed_state::prev_story(&s.feed.state(), cells),
         StoryAction::FirstStory => feed_state::FeedAction::Move { selected: 0 },
         StoryAction::LastStory => feed_state::FeedAction::Move {
-            selected: state.stories.len().saturating_sub(1),
+            selected: s.feed.stories.len().saturating_sub(1),
         },
-        StoryAction::NextPage => feed_state::next_page(&state, cells),
-        StoryAction::PrevPage => feed_state::prev_page(&state, cells),
+        StoryAction::NextPage => feed_state::next_page(&s.feed.state(), cells),
+        StoryAction::PrevPage => feed_state::prev_page(&s.feed.state(), cells),
         StoryAction::SetType(tab) => {
             tx.blur();
-            feed_state::switch_tab(&state, tab)
+            feed_state::switch_tab(&s.feed.state(), tab)
         },
         StoryAction::ToggleBookmark => {
             s.toggle_saved();
