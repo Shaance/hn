@@ -6,7 +6,7 @@
 
 | | Mac app | Terminal app |
 |---|---|---|
-| **Get it** | [Download HN for macOS](https://github.com/Shaance/hn/releases/download/desktop-v1.2.0/HN-desktop-v1.2.0-macos-arm64.zip): Apple Silicon, macOS 13+, signed and notarized | `brew install shaance/tap/hn`, `cargo install hn-reader --locked`, or [download hn 0.3.0](https://github.com/Shaance/hn/releases/tag/tui-v0.3.0) for macOS or Linux |
+| **Get it** | [Download HN for macOS](https://github.com/Shaance/hn/releases/download/desktop-v1.3.0/HN-desktop-v1.3.0-macos-arm64.zip): Apple Silicon, macOS 13+, signed and notarized | `brew install shaance/tap/hn`, `cargo install hn-reader --locked`, or [download hn 0.3.0](https://github.com/Shaance/hn/releases/tag/tui-v0.3.0) for macOS or Linux |
 | **The article** | The story's live page, beside the discussion | Opens in a Ghostty pane beside the discussion, or your browser |
 | **More** | [desktop/README.md](desktop/README.md) | [Terminal app](#terminal-app), below |
 
