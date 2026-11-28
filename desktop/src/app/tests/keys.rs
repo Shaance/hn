@@ -68,6 +68,40 @@ fn question_mark_toggles_help_in_discussion_summary_and_source() {
 }
 
 #[test]
+fn help_columns_fit_at_narrow_window_widths() {
+    let binding_count: usize = crate::keyboard_help::HELP.iter().map(|group| group.rows.len()).sum();
+    for (width, expected_columns) in [(700.0, 1), (749.0, 1), (750.0, 2)] {
+        let mut s = app(true, SavedView::in_memory());
+        s.help = true;
+        let mut rt = rune::Runtime::new(s, view, (width, 1308.0), rune::Env::new(true, 1.0));
+        rt.frame(0.3);
+
+        let elements = rt.elements();
+        let [x, _, w, _] = elements.iter()
+            .find(|e| e.key.as_deref() == Some("help-dialog"))
+            .unwrap()
+            .rect;
+        let columns = elements.iter()
+            .filter(|e| e.key.as_deref().is_some_and(|key| key.starts_with("help-column-")))
+            .count();
+        let mut rows = 0;
+        for row in elements.iter().filter(|e| {
+            e.key.as_deref().is_some_and(|key| key.starts_with("help-row-"))
+        }) {
+            let right = row.rect[0] + row.rect[2];
+            assert!(
+                right <= x + w,
+                "{:?} ends at {right} beyond the dialog's right edge {} at window width {width}",
+                row.key, x + w,
+            );
+            rows += 1;
+        }
+        assert_eq!(rows, binding_count, "Help rows at window width {width}");
+        assert_eq!(columns, expected_columns, "Help columns at window width {width}");
+    }
+}
+
+#[test]
 fn o_activates_reading_selection_and_shift_o_queues_browser() {
     let mut feed = app(true, SavedView::in_memory());
     feed.request(grid(11, 1), Ranking::Fresh);
