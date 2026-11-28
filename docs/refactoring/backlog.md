@@ -52,7 +52,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** `FeedModel::apply` computes the fill and writes `Loading` (`desktop/src/feed.rs:231`); `App::apply` re-derives the ranking and `request` recomputes the fill and writes `Loading` again (`desktop/src/app/feed_actions.rs:15`, `:111`).
 - **Benefit.** The model establishes a request once; `App` dispatches exactly that.
 - **Risk.** Deadline rules for new tab, in-flight reflow and pending page turn. Checks: `desktop/src/app/tests/feed_arrivals.rs`, `feed_paging.rs`.
-- **Status.** open
+- **Status.** done (batch 4). `FeedModel` establishes every request (`establish`, `start_request`, `refresh`, `reflow`) and returns its fill and ranking; `App::dispatch_feed` sends exactly that. Added `refresh_restarts_an_in_flight_deadline` (fails if refresh keeps the old clock).
 
 ### C6. Feed transitions take an owned copy of the whole feed
 - **Problem.** Every navigation call builds a `FeedState` by cloning stories, ID snapshot and caches (`src/app.rs:371`, `desktop/src/feed.rs:170`), while the six transitions read only scalars (`src/feed_state.rs:108`). The two-column destination is computed separately in each front end (`src/app.rs:305`, `desktop/src/app/input.rs:129`; `324d008`).
@@ -115,7 +115,8 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 | :- | :- | :- | :- |
 | 1 | C1 | `60f61d0` | 11 lines added, 14 removed in 4 files; two duplicated rules now have one owner each |
 | 2 | C2, C8 | `15e677b` | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
-| 3 | C3 | the commit that adds this row | 33 added, 47 removed in 2 files; settings no longer writes summary progress; three paired branches became `Section` operations |
+| 3 | C3 | `0a593d3` | 33 added, 47 removed in 2 files; settings no longer writes summary progress; three paired branches became `Section` operations |
+| 4 | C5 | the commit that adds this row | 84 added, 86 removed in 3 desktop files; fill computed and `Loading` written once per request (were twice), ranking decided once, reflow decision moved from `poll.rs` into the model |
 
 ## Active transitions
 
