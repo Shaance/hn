@@ -121,7 +121,7 @@ fn test_to_hn_cli_item() {
         .expect_get_y_combinator_url()
         .return_const("https://news.ycombinator.com/".to_string());
     let service = HackerNewsCliServiceImpl::new_with_client(client);
-    let item = service.api_item_to_hn_cli_item(item);
+    let item = service.story_from_item(item);
 
     assert_eq!(item.id, 1);
     assert_eq!(item.title, "Rust is awesome");
