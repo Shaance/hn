@@ -46,7 +46,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** `tools/update.mjs:311` and `tools/rollout.mjs:177` run `hn --validate-snapshot` with the same timeout and the same "could not run vs rejected" predicate. `388cabf` copied the reader's rule after `7a59940` fixed it.
 - **Benefit.** One owner, in the already-shared `tools/release.mjs`, for a decision that either aborts a good release or retries a rejected one when wrong.
 - **Risk.** Callers keep their own rollback, abort and messages. Checks: `npm run test:update`, `npm run test:rollout`.
-- **Status.** pending decision (P7). Any change to `preview/tools/*.mjs` changes the host-tools version that the production monitor compares with `main` (`.github/workflows/preview-monitor.yml:87-89`, `preview/deploy/tools-version.sh`), and a person must then run `sudo preview/deploy/install-tools.sh dev|prod` on each host (`preview/deploy/README.md`, "Automatic server releases"). For a two-line duplicated predicate that cost outweighs the benefit; bundle it with the next deliberate host-tools change.
+- **Status.** closed as standalone work (P7): bundle with the next deliberate host-tools change. Any change to `preview/tools/*.mjs` changes the host-tools version that the production monitor compares with `main` (`.github/workflows/preview-monitor.yml:87-89`, `preview/deploy/tools-version.sh`), and a person must then run `sudo preview/deploy/install-tools.sh dev|prod` on each host (`preview/deploy/README.md`, "Automatic server releases"). For a two-line duplicated predicate that cost outweighs the benefit; bundle it with the next deliberate host-tools change.
 
 ### C5. Desktop starts a feed request from two owners
 - **Problem.** `FeedModel::apply` computes the fill and writes `Loading` (`desktop/src/feed.rs:231`); `App::apply` re-derives the ranking and `request` recomputes the fill and writes `Loading` again (`desktop/src/app/feed_actions.rs:15`, `:111`).
@@ -58,7 +58,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** Every navigation call builds a `FeedState` by cloning stories, ID snapshot and caches (`src/app.rs:371`, `desktop/src/feed.rs:170`), while the six transitions read only scalars (`src/feed_state.rs:108`). The two-column destination is computed separately in each front end (`src/app.rs:305`, `desktop/src/app/input.rs:129`; `324d008`).
 - **Benefit.** Zero owned `FeedState` builds on navigation paths; one destination calculation.
 - **Risk.** Changing the transitions' signatures breaks `hn_lib` public items; keeping both signatures would leave two entry points with no outside consumer.
-- **Status.** blocked by board item B47 (may `hn_lib`'s public API change?)
+- **Status.** partly done. B47 answered: `hn_lib` is internal, so the full fix (scalar inputs to the six transitions) may break pub items and lands with the next breaking release, 0.3.0. Quick fix done on branch `perf/desktop-feed-key-copy` (`8e0485f`): the desktop builds the snapshot only for feed keys.
 
 ### C7. Desktop reply activation probes retry availability at three sites
 - **Problem.** Row label, pointer/Enter activation and Right key each check exhausted batches and failed IDs (`desktop/src/story_view/discussion.rs:286`, `desktop/src/app/reading_actions.rs:243`, `desktop/src/app/input.rs:350`); `60f0f0e` touched all three.
@@ -81,24 +81,33 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 ### C10. Operator runbook still describes the retired image owner
 - **Problem.** `preview/deploy/README.md:13` and `:32` assign `PREVIEW_IMAGE` to `gateway.env` and tell operators to restore the old pin; the updater writes it to `current/release.env` (`tools/update.mjs:116`) and requires `PREVIEW_ROLE` (`:191`), which the instructions omit.
 - **Benefit.** Finishes the #88 migration in the active instructions.
-- **Status.** open, partly blocked. Removing `PREVIEW_IMAGE` from the `gateway.env` list is verifiable from the repo (the unit loads `current/release.env` second, `preview/deploy/hn-preview.service:11`). Where `PREVIEW_ROLE` is set is not: the update unit loads both `gateway.env` and `storage.env` (`preview/deploy/hn-preview-update.service`), and only the hosts show which one holds it.
+- **Status.** done on branch `preview/finish-layout-retirement` (`cdd9b9a`); the runbook says the updater needs `PREVIEW_ROLE` in its environment without naming the file. Earlier note: removing `PREVIEW_IMAGE` from the `gateway.env` list is verifiable from the repo (the unit loads `current/release.env` second, `preview/deploy/hn-preview.service:11`). Where `PREVIEW_ROLE` is set is not: the update unit loads both `gateway.env` and `storage.env` (`preview/deploy/hn-preview-update.service`), and only the hosts show which one holds it.
 
 ### C11. Browser reconnect regression lives inside the publisher harness
 - **Problem.** About 90 lines of `preview/publisher-check.mjs:202-290` test `app.js` but need the native binary, simulated R2 and systemctl to run.
 - **Benefit.** The browser check runs on its own; the sensitivity mutation targets it.
-- **Status.** open
+- **Status.** deferred. The clean route edits `preview/package.json`, a release path in `preview-server.yml` and `preview-ui.yml`, so this test-only change would trigger an image release and a page redeploy on merge. Do it alongside the next change that ships those anyway.
+
+## Decisions
+
+Answered 2026-11-28 ("let's go" on the recommendations; board B47, B48). Follow-up branches start from origin/main `8d0f7d8` and are local, not pushed.
+
+| ID | Decision | Outcome |
+| :- | :- | :- |
+| P1 | May `hn_lib`'s public API change? (B47) | Internal. The next breaking change ships as 0.3.0; nothing on the follow-up branches breaks a pub signature |
+| P2 | Desktop copied an environment-only key into `summary.json` (B48) | Fixed on `fix/desktop-env-key-persist` (`bd8da03`), with a test that fails without the fix |
+| P3 | Desktop `[`/`]` at a re-rooted comment | Guard in `Thread::sibling` for both apps, on `fix/comment-sibling-at-root` (`57b0bcb`) |
+| P4 | Monitor and page gate accepted health without `running` | Now a monitor failure and a deferred page deploy, on `preview/finish-layout-retirement` (`39cfcb8`) |
+| P5 | Capture fetches each story twice | Deferred: fold into the next library change. A request-count test needs `capture` to take its client at the composition boundary (`src/snapshot_capture.rs:15` builds `HackerNewsClientImpl::new()`) |
+| P6 | Seven unused direct `icu_*` dependencies | Removed on `deps/drop-direct-icu-pins` (`1519d92`); identical features and unlocked resolution before and after |
+| P7 | Share the validator failure rule (C4) | Closed as standalone work; bundle with the next host-tools change |
 
 ## Pending decisions
 
 | ID | Decision | Blocks |
 | :- | :- | :- |
-| P1 | May `hn_lib`'s public API change? (board B47) crates.io lists 0 dependents, 22 downloads | C6; P5 |
-| P2 | Desktop copies an environment-only key into `summary.json` on an unrelated Apply (`desktop/src/settings.rs:99` compares with the stored field; terminal compares with the effective key, `src/reader/settings.rs:105`). README.md:103 says this must not happen. Fix as a behavior correction outside this pass? | Sharing key-edit logic between apps |
-| P3 | Desktop sibling movement at a re-rooted comment can leave the displayed subtree; terminal pins the opposite (`src/app/comment_view_state_tests.rs:175`, `desktop/src/app/input.rs:337`) | Consolidating the sibling guard |
-| P4 | Preview monitor and page gate still accept health without `running` (`.github/workflows/preview-monitor.yml:51`, `preview-ui.yml:76`). Is that recovery mode retired? | Removing the exception (CI change) |
-| P5 | Capture fetches each story twice (`src/snapshot_capture.rs:31`, `src/hn_cli_service.rs:265`); fixing it widens `hn_lib`'s surface and changes request counts | — |
-| P7 | Share the snapshot-validator failure rule in `preview/tools/release.mjs` (C4), accepting a host-tools reinstall on both hosts after merge? | C4 |
-| P6 | Remove the seven unused direct `icu_*` dependencies from the root manifest (`Cargo.toml:39-45`; `418816e`, `f4950e1`, `251babc`) | Dependency change |
+| P8 | A fresh unlocked resolve on the declared `rust-version = "1.88"` pulls `uuid 1.29.3`, which requires Rust 1.89 (pre-existing; seen in both P6 resolutions). Raise `rust-version`, cap `uuid`, or document `cargo install --locked`? | Unlocked `cargo install hn-reader` on Rust 1.88 |
+| P9 | The desktop key hint "Saved to ~/.config/hn/summary.json by default when you apply." (`desktop/src/settings/view.rs:95`) reads as if the shown environment key is saved. Rewording changes the golden trees (`desktop/verification/expected/settings*.json`), which CONTRIBUTING.md asks to ship with before and after images | Copy change |
 
 ## Rejected
 
