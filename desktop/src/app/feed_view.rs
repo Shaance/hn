@@ -29,7 +29,10 @@ pub(super) fn feed_tabs(s: &App, k: &Kit, t: tok::Theme, accent: Color, reduced:
             .on_press_tx(move |s: &mut App, tx: &mut Tx| {
                 // Pointer selection returns arrows to the feed; an accessibility-focused tab keeps them.
                 if !tx.by_keys() && !tx.focus_visible() { tx.blur(); }
-                if tab != s.feed.tab { s.apply(feed_state::switch_tab(&s.feed.state(), tab)); }
+                if tab != s.feed.tab {
+                    let remembered_page = s.feed.feed_positions.get(&tab).map(|p| p.page);
+                    s.apply(feed_state::switch_tab(s.feed.feed_navigation(), tab, remembered_page));
+                }
             })
             .child(text(label).font(type_::TITLE).color(if i == selected { t.text } else { t.text_secondary }).a11y_hidden()));
     }
@@ -340,7 +343,7 @@ fn stepper(page: u32, t: tok::Theme, accent: Color) -> El {
         .center_y()
         .child(chev("\u{2039}", "Previous page", t, |s: &mut App| {
             let cells = s.cells().get();
-            let action = feed_state::prev_page(&s.feed.state(), cells);
+            let action = feed_state::prev_page(s.feed.feed_navigation(), cells);
             s.apply(action);
         }))
         .child(
@@ -351,7 +354,7 @@ fn stepper(page: u32, t: tok::Theme, accent: Color) -> El {
         )
         .child(chev("\u{203a}", "Next page", t, |s: &mut App| {
             let cells = s.cells().get();
-            let action = feed_state::next_page(&s.feed.state(), cells);
+            let action = feed_state::next_page(s.feed.feed_navigation(), cells);
             s.apply(action);
         }))
 }

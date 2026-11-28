@@ -2,7 +2,7 @@
 
 use crate::{
     comments::Thread,
-    feed_state::{self, FeedAction, FeedState, FeedStatus},
+    feed_state::{self, FeedAction, FeedNavigation},
     theme::Theme,
     HNCLIItem,
 };
@@ -234,7 +234,7 @@ impl App {
     /// or feed switch is still in flight, j/k are ignored so repeated presses
     /// cannot stack multiple page advances.
     pub fn next_story(&mut self) -> bool {
-        match feed_state::next_story(&self.feed_state(), usize::from(self.page_size)) {
+        match feed_state::next_story(self.feed_navigation(), usize::from(self.page_size)) {
             FeedAction::TurnPage { .. } if self.snapshot.is_some() => {
                 self.preview_notice = Some(PREVIEW_PAGE_NOTICE);
                 false
@@ -253,7 +253,7 @@ impl App {
     pub fn prev_story(&mut self) -> bool {
         let page = self.current_page;
         self.apply_feed_action(feed_state::prev_story(
-            &self.feed_state(),
+            self.feed_navigation(),
             usize::from(self.page_size),
         ));
         self.current_page != page
@@ -349,7 +349,7 @@ impl App {
             return;
         }
         self.apply_feed_action(feed_state::next_page(
-            &self.feed_state(),
+            self.feed_navigation(),
             usize::from(self.page_size),
         ));
     }
@@ -357,38 +357,32 @@ impl App {
     /// Go to previous page
     pub fn prev_page(&mut self) {
         self.apply_feed_action(feed_state::prev_page(
-            &self.feed_state(),
+            self.feed_navigation(),
             usize::from(self.page_size),
         ));
     }
 
     /// Switch story type
     pub fn set_story_type(&mut self, story_type: StoryType) {
-        self.apply_feed_action(feed_state::switch_tab(&self.feed_state(), story_type));
+        let remembered_page = self.feed_positions.get(&story_type).map(|p| p.page);
+        self.apply_feed_action(feed_state::switch_tab(
+            self.feed_navigation(),
+            story_type,
+            remembered_page,
+        ));
     }
 
-    /// Snapshot of the feed fields the shared `feed_state` transitions read.
-    fn feed_state(&self) -> FeedState {
-        FeedState {
+    fn feed_navigation(&self) -> FeedNavigation {
+        FeedNavigation {
             tab: self.story_type,
-            // The TUI pages by number; the ranked snapshot is the desktop's.
-            id_snapshot: Vec::new(),
-            stories: self.stories.clone(),
-            // App caches by (type, page); the id-keyed cache is the desktop's.
-            story_cache: HashMap::new(),
-            page_size: u32::from(self.page_size),
             display_cursor: (self.current_page.saturating_sub(1) as usize)
                 * usize::from(self.page_size),
             selected: self.selected_index,
-            status: FeedStatus {
-                loading: self.is_loading(),
-                error: self.error().map(str::to_string),
-                stale: self.showing_stale_stories(),
-            },
+            story_count: self.stories.len(),
+            page_size: u32::from(self.page_size),
+            loading: self.is_loading(),
+            stale: self.showing_stale_stories(),
             stories_for: self.stories_for,
-            feed_positions: self.feed_positions.clone(),
-            page_landing: self.page_landing,
-            bookmark_notice: self.bookmark_notice.clone(),
         }
     }
 
@@ -412,10 +406,7 @@ impl App {
                 self.story_type = tab;
                 self.current_page = page;
             }
-            FeedAction::None
-            | FeedAction::ToggleSaved { .. }
-            | FeedAction::ApplyPage { .. }
-            | FeedAction::Resize { .. } => {}
+            FeedAction::None | FeedAction::Resize { .. } => {}
         }
     }
 
