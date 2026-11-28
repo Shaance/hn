@@ -104,10 +104,14 @@ Answered 2026-11-28 ("let's go" on the recommendations; board B47, B48). Follow-
 
 ## Pending decisions
 
-| ID | Decision | Blocks |
+None open. Resolved after the first follow-up round:
+
+| ID | Decision | Outcome |
 | :- | :- | :- |
-| P8 | A fresh unlocked resolve on the declared `rust-version = "1.88"` pulls `uuid 1.29.3`, which requires Rust 1.89 (pre-existing; seen in both P6 resolutions). Raise `rust-version`, cap `uuid`, or document `cargo install --locked`? | Unlocked `cargo install hn-reader` on Rust 1.88 |
-| P9 | The desktop key hint "Saved to ~/.config/hn/summary.json by default when you apply." (`desktop/src/settings/view.rs:95`) reads as if the shown environment key is saved. Rewording changes the golden trees (`desktop/verification/expected/settings*.json`), which CONTRIBUTING.md asks to ship with before and after images | Copy change |
+| P8 | Does an unlocked install on Rust 1.88 break (fresh resolution lists `uuid 1.29.3`, Rust 1.89)? | Does not hold: `cargo +1.88.0 install hn-reader` compiled 222 crates and installed hn 0.2.2; `uuid` sits behind ratatui's optional `termwiz` backend and is never compiled. README's summary table now also says `--locked` (`2ade68c` on `deps/drop-direct-icu-pins`) |
+| P9 | Desktop key hint implied the shown key is saved | Reworded to "Apply saves key changes to ~/.config/hn/summary.json by default." with regenerated settings goldens (on `fix/desktop-env-key-persist`) |
+
+Still deferred: P5 (fetch once, with the next library change), C11 (browser check, with the next change that ships `preview/package.json`), full C6 (with 0.3.0).
 
 ## Rejected
 
