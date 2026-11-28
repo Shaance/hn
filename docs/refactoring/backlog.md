@@ -1,6 +1,6 @@
 # Structural refactoring backlog
 
-Pass 1, branch `refactor/complexity-pass-1`, base `6e82e1f`. Check results live in the run ledger, not here.
+Pass 1, branch `refactor/complexity-pass-1`, base `6e82e1f`, rebased onto `8d0f7d8` before merge. Check results live in the run ledger, not here.
 
 ## Verification commands
 
@@ -126,12 +126,12 @@ Still deferred: P5 (fetch once, with the next library change), C11 (browser chec
 
 | Batch | Candidate | Commit | Change |
 | :- | :- | :- | :- |
-| 1 | C1 | `60f61d0` | 11 lines added, 14 removed in 4 files; two duplicated rules now have one owner each |
-| 2 | C2, C8 | `15e677b` | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
-| 3 | C3 | `0a593d3` | 33 added, 47 removed in 2 files; settings no longer writes summary progress; three paired branches became `Section` operations |
-| 4 | C5 | `8d84b32` | 84 added, 86 removed in 3 desktop files; fill computed and `Loading` written once per request (were twice), ranking decided once, reflow decision moved from `poll.rs` into the model |
-| 5 | C9 | `a0de84d` | 39 added, 41 removed in 3 files across both crates; the 1,800 and 6,000 char limits and the cleaning rules have one owner; adds two pub constructors to `hn_lib` |
-| 6 | C7 | the commit that adds this row | 7 added, 7 removed in 4 desktop files; the retry-only rule has one owner (was three sites) |
+| 1 | C1 | `225c019` | 11 lines added, 14 removed in 4 files; two duplicated rules now have one owner each |
+| 2 | C2, C8 | `79023ef` | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
+| 3 | C3 | `9bd28f5` | 33 added, 47 removed in 2 files; settings no longer writes summary progress; three paired branches became `Section` operations |
+| 4 | C5 | `496a105` | 84 added, 86 removed in 3 desktop files; fill computed and `Loading` written once per request (were twice), ranking decided once, reflow decision moved from `poll.rs` into the model |
+| 5 | C9 | `f704fcf` | 39 added, 41 removed in 3 files across both crates; the 1,800 and 6,000 char limits and the cleaning rules have one owner; adds two pub constructors to `hn_lib` |
+| 6 | C7 | `c6c4414` | 7 added, 7 removed in 4 desktop files; the retry-only rule has one owner (was three sites) |
 
 ## Active transitions
 
