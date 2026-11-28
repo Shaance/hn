@@ -183,7 +183,7 @@ impl<C: HackerNewsClient + Sync> HackerNewsCliService for HackerNewsCliServiceIm
         let mut first_error = None;
         for (id, item_result) in page_ids.iter().zip(items) {
             match item_result {
-                Ok(item) => result.push(self.api_item_to_hn_cli_item(item)),
+                Ok(item) => result.push(self.story_from_item(item)),
                 Err(error) => {
                     first_error.get_or_insert_with(|| error.context(format!("Story item {id}")));
                 }
@@ -245,7 +245,7 @@ impl<C: HackerNewsClient + Sync> HackerNewsCliService for HackerNewsCliServiceIm
             .get_items(ids)
             .await
             .into_iter()
-            .map(|item| item.ok().map(|item| self.api_item_to_hn_cli_item(item)))
+            .map(|item| item.ok().map(|item| self.story_from_item(item)))
             .collect()
     }
 }
@@ -265,7 +265,7 @@ impl<C: HackerNewsClient> HackerNewsCliServiceImpl<C> {
     pub async fn story_with_comment_ids(&self, story_id: i32) -> Result<(HNCLIItem, Vec<i32>)> {
         let item = self.hn_client.get_item(story_id).await?;
         let roots = item.kids.clone().unwrap_or_default();
-        Ok((self.api_item_to_hn_cli_item(item), roots))
+        Ok((self.story_from_item(item), roots))
     }
 
     /// Fetch one group for a transactional refresh. Any missing item aborts the group.
@@ -323,7 +323,8 @@ impl<C: HackerNewsClient> HackerNewsCliServiceImpl<C> {
         }
     }
 
-    fn api_item_to_hn_cli_item(&self, item: HackerNewsItem) -> HNCLIItem {
+    /// The reader's story from a fetched HN item, using the client's item URL when it has none.
+    pub fn story_from_item(&self, item: HackerNewsItem) -> HNCLIItem {
         let raw_text = item.text.as_deref().unwrap_or_default();
         let links = web_links(raw_text);
         let text = decode_html(raw_text);

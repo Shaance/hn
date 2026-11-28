@@ -13,7 +13,10 @@ use std::{
 };
 
 pub async fn capture(path: &Path) -> Result<()> {
-    let client = HackerNewsClientImpl::new();
+    capture_with(HackerNewsClientImpl::new(), path).await
+}
+
+async fn capture_with(client: impl HackerNewsClient + Clone, path: &Path) -> Result<()> {
     let mut feeds = BTreeMap::new();
     for category in ["top", "new", "best"] {
         let ids = client.get_story_ids(category).await?;
@@ -30,7 +33,7 @@ pub async fn capture(path: &Path) -> Result<()> {
         async move {
             let story = client.get_item(id).await?;
             let service = HackerNewsCliServiceImpl::new_with_client(client.clone());
-            let cli = service.story_with_comment_ids(id).await?.0;
+            let cli = service.story_from_item(story.clone());
             let article = match public_article_client(&cli.url).await {
                 Ok(http) => match hn_lib::reader::sources::article(&http, &cli).await {
                     Ok((text, partial)) => CapturedArticle {
@@ -162,4 +165,101 @@ pub async fn prepare(path: &Path) -> Result<()> {
     let mut snapshot = Snapshot::load(path)?;
     hn_lib::reader::snapshot::prepare(&mut snapshot).await?;
     snapshot.write_atomic(path)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use async_trait::async_trait;
+    use hn_lib::hn_client::HackerNewsItem;
+    use std::{
+        fs,
+        sync::{Arc, Mutex},
+    };
+
+    #[derive(Clone)]
+    struct CountingClient {
+        items: BTreeMap<i32, HackerNewsItem>,
+        requests: Arc<Mutex<BTreeMap<i32, usize>>>,
+    }
+
+    #[async_trait]
+    impl HackerNewsClient for CountingClient {
+        async fn get_story_ids(&self, story_type: &str) -> Result<Vec<i32>> {
+            Ok(match story_type {
+                "top" => vec![1, 2],
+                "new" => vec![2, 3],
+                "best" => vec![3, 1],
+                _ => anyhow::bail!("Unexpected feed {story_type}"),
+            })
+        }
+
+        async fn get_items(&self, ids: &[i32]) -> Vec<Result<HackerNewsItem>> {
+            let mut items = Vec::new();
+            for &id in ids {
+                items.push(self.get_item(id).await);
+            }
+            items
+        }
+
+        async fn get_item(&self, id: i32) -> Result<HackerNewsItem> {
+            *self.requests.lock().unwrap().entry(id).or_default() += 1;
+            self.items
+                .get(&id)
+                .cloned()
+                .with_context(|| format!("Unexpected item {id}"))
+        }
+
+        fn get_y_combinator_url(&self) -> &str {
+            "http://example.test/"
+        }
+    }
+
+    #[tokio::test]
+    async fn capture_fetches_each_story_once() -> Result<()> {
+        // HTTP URLs fail the article HTTPS check before hostname resolution.
+        let items: [HackerNewsItem; 4] = serde_json::from_str(
+            r#"[
+            {"id":1,"type":"story","time":1,"title":"First","url":"http://example.test/story","kids":[4]},
+            {"id":2,"type":"story","time":1,"title":"Second","url":"http://example.test/story"},
+            {"id":3,"type":"story","time":1,"title":"Third","url":"http://example.test/story"},
+            {"id":4,"type":"comment","time":1,"text":"A reply"}
+        ]"#,
+        )?;
+        let requests = Arc::new(Mutex::new(BTreeMap::new()));
+        let client = CountingClient {
+            items: items.into_iter().map(|item| (item.id, item)).collect(),
+            requests: Arc::clone(&requests),
+        };
+        let dir = std::env::temp_dir().join(format!(
+            "hn-snapshot-capture-{}-{}",
+            std::process::id(),
+            chrono::Utc::now().timestamp_micros()
+        ));
+        fs::create_dir(&dir)?;
+        let path = dir.join("snapshot.json");
+        let captured = capture_with(client, &path)
+            .await
+            .and_then(|()| Snapshot::load(&path));
+        fs::remove_dir_all(&dir)?;
+        let snapshot = captured?;
+
+        let mut counts = requests.lock().unwrap();
+        assert_eq!(counts.remove(&4), Some(1), "comment fetch count");
+        assert_eq!(
+            *counts,
+            BTreeMap::from([(1, 1), (2, 1), (3, 1)]),
+            "story fetch counts"
+        );
+        assert_eq!(snapshot.items[&1].kids.as_deref(), Some([4].as_slice()));
+        assert_eq!(snapshot.items[&4].r#type, "comment");
+        assert_eq!(
+            snapshot.articles.keys().copied().collect::<Vec<_>>(),
+            [1, 2, 3]
+        );
+        assert!(snapshot.articles.values().all(|article| {
+            article.error.as_deref() == Some("Preview captures HTTPS articles only")
+        }));
+        Ok(())
+    }
 }
