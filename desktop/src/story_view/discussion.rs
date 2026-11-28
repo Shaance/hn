@@ -283,8 +283,7 @@ pub(super) fn comment_row(s: &Story, id: i32, depth: u32, k: &Kit, t: tok::Theme
                 .fill(if active { accent } else { t.text_secondary.alpha(0.5) }),
         );
     }
-    let retry_primary = !readable && !loaded && !folded && !capped && !loading
-        && thread.reply_batch(id, false).is_none() && thread.reply_batch(id, true).is_some();
+    let retry_primary = !readable && !loaded && !folded && !capped && !loading && s.replies_are_retry_only(id);
     let action = if capped { "Continue thread" } else if folded { "Show replies" }
         else if retry_primary { "Retry replies" } else if !loaded && !loading { "Load replies" }
         else { "Hide replies" };

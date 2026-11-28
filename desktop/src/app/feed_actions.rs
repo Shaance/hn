@@ -1,25 +1,21 @@
 //! Feed requests, saved stories and accepted arrivals.
 
-use super::{App, Grid, Notice, Ranking, RequestLifecycle, Arrival, DEFAULT_GRID};
+use super::{App, Grid, Notice, Ranking, Arrival, DEFAULT_GRID};
 use hn_lib::app::StoryType;
 use hn_lib::feed_state;
 use crate::bridge::feed::Request;
-use crate::feed::{FeedWindow, Filled};
+use crate::feed::{FeedWindow, Fill, Filled};
 use crate::feed::tab_index;
 
 impl App {
-    /// Ask for the window `grid` shows. `ranking` says whether this request re-snapshots.
-    ///
+    pub(super) fn request(&mut self, grid: Grid, ranking: Ranking) {
+        let request = self.feed.start_request(grid, ranking);
+        self.dispatch_feed(request);
+    }
+
     /// Saved is the local store, not a feed: it renders every saved story from memory and
     /// never reaches the source, so the viewport applies to display only.
-    pub(super) fn request(&mut self, grid: Grid, ranking: Ranking) {
-        let fill = self.feed.fill(grid);
-        let since = match self.feed.request {
-            RequestLifecycle::Loading(_, _, _, since) => since,
-            _ => None,
-        };
-        self.feed.request = RequestLifecycle::Loading(fill, ranking, grid, since);
-        self.feed.error = None;
+    pub(super) fn dispatch_feed(&mut self, (fill, ranking): (Fill, Ranking)) {
         if fill.tab == StoryType::Saved {
             self.feed.apply_saved(self.saved.store());
             self.accept_arrival();
@@ -61,12 +57,11 @@ impl App {
     /// Re-request the current window with a new ranking, as `r` does. The story the reader has
     /// selected stays selected: the feed re-anchors on its id when the new snapshot lands.
     pub(super) fn refresh(&mut self) {
-        self.feed.request.reset_clock();
         self.pending_arrival = None;
         self.arrival = None;
-        self.feed.pending_anchor = self.feed.selected_id();
         let grid = self.measured.get().unwrap_or(DEFAULT_GRID);
-        self.request(grid, Ranking::Fresh);
+        let request = self.feed.refresh(grid);
+        self.dispatch_feed(request);
     }
 
     pub(super) fn toggle_saved(&mut self) {
@@ -110,12 +105,6 @@ impl App {
 
     pub(super) fn apply(&mut self, action: feed_state::FeedAction) {
         let grid = self.measured.get().unwrap_or(DEFAULT_GRID);
-        // A tab switch is a new feed and needs its own ranking; a page turn or a resize pages
-        // against the one on screen.
-        let ranking = match action {
-            feed_state::FeedAction::SwitchTab { .. } => Ranking::Fresh,
-            _ => Ranking::Keep,
-        };
         let arrival = match action {
             feed_state::FeedAction::TurnPage { display_cursor, .. } => Some(Arrival::Page(
                 if display_cursor < self.feed.display_cursor { -1 } else { 1 })),
@@ -124,9 +113,9 @@ impl App {
             _ => None,
         };
         let applied = self.feed.apply(action, grid);
-        if applied.fill.is_some() {
+        if let Some(request) = applied.request {
             self.pending_arrival = arrival;
-            self.request(grid, ranking);
+            self.dispatch_feed(request);
         }
     }
 

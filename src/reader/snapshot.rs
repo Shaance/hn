@@ -75,11 +75,8 @@ async fn prepare_with_network(
                 let Ok(url) = reqwest::Url::parse(item.url.as_deref().unwrap_or_default()) else {
                     return false;
                 };
-                let host = url.host_str().unwrap_or_default().trim_end_matches('.');
                 url.scheme() == "https"
-                    && !["x.com", "twitter.com"]
-                        .iter()
-                        .any(|domain| host == *domain || host.ends_with(&format!(".{domain}")))
+                    && !crate::snapshot::is_excluded_social_host(&url)
                     && snapshot.articles.get(id).is_some_and(|article| {
                         article.error.is_none() && article.text.chars().count() >= 400
                     })

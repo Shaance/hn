@@ -85,10 +85,6 @@ impl RequestLifecycle {
             *self = Self::Settled(fill, ranking, grid);
         }
     }
-
-    pub fn reset_clock(&mut self) {
-        if let Self::Loading(_, _, _, since) = self { *since = None; }
-    }
 }
 
 /// What applying an action asks the caller to do next.
@@ -96,7 +92,7 @@ impl RequestLifecycle {
 pub struct Applied {
     pub changed: bool,
     /// The window to fetch, when the action invalidated the loaded one.
-    pub fill: Option<Fill>,
+    pub(crate) request: Option<(Fill, Ranking)>,
 }
 
 /// A settled fill, as the async bridge hands it back.
@@ -207,6 +203,49 @@ impl FeedModel {
         }
     }
 
+    fn establish(&mut self, fill: Fill, ranking: Ranking, grid: Grid, since: Option<f64>) -> (Fill, Ranking) {
+        self.request = RequestLifecycle::Loading(fill, ranking, grid, since);
+        self.error = None;
+        (fill, ranking)
+    }
+
+    pub(crate) fn start_request(&mut self, grid: Grid, ranking: Ranking) -> (Fill, Ranking) {
+        let since = match self.request {
+            RequestLifecycle::Loading(_, _, _, since) => since,
+            _ => None,
+        };
+        self.establish(self.fill(grid), ranking, grid, since)
+    }
+
+    pub(crate) fn refresh(&mut self, grid: Grid) -> (Fill, Ranking) {
+        self.pending_anchor = self.selected_id();
+        self.establish(self.fill(grid), Ranking::Fresh, grid, None)
+    }
+
+    pub(crate) fn reflow(&mut self, grid: Grid) -> Option<(Fill, Ranking)> {
+        let mut need = self.fill(grid);
+        let (ranking, since) = match &mut self.request {
+            RequestLifecycle::Loading(fill, _, previous, _) | RequestLifecycle::Settled(fill, _, previous)
+                if *fill == need => { *previous = grid; return None; }
+            RequestLifecycle::Loading(_, ranking, _, since) => (*ranking, *since),
+            RequestLifecycle::BeforeFirst | RequestLifecycle::Settled(..) => (Ranking::Keep, None),
+        };
+        // A page turn has its own destination. Reflow the page on screen only when
+        // there is no such turn, or when an earlier reflow is already pending.
+        if self.tab != StoryType::Saved
+            && (self.pending_cursor.is_none() || self.pending_anchor.is_some())
+            && let Some(id) = self.selected_id()
+        {
+            let offset = (self.selected / need.count) * need.count.get();
+            if offset > 0 || self.pending_cursor.is_some() {
+                self.pending_anchor.get_or_insert(id);
+                self.pending_cursor = (offset > 0).then_some(self.display_cursor + offset);
+                need.from_rank = self.target_cursor();
+            }
+        }
+        Some(self.establish(need, ranking, grid, since))
+    }
+
     /// The story id at the cursor, for re-anchoring a refresh by id rather than by index.
     pub fn selected_id(&self) -> Option<i32> {
         self.stories.get(self.selected).map(|story| story.id)
@@ -214,8 +253,8 @@ impl FeedModel {
 
     /// Apply a described change. `grid` is the viewport the caller measured.
     pub fn apply(&mut self, action: FeedAction, grid: Grid) -> Applied {
-        match action {
-            FeedAction::None => Applied::default(),
+        let request = match action {
+            FeedAction::None => return Applied::default(),
             FeedAction::Move { selected } => {
                 // While a page turn is in flight the rows on screen are the page being left:
                 // selecting one would select it under the ranks of the page being loaded.
@@ -223,10 +262,7 @@ impl FeedModel {
                     return Applied::default();
                 }
                 self.selected = selected;
-                Applied {
-                    changed: true,
-                    fill: None,
-                }
+                None
             }
             FeedAction::TurnPage {
                 display_cursor,
@@ -241,12 +277,7 @@ impl FeedModel {
                 if landing.is_some() {
                     self.page_landing = landing;
                 }
-                let fill = self.fill(grid);
-                self.request = RequestLifecycle::Loading(fill, Ranking::Keep, grid, None);
-                Applied {
-                    changed: true,
-                    fill: Some(fill),
-                }
+                Some(self.establish(self.fill(grid), Ranking::Keep, grid, None))
             }
             FeedAction::SwitchTab { tab, page } => {
                 self.remember_position();
@@ -259,14 +290,8 @@ impl FeedModel {
                 self.failed.clear();
                 self.stories_for = None;
                 self.page_landing = None;
-                self.error = None;
                 self.stale = false;
-                let fill = self.fill(grid);
-                self.request = RequestLifecycle::Loading(fill, Ranking::Fresh, grid, None);
-                Applied {
-                    changed: true,
-                    fill: Some(fill),
-                }
+                Some(self.establish(self.fill(grid), Ranking::Fresh, grid, None))
             }
             FeedAction::ToggleSaved { id, saved } => {
                 self.bookmark_notice = Some(if saved {
@@ -275,24 +300,16 @@ impl FeedModel {
                     format!("Removed from Saved")
                 });
                 let _ = id;
-                Applied {
-                    changed: true,
-                    fill: None,
-                }
+                None
             }
             FeedAction::ApplyPage { tab, page, .. } => {
                 self.stories_for = Some((tab, page));
                 self.request.settle();
-                Applied {
-                    changed: true,
-                    fill: None,
-                }
+                None
             }
-            FeedAction::Resize { .. } => Applied {
-                changed: true,
-                fill: Some(self.fill(grid)),
-            },
-        }
+            FeedAction::Resize { .. } => Some(self.start_request(grid, Ranking::Keep)),
+        };
+        Applied { changed: true, request }
     }
 
     /// Take a settled fill. A fill for another tab or another cursor is stale and dropped.
@@ -530,7 +547,7 @@ mod tests {
         assert_eq!(feed.display_cursor, 0, "the page on screen until it lands");
         assert_eq!(feed.stepper(), 1, "11/30 + 1 is still page 1");
         assert_eq!(
-            applied.fill,
+            applied.request.map(|(fill, _)| fill),
             Some(Fill {
                 tab: StoryType::Top,
                 from_rank: 11,
@@ -584,7 +601,7 @@ mod tests {
         assert_eq!(feed.tab, StoryType::New);
         assert_eq!(feed.display_cursor, 0);
         assert_eq!(
-            applied.fill,
+            applied.request.map(|(fill, _)| fill),
             Some(Fill {
                 tab: StoryType::New,
                 from_rank: 0,
@@ -616,7 +633,7 @@ mod tests {
         let applied = feed.apply(action, grid(19, 2));
         assert_eq!(feed.display_cursor, 0, "resize keeps the first visible rank");
         assert_eq!(
-            applied.fill,
+            applied.request.map(|(fill, _)| fill),
             Some(Fill {
                 tab: StoryType::Top,
                 from_rank: 0,
@@ -626,7 +643,7 @@ mod tests {
         // Shrinking back asks for fewer cells but never drops what it holds.
         let action = feed_state::resize(&feed.state(), 11, 1);
         let applied = feed.apply(action, grid(11, 1));
-        assert_eq!(applied.fill.unwrap().count.get(), 11);
+        assert_eq!(applied.request.unwrap().0.count.get(), 11);
         assert_eq!(feed.stories.len(), 11, "the held window is untouched");
     }
 
@@ -767,6 +784,17 @@ mod tests {
     }
 
     #[test]
+    fn refresh_restarts_an_in_flight_deadline() {
+        let mut feed = FeedModel::new();
+        let grid = grid(11, 1);
+        feed.start_request(grid, Ranking::Fresh);
+        assert_eq!(feed.poll_timeout(0.0, 10.0), Some(false));
+        feed.refresh(grid);
+        assert_eq!(feed.poll_timeout(10.0, 10.0), Some(false), "the old deadline has passed");
+        assert_eq!(feed.poll_timeout(20.0, 10.0), Some(true));
+    }
+
+    #[test]
     fn a_ranking_failure_is_an_error_state_not_an_empty_feed() {
         let mut feed = loaded(11, 1);
         let before = feed.stories.len();
@@ -793,7 +821,7 @@ mod tests {
         // Shrinking asks for fewer cells; the window shrinks with the viewport.
         let action = feed_state::resize(&feed.state(), 11, 1);
         let applied = feed.apply(action, grid(11, 1));
-        assert_eq!(applied.fill.unwrap().count.get(), 11);
+        assert_eq!(applied.request.unwrap().0.count.get(), 11);
         feed.apply_fill(filled(StoryType::Top, 0, 11));
         assert_eq!(feed.stories.len(), 11);
         // Growing back is served from the held pages: a rank the source cannot return now

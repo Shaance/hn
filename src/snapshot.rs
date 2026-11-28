@@ -4,6 +4,13 @@ use anyhow::{ensure, Context, Result};
 use serde::{Deserialize, Serialize};
 use std::{collections::BTreeMap, path::Path};
 
+pub(crate) fn is_excluded_social_host(url: &reqwest::Url) -> bool {
+    let host = url.host_str().unwrap_or_default().trim_end_matches('.');
+    ["x.com", "twitter.com"]
+        .iter()
+        .any(|domain| host == *domain || host.ends_with(&format!(".{domain}")))
+}
+
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Snapshot {
     pub version: u32,

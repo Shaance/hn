@@ -123,7 +123,6 @@ pub(super) fn poll_updates(s: &mut App, now: f64, tx: &mut Tx, back_requested: b
     // One request per invalidation: the measured grid is the only thing that moves it. A
     // resize keeps an in-flight fresh request fresh; otherwise it uses the accepted ranking.
     if let Some(grid) = s.measured.get() {
-        let need = s.feed.fill(grid);
         if s.feed.tab == StoryType::Saved
             && matches!(s.feed.request, RequestLifecycle::Loading(_, _, previous, _)
                 | RequestLifecycle::Settled(_, _, previous) if previous != grid)
@@ -134,29 +133,11 @@ pub(super) fn poll_updates(s: &mut App, now: f64, tx: &mut Tx, back_requested: b
             tx.instant();
             changed = true;
         }
-        let ranking = match &mut s.feed.request {
-            RequestLifecycle::Loading(fill, _, previous, _) | RequestLifecycle::Settled(fill, _, previous)
-                if *fill == need => { *previous = grid; None }
-            RequestLifecycle::Loading(_, ranking, _, _) => Some(*ranking),
-            RequestLifecycle::BeforeFirst | RequestLifecycle::Settled(..) => Some(Ranking::Keep),
-        };
-        if let Some(ranking) = ranking {
-            // A page turn has its own destination. Reflow the page on screen only when
-            // there is no such turn, or when an earlier reflow is already pending.
-            if s.feed.tab != StoryType::Saved
-                && (s.feed.pending_cursor.is_none() || s.feed.pending_anchor.is_some())
-                && let Some(id) = s.feed.selected_id()
-            {
-                let offset = (s.feed.selected / need.count) * need.count.get();
-                if offset > 0 || s.feed.pending_cursor.is_some() {
-                    s.feed.pending_anchor.get_or_insert(id);
-                    s.feed.pending_cursor = (offset > 0).then_some(s.feed.display_cursor + offset);
-                }
-            }
+        if let Some(request) = s.feed.reflow(grid) {
             if !matches!(s.pending_arrival, Some(Arrival::Initial | Arrival::Tab(_))) {
                 s.pending_arrival = None;
             }
-            s.request(grid, ranking);
+            s.dispatch_feed(request);
             changed = true;
         }
     }

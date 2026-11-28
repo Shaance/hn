@@ -76,6 +76,27 @@ impl<T, C, S> Section<T, C, S> {
             }
         }
     }
+    pub(super) fn cancel_automatic_preparation(&mut self) {
+        if matches!(self.progress, Progress::Queued(a) | Progress::Preparing(a, _, _) if a.automatic)
+        {
+            self.cancel_preparation();
+        }
+    }
+    pub(super) fn invalidate_pending(&mut self, active: bool, profile: Profile, next: &mut u64) {
+        if self.pending() {
+            self.cancel_preparation();
+            // Discard any completion from an attempt already submitted with the old key.
+            self.progress = Progress::Idle;
+            if active {
+                self.queue(profile, next, Request::Generate);
+            }
+        }
+    }
+    pub(super) fn retry_auth_failure(&mut self, profile: Profile, next: &mut u64) {
+        if matches!(&self.progress, Progress::Failed(_, error) if error.auth) {
+            self.queue(profile, next, Request::Retry);
+        }
+    }
     fn prepared(&mut self, attempt: Attempt, result: Result<Capture<C>, Failure>) {
         let Progress::Preparing(current, _, desired) = self.progress else {
             return;

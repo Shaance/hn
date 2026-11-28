@@ -351,6 +351,29 @@ impl Story {
         self.story.id
     }
 
+    /// Install saved halves into a newly opened reading before its captures land.
+    pub(crate) fn restore_summary(&mut self, article: Option<(ArticleData, u64)>, discussion: Option<(DiscussionData, u64)>) {
+        let article_age = article.map(|(data, age)| {
+            self.article_summary = ArticleSummaryState::Done(data.article.text);
+            age
+        });
+        let discussion = discussion.map(|(data, age)| {
+            self.land_summary(Ok((data.discussion, data.context.sources)));
+            (age, data.context.comments_at_save)
+        });
+        self.restored_summary = (article_age.is_some() || discussion.is_some()).then(|| RestoredSummary {
+            article_age, discussion, observed: std::time::Instant::now(),
+        });
+    }
+
+    fn clear_restored_summary(&mut self, article: bool) {
+        let Some(restored) = &mut self.restored_summary else { return; };
+        if article { restored.article_age = None; } else { restored.discussion = None; }
+        if restored.article_age.is_none() && restored.discussion.is_none() {
+            self.restored_summary = None;
+        }
+    }
+
     /// Each phase changes only its own surface. A late summary must not replace the article,
     /// the comment tree, or a reply the reader has opened since the discussion arrived.
     pub fn land_update(&mut self, update: StoryUpdate, store: Option<&mut SummaryStore>) -> bool {
@@ -375,6 +398,7 @@ impl Story {
                         eprintln!("summary {story_id}: write failed: {error}");
                     }
                 }
+                if summary.is_ok() { self.clear_restored_summary(true); }
                 self.land_article_summary(summary);
             }
             StoryUpdate::Discussion { story_id, comments, summary_skipped } if story_id == self.id() => {
@@ -412,7 +436,9 @@ impl Story {
                         eprintln!("summary {story_id}: write failed: {error}");
                     }
                 }
+                let fresh = summary.is_ok();
                 self.land_summary(summary);
+                if fresh && self.source().is_none() { self.clear_restored_summary(false); }
             }
             _ => return false,
         }
@@ -455,6 +481,10 @@ impl Story {
                 previous: previous.map(Box::new),
             },
         };
+    }
+
+    pub(crate) fn replies_are_retry_only(&self, id: i32) -> bool {
+        self.thread.reply_batch(id, false).is_none() && self.thread.reply_batch(id, true).is_some()
     }
 
     pub fn request_replies(&mut self, parent_id: i32, retry: bool) -> Option<crate::story_io::ReplyRequest> {
@@ -588,10 +618,7 @@ impl Story {
             cursor.focused = true;
         }
         display.0 = DisplayState::Summary { summary, cursor };
-        if accepted && let Some(restored) = &mut self.restored_summary {
-            restored.discussion = None;
-            if restored.article_age.is_none() { self.restored_summary = None; }
-        }
+        if accepted { self.clear_restored_summary(false); }
         true
     }
 

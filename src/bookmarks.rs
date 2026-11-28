@@ -64,15 +64,11 @@ pub fn toggle_saved(store: &mut SavedStore, item: &HNCLIItem) -> bool {
 
 pub fn toggle(app: &mut App, path: Option<&Path>) -> Result<()> {
     let path = path.context("Saved stories unavailable. Open Saved (4) and press r to retry")?;
-    let Some(story) = app.bookmark_story().cloned() else {
+    let Some(story) = app.bookmark_story() else {
         return Ok(());
     };
     let mut next = app.bookmarks.clone();
-    if let Some(index) = next.iter().position(|saved| saved.id == story.id) {
-        next.remove(index);
-    } else {
-        next.insert(0, story);
-    }
+    toggle_saved(&mut next, story);
     save(path, &next)?;
     app.bookmarks = next;
     app.bookmark_notice = None;
