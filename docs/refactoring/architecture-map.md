@@ -23,14 +23,17 @@ Written for structural refactoring pass 1 (base `6e82e1f`). Labels: **documented
 
 | Concern | Owner | Notes |
 | :- | :- | :- |
-| Feed paging, selection, tab switching | `hn_lib::feed_state` transitions | Both front ends rebuild an owned `FeedState` copy to call them (`src/app.rs:371`, `desktop/src/feed.rs:170`) |
+| Feed paging, selection, tab switching | `hn_lib::feed_state` transitions | Both front ends rebuild an owned `FeedState` copy to call them (`src/app.rs:371`, `desktop/src/feed.rs:170`; backlog C6, blocked) |
+| Desktop feed requests (fill, ranking, deadline clock) | `FeedModel` (`establish`, `start_request`, `refresh`, `reflow` in `desktop/src/feed.rs`) | `App::dispatch_feed` sends what the model established (since pass 1, batch 4) |
 | Comment tree navigation | `hn_lib::comments::Thread` | Both front ends; key routing and focus differ by design |
-| Saved stories | `hn_lib::bookmarks` (`saved.json`) | Terminal repeats the shared toggle (`src/bookmarks.rs:69`) |
-| Terminal summary lifecycle | `Reader` (job set, attempt IDs) and `Section` (`src/reader/jobs.rs`) | Settings code also writes `Progress` directly (`src/reader/settings.rs:138-195`) |
-| Desktop summary lifecycle | `Story` (displayed results), `Bridge` (tasks, parking) | Dispatch eligibility decided in the window and twice in the bridge |
+| Saved stories | `hn_lib::bookmarks` (`saved.json`) | Both apps toggle through `toggle_saved` (since batch 1) |
+| Terminal summary lifecycle | `Reader` (job set, attempt IDs) and `Section` (`src/reader/jobs.rs`) | `Section` is the only writer of its progress, including settings-driven transitions (since batch 3) |
+| Desktop summary lifecycle | `Story` (displayed results, restored-summary marker), `Bridge` (tasks, parking, `should_summarize`) | The window's `configured()` gate stays for the test harness (backlog, justified exceptions) |
+| Discussion evidence sent to the model | `hn_lib::reader::Source::from_comment`, `DiscussionCapture::from_story` | Cleaning and the 1,800/6,000 char limits; each app keeps its own selection (since batch 5) |
 | Summary settings | `hn_lib::reader::settings::Config` → `summary.json`, owner-only | Key precedence documented in README.md:100-102 |
 | Saved summaries | `hn_lib::reader::saved::SummaryStore`, one file per half, shared by both apps | Legacy single-file summaries ignored and left in place (documented by test, `src/reader/saved_tests.rs:134`) |
-| Snapshot format and validation | `hn_lib::snapshot` | Read by the deployed preview |
+| Snapshot format and validation | `hn_lib::snapshot` | Read by the deployed preview; also owns the X/Twitter exclusion (`is_excluded_social_host`) |
+| Preview host tooling | `preview/tools/*.mjs`, installed by `preview/deploy/install-tools.sh` | Any change needs a person to reinstall on both hosts; the monitor compares a hash with `main` |
 
 ## External integrations
 

@@ -64,7 +64,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** Row label, pointer/Enter activation and Right key each check exhausted batches and failed IDs (`desktop/src/story_view/discussion.rs:286`, `desktop/src/app/reading_actions.rs:243`, `desktop/src/app/input.rs:350`); `60f0f0e` touched all three.
 - **Benefit.** One `Story` decision, three callers.
 - **Checks.** `desktop/src/app/tests/discussion.rs:623`, `src/comments.rs:1167`.
-- **Status.** open
+- **Status.** done (batch 6). `Story::replies_are_retry_only`; the terminal's different rule (`src/app/comment_view_state.rs:262`) is intentionally separate.
 
 ### C8. Desktop restores saved summaries through synthetic completions
 - **Problem.** Restore manufactures successful `StoryUpdate`s and the window re-interprets results to clear age markers (`desktop/src/app/reading_actions.rs:42`, `:135`; `desktop/src/story.rs:575`).
@@ -117,7 +117,8 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 | 2 | C2, C8 | `15e677b` | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
 | 3 | C3 | `0a593d3` | 33 added, 47 removed in 2 files; settings no longer writes summary progress; three paired branches became `Section` operations |
 | 4 | C5 | `8d84b32` | 84 added, 86 removed in 3 desktop files; fill computed and `Loading` written once per request (were twice), ranking decided once, reflow decision moved from `poll.rs` into the model |
-| 5 | C9 | the commit that adds this row | 39 added, 41 removed in 3 files across both crates; the 1,800 and 6,000 char limits and the cleaning rules have one owner; adds two pub constructors to `hn_lib` |
+| 5 | C9 | `a0de84d` | 39 added, 41 removed in 3 files across both crates; the 1,800 and 6,000 char limits and the cleaning rules have one owner; adds two pub constructors to `hn_lib` |
+| 6 | C7 | the commit that adds this row | 7 added, 7 removed in 4 desktop files; the retry-only rule has one owner (was three sites) |
 
 ## Active transitions
 

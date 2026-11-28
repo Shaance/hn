@@ -483,6 +483,10 @@ impl Story {
         };
     }
 
+    pub(crate) fn replies_are_retry_only(&self, id: i32) -> bool {
+        self.thread.reply_batch(id, false).is_none() && self.thread.reply_batch(id, true).is_some()
+    }
+
     pub fn request_replies(&mut self, parent_id: i32, retry: bool) -> Option<crate::story_io::ReplyRequest> {
         if self.pending_reply.is_some() { return None; }
         let batch = self.thread.reply_batch(parent_id, retry)?;

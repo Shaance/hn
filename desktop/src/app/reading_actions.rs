@@ -216,8 +216,7 @@ impl App {
             return;
         }
         let unloaded = story.thread.has_children(id) && story.thread.children_of(id).is_empty();
-        let retry = unloaded && story.thread.reply_batch(id, false).is_none()
-            && story.thread.reply_batch(id, true).is_some();
+        let retry = unloaded && story.replies_are_retry_only(id);
         story.with_thread(|thread| { if unloaded { thread.unfold(); } else { thread.activate(); } });
         if unloaded { self.load_replies(id, retry); }
     }
