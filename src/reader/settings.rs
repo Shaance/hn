@@ -1,6 +1,6 @@
 use super::{
     config::{Profile, Provider},
-    Progress, Reader, Request,
+    Reader, Request,
 };
 use crate::ui::widgets::render_modal;
 use crossterm::event::KeyCode;
@@ -137,58 +137,23 @@ impl Reader {
         self.settings_error.clear();
         if auto_disabled {
             for reading in self.readings.values_mut() {
-                if matches!(reading.article.progress, Progress::Queued(a) | Progress::Preparing(a, _, _) if a.automatic)
-                {
-                    reading.article.cancel_preparation();
-                }
-                if matches!(reading.discussion.progress, Progress::Queued(a) | Progress::Preparing(a, _, _) if a.automatic)
-                {
-                    reading.discussion.cancel_preparation();
-                }
+                reading.article.cancel_automatic_preparation();
+                reading.discussion.cancel_automatic_preparation();
             }
         }
         if repaired {
             self.auth_failed = false;
+            let profile = self.config.profile;
+            let next = &mut self.next_attempt;
             for (id, reading) in self.readings.iter_mut() {
-                if changed_key && reading.article.pending() {
-                    reading.article.cancel_preparation();
-                    reading.article.progress = Progress::Idle;
-                    if self.active == Some(*id) {
-                        reading.article.queue(
-                            self.config.profile,
-                            &mut self.next_attempt,
-                            Request::Generate,
-                        );
-                    }
+                let active = self.active == Some(*id);
+                if changed_key {
+                    reading.article.invalidate_pending(active, profile, next);
+                    reading.discussion.invalidate_pending(active, profile, next);
                 }
-                if changed_key && reading.discussion.pending() {
-                    reading.discussion.cancel_preparation();
-                    reading.discussion.progress = Progress::Idle;
-                    if self.active == Some(*id) {
-                        reading.discussion.queue(
-                            self.config.profile,
-                            &mut self.next_attempt,
-                            Request::Generate,
-                        );
-                    }
-                }
-                if self.active == Some(*id)
-                    && matches!(&reading.article.progress, Progress::Failed(_, e) if e.auth)
-                {
-                    reading.article.queue(
-                        self.config.profile,
-                        &mut self.next_attempt,
-                        Request::Retry,
-                    );
-                }
-                if self.active == Some(*id)
-                    && matches!(&reading.discussion.progress, Progress::Failed(_, e) if e.auth)
-                {
-                    reading.discussion.queue(
-                        self.config.profile,
-                        &mut self.next_attempt,
-                        Request::Retry,
-                    );
+                if active {
+                    reading.article.retry_auth_failure(profile, next);
+                    reading.discussion.retry_auth_failure(profile, next);
                 }
             }
         }

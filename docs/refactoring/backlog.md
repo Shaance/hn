@@ -40,13 +40,13 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** Applying settings repeats three decisions for article and discussion and sets `Progress::Idle` itself (`src/reader/settings.rs:138-195`), although `Section` owns queuing and cancellation (`src/reader/jobs.rs:15-79`).
 - **Benefit.** Three paired branches become `Section` operations; `Section` is the only writer of its progress.
 - **Risk.** Auto-off must keep submitted work; changed keys invalidate pending work; auth failures requeue only on the active story. Checks: `src/reader/tests/summary_settings.rs`, `scripts/verify-reader.sh`.
-- **Status.** open
+- **Status.** done (batch 3). `Section::cancel_automatic_preparation`, `invalidate_pending` and `retry_auth_failure` (`src/reader/jobs.rs`); settings no longer reads or writes `Progress`.
 
 ### C4. Preview host tools classify a validator failure twice
 - **Problem.** `tools/update.mjs:311` and `tools/rollout.mjs:177` run `hn --validate-snapshot` with the same timeout and the same "could not run vs rejected" predicate. `388cabf` copied the reader's rule after `7a59940` fixed it.
 - **Benefit.** One owner, in the already-shared `tools/release.mjs`, for a decision that either aborts a good release or retries a rejected one when wrong.
 - **Risk.** Callers keep their own rollback, abort and messages. Checks: `npm run test:update`, `npm run test:rollout`.
-- **Status.** open
+- **Status.** pending decision (P7). Any change to `preview/tools/*.mjs` changes the host-tools version that the production monitor compares with `main` (`.github/workflows/preview-monitor.yml:87-89`, `preview/deploy/tools-version.sh`), and a person must then run `sudo preview/deploy/install-tools.sh dev|prod` on each host (`preview/deploy/README.md`, "Automatic server releases"). For a two-line duplicated predicate that cost outweighs the benefit; bundle it with the next deliberate host-tools change.
 
 ### C5. Desktop starts a feed request from two owners
 - **Problem.** `FeedModel::apply` computes the fill and writes `Loading` (`desktop/src/feed.rs:231`); `App::apply` re-derives the ranking and `request` recomputes the fill and writes `Loading` again (`desktop/src/app/feed_actions.rs:15`, `:111`).
@@ -81,7 +81,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 ### C10. Operator runbook still describes the retired image owner
 - **Problem.** `preview/deploy/README.md:13` and `:32` assign `PREVIEW_IMAGE` to `gateway.env` and tell operators to restore the old pin; the updater writes it to `current/release.env` (`tools/update.mjs:116`) and requires `PREVIEW_ROLE` (`:191`), which the instructions omit.
 - **Benefit.** Finishes the #88 migration in the active instructions.
-- **Status.** open
+- **Status.** open, partly blocked. Removing `PREVIEW_IMAGE` from the `gateway.env` list is verifiable from the repo (the unit loads `current/release.env` second, `preview/deploy/hn-preview.service:11`). Where `PREVIEW_ROLE` is set is not: the update unit loads both `gateway.env` and `storage.env` (`preview/deploy/hn-preview-update.service`), and only the hosts show which one holds it.
 
 ### C11. Browser reconnect regression lives inside the publisher harness
 - **Problem.** About 90 lines of `preview/publisher-check.mjs:202-290` test `app.js` but need the native binary, simulated R2 and systemctl to run.
@@ -97,6 +97,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 | P3 | Desktop sibling movement at a re-rooted comment can leave the displayed subtree; terminal pins the opposite (`src/app/comment_view_state_tests.rs:175`, `desktop/src/app/input.rs:337`) | Consolidating the sibling guard |
 | P4 | Preview monitor and page gate still accept health without `running` (`.github/workflows/preview-monitor.yml:51`, `preview-ui.yml:76`). Is that recovery mode retired? | Removing the exception (CI change) |
 | P5 | Capture fetches each story twice (`src/snapshot_capture.rs:31`, `src/hn_cli_service.rs:265`); fixing it widens `hn_lib`'s surface and changes request counts | — |
+| P7 | Share the snapshot-validator failure rule in `preview/tools/release.mjs` (C4), accepting a host-tools reinstall on both hosts after merge? | C4 |
 | P6 | Remove the seven unused direct `icu_*` dependencies from the root manifest (`Cargo.toml:39-45`; `418816e`, `f4950e1`, `251babc`) | Dependency change |
 
 ## Rejected
@@ -113,7 +114,8 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 | Batch | Candidate | Commit | Change |
 | :- | :- | :- | :- |
 | 1 | C1 | `60f61d0` | 11 lines added, 14 removed in 4 files; two duplicated rules now have one owner each |
-| 2 | C2, C8 | the commit that adds this row | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
+| 2 | C2, C8 | `15e677b` | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
+| 3 | C3 | the commit that adds this row | 33 added, 47 removed in 2 files; settings no longer writes summary progress; three paired branches became `Section` operations |
 
 ## Active transitions
 
