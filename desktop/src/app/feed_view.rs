@@ -399,9 +399,9 @@ fn banner(s: &App, error: &str, k: &Kit, t: tok::Theme) -> El {
         );
     #[cfg(target_os = "macos")]
     let banner = if s.saved.path().is_some() {
-        banner.child(quiet_button("Reveal in Finder").on_press(|s: &mut App| {
-            if !s.headless && let Some(path) = s.saved.path() {
-                let _ = std::process::Command::new("/usr/bin/open").arg("-R").arg(path).spawn();
+        banner.child(quiet_button("Reveal in Finder").on_press_tx(|s: &mut App, tx: &mut Tx| {
+            if let Some(path) = s.saved.path() {
+                let _ = tx.reveal_path(path);
             }
         }).build(k).key("saved-reveal").cursor(rune::Cursor::Pointer))
     } else { banner };

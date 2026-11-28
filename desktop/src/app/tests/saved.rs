@@ -35,6 +35,27 @@ fn saved_empty_and_unreadable_states_show_the_right_actions() {
     }
 }
 
+#[cfg(target_os = "macos")]
+#[test]
+fn saved_reveal_requests_the_corrupt_file_in_finder() {
+    let mut s = app(true, SavedView::in_memory());
+    scene_saved_corrupt(&mut s);
+    s.request(DEFAULT_GRID, Ranking::Fresh);
+    let path = s.saved.path().unwrap().to_path_buf();
+    let mut rt = rune::Runtime::new(s, view, (1180.0, 760.0), rune::Env::new(true, 1.0));
+    rt.frame(0.0);
+
+    let [x, y, w, h] = rt.elements().iter().find(|e| e.key.as_deref() == Some("saved-reveal")).unwrap().rect;
+    rt.pointer_down(x + w / 2.0, y + h / 2.0);
+    rt.pointer_up(x + w / 2.0, y + h / 2.0);
+    rt.frame(0.0);
+
+    assert_eq!(
+        rt.take_path_requests(),
+        [rune::PathRequest { path, action: rune::PathAction::Reveal }],
+    );
+}
+
 #[test]
 fn saved_write_failure_is_not_reported_as_a_read_failure() {
     let dir = temp_dir("saved-write-banner");
