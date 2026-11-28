@@ -48,9 +48,8 @@ jobs:
             } catch {
               return ['Production /healthz is unreachable or did not return a JSON object.'];
             }
-            if (health.running == null) return null;
-            const missing = ['committed', 'rollout'].filter(field => health[field] == null);
-            if (missing.length) return [`Production /healthz is missing ${missing.join(' and ')} while the monitor is armed.`];
+            const missing = ['running', 'committed', 'rollout'].filter(field => health[field] == null);
+            if (missing.length) return [`Production /healthz is missing ${missing.join(', ')}.`];
 
             const failures = [];
             const check = (description, evaluate) => {
@@ -118,15 +117,11 @@ jobs:
           }
 
           let failures = evaluate();
-          if (failures?.length) {
+          if (failures.length) {
             console.error(listFailures(failures));
             console.log('Waiting 20 minutes before checking the release again.');
             await wait(20 * 60_000);
             failures = evaluate();
-          }
-          if (failures === null) {
-            console.log('Preview release monitor is not armed.');
-            process.exit(0);
           }
           if (failures.length) console.error(listFailures(failures));
           const issues = JSON.parse(gh('api', '--paginate', '--slurp', `repos/${GH_REPO}/issues?state=open&labels=preview-alert&per_page=100`))
