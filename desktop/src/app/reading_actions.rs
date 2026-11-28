@@ -5,7 +5,7 @@ use std::sync::Arc;
 use hn_lib::HNCLIItem;
 use rune::Tx;
 use crate::story_io::{StoryRequest, StoryUpdate};
-use crate::story::{ArticleSummaryState, RestoredSummary, Story, SummaryState};
+use crate::story::{ArticleSummaryState, Story};
 use super::input::reveal_citation;
 
 impl App {
@@ -39,29 +39,11 @@ impl App {
         }
     }
 
-    fn restore_summary(&mut self, open: &mut Story) {
+    fn restore_summary(&self, open: &mut Story) {
         let Some(store) = &self.summary_store else { return; };
-        let mut article_age = None;
-        let mut discussion = None;
-        if let Some(article) = store.load_article(open.id()) {
-            article_age = Some(store.age(article.header.saved_at));
-            open.article_summary = ArticleSummaryState::Generating { previous: None };
-            open.land_update(StoryUpdate::ArticleSummary {
-                story_id: open.id(), summary: Ok(article.data.article),
-                header: article.header, empty_capture: false, partial: article.data.partial,
-            }, None);
-        }
-        if let Some(saved) = store.load_discussion(open.id()) {
-            discussion = Some((store.age(saved.header.saved_at), saved.data.context.comments_at_save));
-            open.summary = SummaryState::Generating { previous: None };
-            open.land_update(StoryUpdate::Summary {
-                story_id: open.id(), summary: Ok((saved.data.discussion, saved.data.context.sources)),
-                header: saved.header, coverage: saved.data.context.coverage,
-            }, None);
-        }
-        open.restored_summary = (article_age.is_some() || discussion.is_some()).then(|| RestoredSummary {
-            article_age, discussion, observed: std::time::Instant::now(),
-        });
+        let article = store.load_article(open.id()).map(|saved| (saved.data, store.age(saved.header.saved_at)));
+        let discussion = store.load_discussion(open.id()).map(|saved| (saved.data, store.age(saved.header.saved_at)));
+        open.restore_summary(article, discussion);
     }
 
     /// The row the feed has selected, if it is a story that loaded.
@@ -133,22 +115,7 @@ impl App {
     }
 
     pub(super) fn land_story_update(&mut self, update: StoryUpdate) -> bool {
-        let fresh_article = matches!(&update, StoryUpdate::ArticleSummary { summary: Ok(_), .. });
-        let fresh_discussion = matches!(&update, StoryUpdate::Summary { summary: Ok(_), .. });
-        let landed = self.story.as_mut().is_some_and(|story| story.land_update(update, self.summary_store.as_mut()));
-        if landed {
-            if let Some(story) = &mut self.story {
-                let discussion_displayed = story.source().is_none();
-                if let Some(restored) = &mut story.restored_summary {
-                    if fresh_article { restored.article_age = None; }
-                    if fresh_discussion && discussion_displayed { restored.discussion = None; }
-                    if restored.article_age.is_none() && restored.discussion.is_none() {
-                        story.restored_summary = None;
-                    }
-                }
-            }
-        }
-        landed
+        self.story.as_mut().is_some_and(|story| story.land_update(update, self.summary_store.as_mut()))
     }
 
     fn finish_story_now(&mut self) {

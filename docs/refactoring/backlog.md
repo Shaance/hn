@@ -34,7 +34,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** The window derives `configured && generating` per half (`desktop/src/app/reading_actions.rs:127`); both bridge branches then repeat the same paid-call predicate (`desktop/src/bridge/mod.rs:199`, `:214`). Fixes `bad0400` and `f4b464c` each touched app, bridge and story together.
 - **Benefit.** One predicate decides whether a paid summary call starts, for both halves.
 - **Risk.** `summary_skipped` has a narrower meaning than "not dispatched"; it must stay as is. Checks: `desktop/src/app/tests/summary_lifecycle.rs`, `summary_persistence.rs`, goldens.
-- **Status.** open
+- **Status.** done (batch 2, with C8). The bridge's `should_summarize` decides dispatch for both halves. The window's `configured()` gate stays; see justified exceptions.
 
 ### C3. Terminal settings writes summary progress directly, per half
 - **Problem.** Applying settings repeats three decisions for article and discussion and sets `Progress::Idle` itself (`src/reader/settings.rs:138-195`), although `Section` owns queuing and cancellation (`src/reader/jobs.rs:15-79`).
@@ -70,7 +70,7 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 - **Problem.** Restore manufactures successful `StoryUpdate`s and the window re-interprets results to clear age markers (`desktop/src/app/reading_actions.rs:42`, `:135`; `desktop/src/story.rs:575`).
 - **Benefit.** `Story` owns restoration and its markers; two synthetic completions removed.
 - **Checks.** `summary_persistence.rs:444`, restart request counts, goldens.
-- **Status.** open
+- **Status.** done (batch 2, with C2). `Story::restore_summary` installs saved halves; `Story` alone writes `restored_summary`.
 
 ### C9. Discussion evidence is built separately by each app
 - **Problem.** Both clean comment text and apply the 1,800 and 6,000 character limits (`src/reader/sources.rs:201`, `desktop/src/service/mod.rs:155`).
@@ -112,7 +112,8 @@ Status values: open, in progress, done, rejected (reason), blocked (what unblock
 
 | Batch | Candidate | Commit | Change |
 | :- | :- | :- | :- |
-| 1 | C1 | the commit that adds this file | 11 lines added, 14 removed in 4 files; two duplicated rules now have one owner each |
+| 1 | C1 | `60f61d0` | 11 lines added, 14 removed in 4 files; two duplicated rules now have one owner each |
+| 2 | C2, C8 | the commit that adds this row | 39 added, 45 removed in 3 desktop files; one dispatch predicate (was two), one writer of the restored-summary marker (was three sites in two types), no synthetic `StoryUpdate` on restore |
 
 ## Active transitions
 
@@ -120,4 +121,4 @@ None.
 
 ## Justified exceptions
 
-None yet.
+- **Two credential checks before a desktop summary call.** The window's `configured()` (`desktop/src/app/mod.rs:224`, `headless || key`) and the bridge's `should_summarize` (`!source.is_live() || key`) agree in production, where headless means the fixture source. The test constructor `desktop/src/app/tests/support.rs:57` always uses the fixture source and some tests set `headless = false` (`feed_paging.rs:125`, `story_lifecycle.rs:259`), so dropping the window gate would change those tests' behavior. Removing it would need the test harness to pair source and headless the way `init` does; not worth a batch on its own.

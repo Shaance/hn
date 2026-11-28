@@ -196,7 +196,7 @@ impl Bridge {
             return Some(match phase {
                 ArticlePhase::Captured { source, request, article, manual } => {
                     let story_id = request.story.id;
-                    if let Ok(captured) = &article && (manual || config.automatic) && summarize_article && (!source.is_live() || !config.key().is_empty()) {
+                    if let Ok(captured) = &article && should_summarize(config, &source, manual, summarize_article) {
                         let captured = captured.clone();
                         let config = config.clone();
                         self.article = Some(self.handle.spawn(async move {
@@ -211,7 +211,7 @@ impl Bridge {
         match take_task(&mut self.story, self.waker.as_ref())? {
             StoryPhase::Captured { source, request, comments, manual } => {
                 let story_id = request.story.id;
-                if let Ok(captured) = &comments && (manual || config.automatic) && summarize_discussion && (!source.is_live() || !config.key().is_empty()) {
+                if let Ok(captured) = &comments && should_summarize(config, &source, manual, summarize_discussion) {
                     let sources = captured.sources.clone();
                     let config = config.clone();
                     self.story = Some(self.handle.spawn(async move {
@@ -258,6 +258,10 @@ impl Bridge {
         self.cancel_story();
         self.parked.clear();
     }
+}
+
+fn should_summarize(config: &Config, source: &Source, manual: bool, awaiting_summary: bool) -> bool {
+    (manual || config.automatic) && awaiting_summary && (!source.is_live() || !config.key().is_empty())
 }
 
 async fn run_replies(source: &Source, request: ReplyRequest, depth: usize) -> ReplyFilled {
