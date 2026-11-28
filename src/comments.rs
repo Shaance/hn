@@ -783,6 +783,9 @@ impl Thread {
         let Some(cursor) = self.cursor else {
             return false;
         };
+        if self.root == Some(cursor) {
+            return false;
+        }
         let siblings = match self.parent_of(cursor) {
             Some(parent) => self.children_of(parent),
             None => self.roots.clone(),
@@ -1434,6 +1437,29 @@ mod tests {
         assert_eq!(thread.cursor(), Some(902));
         assert!(thread.prev_sibling());
         assert_eq!(thread.cursor(), Some(901));
+    }
+
+    #[test]
+    fn sibling_navigation_stays_within_the_rerooted_thread() {
+        let mut thread = thread();
+        assert_eq!(thread.root(), None);
+        assert!(thread.select(902));
+        assert!(thread.prev_sibling());
+        assert_eq!(thread.cursor(), Some(901));
+        assert!(thread.next_sibling());
+        assert_eq!(thread.cursor(), Some(902));
+
+        assert!(thread.reroot(902));
+        assert!(!thread.prev_sibling());
+        assert!(!thread.next_sibling());
+        assert_eq!(thread.cursor(), Some(902));
+
+        assert!(thread.reroot(901));
+        assert!(thread.select(9010));
+        assert!(thread.next_sibling());
+        assert_eq!(thread.cursor(), Some(9011));
+        assert!(thread.prev_sibling());
+        assert_eq!(thread.cursor(), Some(9010));
     }
 
     #[test]

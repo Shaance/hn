@@ -49,16 +49,12 @@ impl App {
 
     pub fn next_comment_sibling(&mut self) {
         self.follow_comment_selection = true;
-        if self.thread.root().is_none() || self.thread.cursor() != self.thread.root() {
-            self.thread.next_sibling();
-        }
+        self.thread.next_sibling();
     }
 
     pub fn prev_comment_sibling(&mut self) {
         self.follow_comment_selection = true;
-        if self.thread.root().is_none() || self.thread.cursor() != self.thread.root() {
-            self.thread.prev_sibling();
-        }
+        self.thread.prev_sibling();
     }
 
     pub fn parent_comment(&mut self) {

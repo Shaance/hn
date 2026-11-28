@@ -284,6 +284,22 @@ fn hovering_between_equal_depths_with_different_ancestors_keeps_geometry() {
 }
 
 #[test]
+fn sibling_keys_keep_the_rerooted_comment_selected() {
+    let mut s = app(true, SavedView::in_memory());
+    scene_comments(&mut s);
+    let story = s.story.as_mut().unwrap();
+    assert!(story.source().is_none());
+    assert!(story.thread.reroot(902));
+
+    for key in ["[", "]"] {
+        press(&mut s, rune::Key::Text(key.into()));
+        let thread = &s.story.as_ref().unwrap().thread;
+        assert_eq!(thread.root(), Some(902));
+        assert_eq!(thread.cursor(), Some(902), "{key} moved off the re-rooted comment");
+    }
+}
+
+#[test]
 fn disclosure_edge_click_folds_and_unfolds_without_slow_row_reflow() {
     for (source, reduced) in [(false, false), (true, false), (false, true), (true, true)] {
         let mut s = app(true, SavedView::in_memory());
