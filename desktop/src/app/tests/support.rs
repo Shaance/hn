@@ -75,8 +75,6 @@ pub(super) fn app(headless: bool, saved: SavedView) -> App {
         comment_offsets: [Rc::new(Cell::new(0.0)), Rc::new(Cell::new(0.0))],
         readings: HashMap::new(),
         summary_store: None,
-        scroll_pacing: Rc::new(Cell::new(ScrollPacing::Idle)),
-        scroll_waker: None,
         inspector: Cell::new(inspector()),
         inspector_width: Cell::new(INSPECTOR_WIDTH),
         inspector_default_width: INSPECTOR_WIDTH,

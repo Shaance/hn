@@ -1,6 +1,6 @@
 //! Window setup and asynchronous result polling.
 
-use super::{App, Live, Notice, Ranking, RequestLifecycle, Arrival, ScrollPacing, DEFAULT_GRID, TOAST_SECONDS, LOAD_TIMEOUT, LAYOUT_SECONDS, SCROLL_PACING_SECONDS};
+use super::{App, Live, Notice, Ranking, RequestLifecycle, Arrival, DEFAULT_GRID, TOAST_SECONDS, LOAD_TIMEOUT, LAYOUT_SECONDS};
 use std::time::Duration;
 use hn_lib::app::StoryType;
 use rune::Tx;
@@ -12,7 +12,6 @@ use crate::webview;
 /// One aggregate fill request, then the waker that brings its answer back to `poll`.
 pub(super) fn setup(s: &mut App, waker: Waker) {
     webview::set_waker(waker.clone());
-    s.scroll_waker = Some(waker.clone());
     s.bridge.set_waker(waker);
     // The remembered tab and page decide what the first request asks for, so they land before
     // it. The measured grid re-requests if the window is not the default size.
@@ -32,15 +31,6 @@ pub(super) fn poll_updates(s: &mut App, now: f64, tx: &mut Tx, back_requested: b
     let mut feed_arrived = false;
     let mut summary_arrived = false;
     let mut replies_arrived = false;
-    match s.scroll_pacing.get() {
-        ScrollPacing::Moved => {
-            s.scroll_pacing.set(ScrollPacing::Until(now + SCROLL_PACING_SECONDS));
-            tx.wake_after(Duration::ZERO);
-        }
-        ScrollPacing::Until(until) if now < until => tx.wake_after(Duration::ZERO),
-        ScrollPacing::Until(_) => s.scroll_pacing.set(ScrollPacing::Idle),
-        ScrollPacing::Idle => {}
-    }
     if let Some(filled) = s.bridge.take() {
         let landed = s.feed.apply_fill(filled);
         changed |= landed;
