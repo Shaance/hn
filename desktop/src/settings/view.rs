@@ -92,7 +92,7 @@ impl Settings {
         let mut key_fields = col().key("settings-key").w_full().gap(6.0)
             .child(text(key_label).font(type_::LABEL).color(t.text_secondary).a11y_hidden())
             .child(key)
-            .child(text("Saved to ~/.config/hn/summary.json by default when you apply.")
+            .child(text("Apply saves key changes to ~/.config/hn/summary.json by default.")
                 .font(type_::LABEL).color(t.text_secondary).wrap());
         if self.reenter {
             key_fields = key_fields.child(

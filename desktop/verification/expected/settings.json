@@ -266,7 +266,7 @@
                                                   456.0,
                                                   15.0
                                                 ],
-                                                "name": "Saved to ~/.config/hn/summary.json by default when you apply.",
+                                                "name": "Apply saves key changes to ~/.config/hn/summary.json by default.",
                                                 "role": "label"
                                               }
                                             ],
@@ -4945,7 +4945,7 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Saved to ~/.config/hn/summary.json by default when you apply."
+      "text": "Apply saves key changes to ~/.config/hn/summary.json by default."
     },
     {
       "blur": 0.0,
