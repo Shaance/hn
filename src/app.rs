@@ -581,11 +581,8 @@ impl App {
                         let Ok(url) = reqwest::Url::parse(&story.url) else {
                             return false;
                         };
-                        let host = url.host_str().unwrap_or_default().trim_end_matches('.');
                         matches!(url.scheme(), "http" | "https")
-                            && !["x.com", "twitter.com"].iter().any(|domain| {
-                                host == *domain || host.ends_with(&format!(".{domain}"))
-                            })
+                            && !crate::snapshot::is_excluded_social_host(&url)
                     })
                     .min_by_key(|(index, story)| {
                         let has_summary = snapshot.articles.get(&story.id).is_some_and(|article| {
