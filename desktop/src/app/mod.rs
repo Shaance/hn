@@ -34,7 +34,7 @@ use std::rc::Rc;
 use std::sync::{Arc, OnceLock};
 
 use hn_lib::reader::{self, Config};
-use rune::{Waker, WindowHandle};
+use rune::WindowHandle;
 use rune_kit::PaneState;
 
 use crate::bookmarks::SavedView;
@@ -62,9 +62,6 @@ const LOAD_TIMEOUT: f64 = 10.0;
 /// How often the window's own state may be written. A grip drag moves the width every frame,
 /// and a file per frame is not worth it.
 const LAYOUT_SECONDS: f64 = 2.0;
-/// Rune can stop its display link between wheel events; keeping it warm briefly gives the
-/// discussion a more even native presentation cadence without drawing continuously at rest.
-const SCROLL_PACING_SECONDS: f64 = 0.05;
 /// The inspector's default width and range in window points, independent of UI zoom.
 const INSPECTOR_WIDTH: f32 = 543.0;
 const INSPECTOR_MIN: f32 = 360.0;
@@ -84,13 +81,6 @@ enum Arrival {
     Tab(i8),
     Page(i8),
     Back,
-}
-
-#[derive(Clone, Copy, Debug, PartialEq)]
-enum ScrollPacing {
-    Idle,
-    Moved,
-    Until(f64),
 }
 
 /// The live article pane's child view.
@@ -140,9 +130,6 @@ pub struct App {
     /// Readings kept for this window's lifetime, including their summary citation snapshots.
     readings: HashMap<i32, Story>,
     summary_store: Option<SummaryStore>,
-    /// The reading viewports' scroll observers and poll share this frame-pacing state.
-    scroll_pacing: Rc<Cell<ScrollPacing>>,
-    scroll_waker: Option<Waker>,
     /// The inspector's width and open state; the view updates its range after measuring the window.
     inspector: Cell<PaneState>,
     /// The chosen and reset widths in window points, independent of Rune's view-point rounding.
@@ -204,18 +191,9 @@ pub enum Pane<'a> {
 
 impl App {
     fn scroll_observer(&self, slot: Option<usize>) -> impl Fn(rune::ScrollPos) + 'static {
-        let pacing = Rc::clone(&self.scroll_pacing);
         let offset = slot.map(|i| Rc::clone(&self.comment_offsets[i]));
-        let waker = self.scroll_waker.clone();
-        let previous = Cell::new(0.0);
-        // At this Rune pin, a source-less live-only handler can leave its live wake pending.
-        // The offset observer wakes poll without a handler commit or a live-only event.
         move |at| {
             if let Some(offset) = &offset { offset.set(at.offset[1]); }
-            if previous.replace(at.offset[1]) == at.offset[1] { return; }
-            if pacing.replace(ScrollPacing::Moved) == ScrollPacing::Idle && let Some(waker) = &waker {
-                waker();
-            }
         }
     }
 
@@ -288,8 +266,6 @@ fn init() -> App {
         comment_offsets: [Rc::new(Cell::new(0.0)), Rc::new(Cell::new(0.0))],
         readings: HashMap::new(),
         summary_store,
-        scroll_pacing: Rc::new(Cell::new(ScrollPacing::Idle)),
-        scroll_waker: None,
         inspector: Cell::new(PaneState::new(INSPECTOR_WIDTH / zoom.scale())
             .range(INSPECTOR_MIN / zoom.scale(), INSPECTOR_MAX / zoom.scale())
             .collapsed()),

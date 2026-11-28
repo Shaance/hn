@@ -357,6 +357,6 @@ Refreshing comments updates roots and replies already loaded at any depth. Newly
 
 Long discussions use Rune’s variable-height virtual rows: offscreen comment text and controls are not mounted. Keyboard navigation reveals the selected row; this bounds mounted content but is not a claim about measured native scroll performance.
 
-The discussion observes its scroll offset and keeps Rune’s frame clock active for 50 ms after movement, so successive scroll events share a running display link. Its UI wake callback and poll timer do not rebuild the view, and the window returns to idle afterward. Rebuilding a scrolled discussion may also start a short pacing interval. Native trackpad deltas and momentum are unchanged. Assess smoothness in an optimized build using native presentation timestamps (`--native --trace`), since CPU frame cost alone does not measure the cadence visible on screen.
+Assess scroll smoothness in an optimized build using native presentation timestamps (`--native --trace`), since CPU frame cost alone does not measure the cadence visible on screen.
 
 The desktop reading view keeps the story title and metadata in one article header, aligned with the summary. The footer gives the contextual back action. Collapsing replies keeps their parent comment readable; dead, deleted, and blank leaves are omitted. An unavailable parent with replies remains a compact disclosure so readable descendants stay reachable. Those comments are also excluded from summary sources.

@@ -544,94 +544,36 @@ fn long_discussion() -> App {
 }
 
 #[test]
-fn discussion_scroll_keeps_frames_paced_until_it_is_still() {
-    use std::sync::atomic::{AtomicUsize, Ordering};
-
-    let mut app = long_discussion();
-    assert_eq!(app.story.as_ref().unwrap().thread.len(), 244, "the synchronous fixture loaded its comments");
-    let wakes = Arc::new(AtomicUsize::new(0));
-    let wake_count = Arc::clone(&wakes);
-    app.scroll_waker = Some(Arc::new(move || { wake_count.fetch_add(1, Ordering::Relaxed); }));
-    let mut rt = rune::Runtime::new(app, view, (1180.0, 760.0), rune::Env::new(true, 1.0));
-    rt.poll = Some(poll);
-    for _ in 0..120 { rt.frame(1.0 / 60.0); }
-    assert_eq!(rt.state.scroll_pacing.get(), ScrollPacing::Idle, "initial layout settles");
-    assert_eq!(wakes.load(Ordering::Relaxed), 0, "initial offset is not a scroll");
-
-    let viewport = rt.elements().into_iter().find(|e| e.key.as_deref() == Some("discussion-scroll")).unwrap().rect;
-    let point = (viewport[0] + viewport[2] / 2.0, viewport[1] + viewport[3] / 2.0);
-    let scroll_y = |rt: &rune::Runtime<App>| rt.elements().iter()
-        .find(|e| e.key.as_deref() == Some("discussion-header")).unwrap().scrolled[1];
-    let before = scroll_y(&rt);
-    let commits = rt.stats.commits;
-    rt.wheel(point.0, point.1, -5.0);
-    rt.frame(1.0 / 120.0);
-    assert!(scroll_y(&rt) > before, "the real discussion viewport scrolled");
-    assert_eq!(rt.state.scroll_pacing.get(), ScrollPacing::Moved);
-    assert_eq!(wakes.load(Ordering::Relaxed), 1, "the first movement wakes poll");
-    assert_eq!(rt.stats.commits, commits, "the moving offset callback does not rebuild the view");
-    rt.frame(1.0 / 120.0);
-    let ScrollPacing::Until(first_deadline) = rt.state.scroll_pacing.get() else { panic!("scroll starts pacing") };
-    assert!(rt.wake_deadline().is_some(), "pacing asks for another frame");
-    assert_eq!(rt.stats.commits, commits, "the offset callback does not rebuild the view");
-
-    rt.wheel(point.0, point.1, -5.0);
-    rt.frame(1.0 / 120.0);
-    rt.frame(1.0 / 120.0);
-    assert!(matches!(rt.state.scroll_pacing.get(), ScrollPacing::Until(until) if until > first_deadline), "further scrolling extends pacing");
-    assert_eq!(wakes.load(Ordering::Relaxed), 1, "an active cadence needs no extra wake");
-    for _ in 0..20 { rt.frame(1.0 / 120.0); }
-    assert_eq!(rt.state.scroll_pacing.get(), ScrollPacing::Idle, "pacing ends after the scroll rests");
-    assert!(rt.wake_deadline().is_none(), "the idle window has no pacing wake");
-    assert!(!rt.live_pending(), "the idle window has no live work pending");
-
-    rt.wheel(point.0, point.1, -5.0);
-    rt.frame(1.0 / 120.0);
-    assert_eq!(wakes.load(Ordering::Relaxed), 2, "a later gesture wakes poll again");
-    for _ in 0..20 { rt.frame(1.0 / 120.0); }
-    assert_eq!(rt.state.scroll_pacing.get(), ScrollPacing::Idle);
-    assert!(rt.wake_deadline().is_none() && !rt.live_pending(), "the window returns to idle again");
-}
-
-#[test]
-fn summary_and_source_scroll_return_to_idle() {
-    use std::sync::atomic::{AtomicUsize, Ordering};
-
-    for source in [false, true] {
-        let mut s = app(true, SavedView::in_memory());
-        if source {
+fn wheel_scroll_updates_comment_offsets_without_rebuilding() {
+    for (slot, viewport, content) in [
+        (0, "discussion-scroll", "discussion-header"),
+        (1, "source-viewer", "source-content"),
+    ] {
+        let s = if slot == 0 {
+            long_discussion()
+        } else {
+            let mut s = app(true, SavedView::in_memory());
             let Source::Fake(fake) = s.source.as_ref() else { unreachable!() };
             fake.comments.lock().unwrap().iter_mut().find(|comment| comment.id == 901).unwrap().text =
                 "A captured comment with enough text to scroll. ".repeat(120);
-        }
-        scene_story(&mut s);
-        let story = s.story.as_mut().unwrap();
-        if source {
+            scene_story(&mut s);
             s.open_citation(0);
-        } else {
-            story.article_summary = crate::story::ArticleSummaryState::Done("A long article summary. ".repeat(120));
-        }
-        let wakes = Arc::new(AtomicUsize::new(0));
-        let count = Arc::clone(&wakes);
-        s.scroll_waker = Some(Arc::new(move || { count.fetch_add(1, Ordering::Relaxed); }));
+            s
+        };
         let mut rt = rune::Runtime::new(s, view, (1180.0, 760.0), rune::Env::new(true, 1.0));
         rt.poll = Some(poll);
         for _ in 0..120 { rt.frame(1.0 / 60.0); }
-        assert_eq!(rt.state.scroll_pacing.get(), ScrollPacing::Idle);
-        let viewport = if source { "source-viewer" } else { "summary-scroll" };
-        let content = if source { "source-content" } else { "article-summary" };
-        let elements = rt.elements();
-        let [x, y, w, h] = elements.iter().find(|e| e.key.as_deref() == Some(viewport)).unwrap().rect;
-        let before = elements.iter().find(|e| e.key.as_deref() == Some(content)).unwrap().rect[1];
+        let element = |rt: &rune::Runtime<App>, key: &str| rt.elements().into_iter()
+            .find(|e| e.key.as_deref() == Some(key)).unwrap();
+        let [x, y, w, h] = element(&rt, viewport).rect;
+        let before = element(&rt, content).scrolled[1];
+        let commits = rt.stats.commits;
         rt.wheel(x + w / 2.0, y + h / 2.0, -10.0);
         rt.frame(1.0 / 120.0);
-        let after = rt.elements().iter().find(|e| e.key.as_deref() == Some(content)).unwrap().rect[1];
-        assert!(after < before, "{viewport} must actually scroll");
-        assert_eq!(rt.state.scroll_pacing.get(), ScrollPacing::Moved);
-        assert!(wakes.load(Ordering::Relaxed) > 0, "{viewport} wakes the frame clock");
-        for _ in 0..20 { rt.frame(1.0 / 120.0); }
-        assert_eq!(rt.state.scroll_pacing.get(), ScrollPacing::Idle);
-        assert!(rt.wake_deadline().is_none() && !rt.live_pending(), "{viewport} returns to idle");
+        let after = element(&rt, content).scrolled[1];
+        assert!(after > before, "{viewport} must actually scroll");
+        assert_eq!(rt.state.comment_offsets[slot].get(), after);
+        assert_eq!(rt.stats.commits, commits, "scrolling does not rebuild the view");
     }
 }
 
