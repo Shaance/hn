@@ -73,7 +73,7 @@ fn section(group: &HelpGroup, k: &Kit, t: tok::Theme, accent: Color) -> El {
                         .w(152.0)
                         .gap(3.0)
                         .justify_end()
-                        .child(Keybind::new(row_.keys).build(k)),
+                        .child(Keybind::new(row_.keys).keep_case().build(k)),
                 )
                 .child(
                     text(row_.label.to_string())

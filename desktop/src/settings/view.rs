@@ -35,15 +35,7 @@ fn quality_tile(profile: Profile, provider: Provider, checked: bool, t: tok::The
                 .child(text(description).font(type_::LABEL).color(t.text_secondary).wrap())
                 .child(text(model).key(format!("{key}-model")).font(type_::MONO_CAPTION).color(t.text_secondary).wrap_anywhere()),
         )
-        .on_key(move |s: &mut crate::app::App, ev: &rune::KeyEvent, _tx: &mut rune::Tx| {
-            if ev.key != rune::Key::Enter || ev.mods != rune::Mods::default() {
-                return false;
-            }
-            if let Some(settings) = s.settings_mut() {
-                settings.set_profile(profile);
-            }
-            true
-        })
+        .press_on_return()
         .on_press(move |s: &mut crate::app::App| {
             if let Some(settings) = s.settings_mut() {
                 settings.set_profile(profile);
