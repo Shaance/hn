@@ -2,7 +2,7 @@
 //!
 //! The contents are [`crate::keyboard_help::HELP`], which the tests in `keys.rs` check against the routing
 //! tables — so the sheet cannot drift from the keys the window actually binds. This module is
-//! only the layout: two columns of `Keybind` rows, grouped Feed / Discussion / Summary / Window.
+//! only the layout: `Keybind` rows grouped into one or two columns.
 //!
 //! The `Dialog` is the modal: Rune traps focus inside it, `Esc` runs its dismiss closure, and
 //! the background is inert while it is open.
@@ -17,12 +17,23 @@ use crate::keyboard_help::{HelpGroup, HELP};
 /// [`crate::keyboard_help::HelpGroup::column`]'s, because the split is by height rather than by halving the list.
 const COLUMNS: usize = 2;
 
+/// The shipped catalog's natural column widths (321.9 and 336.02 points) plus the
+/// 28-point gap, rounded to 686 points. With the dialog capped at 720 points,
+/// 16-point layer margins and 16-point body insets require a 750-point window.
+const TWO_COLUMN_MIN: f32 = 686.0;
+
 /// The sheet, in the overlay layer. `open` is the app's flag.
 pub fn view(k: &Kit, t: tok::Theme, accent: Color, open: bool, layer: &mut Vec<El>) {
+    let two_columns = rune::memo::layout_with("help-scroll", |r| r[2] >= TWO_COLUMN_MIN)
+        .unwrap_or(true);
+    let column_count = if two_columns { COLUMNS } else { 1 };
     let mut columns = row().key("help-columns").w_full().gap(28.0).items_start();
-    for column in 0..COLUMNS {
+    for column in 0..column_count {
         let mut body = col().key(format!("help-column-{column}")).grow(1.0).gap(18.0);
-        for group in HELP.iter().filter(|group| group.column == column) {
+        let group_columns = if two_columns { column..column + 1 } else { 0..COLUMNS };
+        let groups = group_columns
+            .flat_map(|index| HELP.iter().filter(move |group| group.column == index));
+        for group in groups {
             body = body.child(section(group, k, t, accent));
         }
         columns = columns.child(body);
