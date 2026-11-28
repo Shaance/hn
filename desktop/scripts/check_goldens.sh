@@ -5,8 +5,8 @@
 #
 #   1. the element tree, canonicalised with `jq -S`, matches expected/ — byte-identical on
 #      macOS, semantic-only elsewhere (see SEMANTIC below);
-#   2. the PNG is within 0.5% of expected/ (macOS only: cross-platform pixel equality is not
-#      claimed, so Linux and Windows run with HN_TREES_ONLY=1);
+#   2. at most 0.5% of PNG pixels differ from expected/ by more than 2% in any RGB channel
+#      (macOS only; Linux and Windows run with HN_TREES_ONLY=1);
 #   3. the motion lint: nothing animates at rest, and no spatial track is ever active;
 #   4. fidelity invariants read from the tree, not the pixels — column x-positions, rank order,
 #      stepper text, and the selected row's focus flags. These exist so a self-generated golden
@@ -61,16 +61,45 @@ canon() { # in out
   fi
 }
 
+# Measured directly: `compare -metric AE` counts differing pixels on ImageMagick 7.1.1 but
+# sums channel error on 7.1.2, so it cannot carry the 0.5% rule on both.
+differing_fraction() { # expected actual diff_png
+  magick "$1" "$2" -alpha off -compose difference -composite \
+    -channel RGB -separate -evaluate-sequence max -threshold 2% \
+    -write "$3" -precision 15 -format '%[fx:mean]' info:
+}
+
+pixel_self_test() {
+  local base="$ACTUAL/pixel-test" row test_case want fraction
+  step "pixel measurement self-test"
+  magick -size 10x10 xc:black "$base-identical.png"
+  magick "$base-identical.png" -fill white -draw 'point 0,0' "$base-one-pixel.png"
+  magick -size 10x10 'xc:rgb(1%,0%,0%)' "$base-below-fuzz.png"
+  magick -size 10x10 'xc:rgb(5%,0%,0%)' "$base-above-fuzz.png"
+  for row in 'one-pixel|0.01' 'identical|0' 'below-fuzz|0' 'above-fuzz|1'; do
+    IFS='|' read -r test_case want <<<"$row"
+    if ! fraction=$(differing_fraction "$base-identical.png" "$base-$test_case.png" "$base.diff.png") ||
+        [ "$fraction" != "$want" ]; then
+      bad "pixel self-test $test_case (expected $want, got ${fraction:-no fraction}; $(magick -version | sed -n '1p'))"
+      exit 2
+    fi
+    pass "pixel self-test $test_case ($fraction)"
+  done
+}
+
 for tool in jq; do
   command -v "$tool" >/dev/null || { echo "missing $tool"; exit 2; }
 done
 if [ "$TREES_ONLY" != 1 ]; then
-  for tool in compare identify; do
+  for tool in magick identify; do
     command -v "$tool" >/dev/null || { echo "missing $tool (ImageMagick); set HN_TREES_ONLY=1 to skip pixels"; exit 2; }
   done
 fi
 
 mkdir -p "$ACTUAL"
+if [ "$TREES_ONLY" != 1 ]; then
+  pixel_self_test
+fi
 
 if [ "${HN_SKIP_BUILD:-0}" != 1 ]; then
   step "build"
@@ -146,23 +175,33 @@ done
 if [ "$TREES_ONLY" = 1 ]; then
   step "pixels (skipped: HN_TREES_ONLY=1)"
 else
-  step "pixels (compare -metric AE -fuzz 2%, fail above 0.5%)"
+  step "pixels (any RGB channel differs by more than 2%, fail above 0.5% of pixels)"
   for row in "${ALL[@]}"; do
     IFS='|' read -r name _ _ _ _ <<<"$row"
-    read -r w h <<<"$(identify -format '%w %h' "$EXPECTED/$name.png")"
+    if ! expected_size=$(identify -format '%w %h' "$EXPECTED/$name.png") ||
+        ! actual_size=$(identify -format '%w %h' "$ACTUAL/$name.png"); then
+      bad "$name png (could not identify dimensions)"
+      continue
+    fi
+    if [ "$expected_size" != "$actual_size" ]; then
+      bad "$name png (size ${actual_size/ /x}, expected ${expected_size/ /x})"
+      continue
+    fi
+    read -r w h <<<"$expected_size"
     total=$((w * h))
-    # `compare` exits 1 when the images differ at all, so the metric is read from stderr.
-    ae=$(compare -metric AE -fuzz 2% "$EXPECTED/$name.png" "$ACTUAL/$name.png" \
-      "$ACTUAL/$name.diff.png" 2>&1 >/dev/null || true)
-    ae=${ae%% *}
-    case "$ae" in
-      ''|*[!0-9]*) bad "$name png (unreadable metric: $ae)"; continue ;;
-    esac
-    # 0.5% of pixels, as an integer comparison: ae * 1000 > total * 5.
-    if [ $((ae * 1000)) -le $((total * 5)) ]; then
-      pass "$name png ($ae of $total px differ)"
+    if ! fraction=$(differing_fraction "$EXPECTED/$name.png" "$ACTUAL/$name.png" "$ACTUAL/$name.diff.png"); then
+      bad "$name png (pixel measurement failed)"
+      continue
+    fi
+    if ! [[ "$fraction" =~ ^[0-9]+([.][0-9]+)?([eE][+-]?[0-9]+)?$ ]]; then
+      bad "$name png (unreadable metric: $fraction)"
+      continue
+    fi
+    count=$(awk -v fraction="$fraction" -v total="$total" 'BEGIN { printf "%.0f", fraction * total }')
+    if awk -v fraction="$fraction" 'BEGIN { exit !(fraction <= 0.005) }'; then
+      pass "$name png ($count of $total px differ)"
     else
-      bad "$name png ($ae of $total px differ, over 0.5%; see $ACTUAL/$name.diff.png)"
+      bad "$name png ($count of $total px differ, over 0.5%; see $ACTUAL/$name.diff.png)"
     fi
   done
 fi
