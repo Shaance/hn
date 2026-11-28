@@ -27,7 +27,7 @@ fn kit_button_focus_ring_is_amber_in_both_themes() {
         let button = tree.iter().find(|e| e.key.as_deref() == Some("discussion-focus")).unwrap();
         assert!(button.focused && button.focus_visible);
         let [x, y, w, h] = button.rect;
-        let amber = tok::accent(3, dark).premul(1.0);
+        let amber = tok::accent(3, dark).premul_srgb(1.0);
         assert!(rt.instances.iter().any(|i| i.border == amber &&
             i.rect[0] <= x && i.rect[1] <= y && i.rect[2] >= w && i.rect[3] >= h),
             "focused kit button must paint an amber ring");
@@ -89,7 +89,7 @@ fn citation_return_keeps_keyboard_focus_and_matches_native_back_motion() {
             assert!(find("cite-0").label.as_deref().unwrap().starts_with("Selected."));
             find("citation-focus");
             let [x, y, w, h] = summary.rect;
-            let amber = tok::accent(3, true).premul(1.0);
+            let amber = tok::accent(3, true).premul_srgb(1.0);
             assert!(!rt.instances.iter().any(|i| i.border == amber &&
                 i.rect[0] <= x && i.rect[1] <= y && i.rect[2] >= w && i.rect[3] >= h),
                 "the selected citation supplies the focus cue");

@@ -279,10 +279,10 @@ The release measurements above were recorded at the earlier `d751f07` pin; they 
 
 ## Known limitations
 
-- **Rune is pinned to a pre-release commit** (`78efd4a7`), not a published crate. Building needs
+- **Rune is pinned to a pre-release commit** (`86df731b`), not a published crate. Building needs
   network access to `github.com/anomalyco/rune`, and an upstream change can break this crate
   without a version bump to warn us.
-- The desktop workspace mirrors Rune's required official patches for Parley, winit, wgpu-hal and both AccessKit adapters at the same revision. Rune's `tooling` feature preserves the existing release headless commands.
+- The desktop workspace mirrors Rune's required official patches for naga, wgpu-hal, winit, sctk-adwaita, Parley and three AccessKit adapters at the same revision. Rune's `tooling` feature preserves the existing release headless commands.
 - **macOS is the only platform with a verified window.** The headless path is cross-platform and
   the gate runs on Linux with `HN_TREES_ONLY=1`, but the window itself has only been driven on
   macOS. Linux needs the usual X11/Wayland and font packages a GPU window implies; nothing here
