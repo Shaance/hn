@@ -1046,6 +1046,7 @@
   "dark_system": true,
   "elements": [
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1053,9 +1054,11 @@
       "focused": false,
       "inert": false,
       "key": "kit-root",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -1066,6 +1069,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#121314ff",
       "focusVisible": false,
@@ -1073,9 +1077,11 @@
       "focused": false,
       "inert": false,
       "key": "window",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -1086,6 +1092,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#121314ff",
       "focusVisible": false,
@@ -1093,9 +1100,11 @@
       "focused": false,
       "inert": false,
       "key": "shell",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -1106,6 +1115,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1113,9 +1123,11 @@
       "focused": false,
       "inert": false,
       "key": "split",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -1126,6 +1138,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1133,9 +1146,11 @@
       "focused": false,
       "inert": false,
       "key": "main-column",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -1146,6 +1161,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1153,9 +1169,11 @@
       "focused": false,
       "inert": false,
       "key": "toolbar",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -1166,6 +1184,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1173,9 +1192,11 @@
       "focused": false,
       "inert": false,
       "key": "leading",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading",
+      "radius": 0.0,
       "rect": [
         75.0,
         6.0,
@@ -1186,6 +1207,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#121314ff",
       "focusVisible": false,
@@ -1194,9 +1216,11 @@
       "inert": false,
       "key": "feed-tabs",
       "label": "Feed",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs",
+      "radius": 7.0,
       "rect": [
         75.0,
         6.0,
@@ -1207,6 +1231,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#1c1d20ff",
       "focusVisible": false,
@@ -1214,9 +1239,11 @@
       "focused": false,
       "inert": false,
       "key": "indicator",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/indicator",
+      "radius": 7.0,
       "rect": [
         75.0,
         6.0,
@@ -1224,18 +1251,31 @@
         36.0
       ],
       "role": "group",
-      "scale": 1.0
+      "scale": 1.0,
+      "shadows": [
+        {
+          "blur": 0.0,
+          "color": "#ffffff0e",
+          "inset": false,
+          "spread": 0.5,
+          "x": 0.0,
+          "y": 0.0
+        }
+      ]
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/indicator/#0",
+      "radius": 0.0,
       "rect": [
         75.0,
         37.0,
@@ -1246,15 +1286,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/indicator/#0/#0",
+      "radius": 1.0,
       "rect": [
         102.45,
         37.0,
@@ -1265,6 +1308,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1274,9 +1318,11 @@
       "itemSelected": true,
       "key": "segment0",
       "label": "Top",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment0",
+      "radius": 7.0,
       "rect": [
         75.0,
         6.0,
@@ -1287,6 +1333,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -1294,9 +1341,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment0/#0",
+      "radius": 0.0,
       "rect": [
         98.66,
         15.88,
@@ -1305,9 +1354,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Top"
+      "text": "Top",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1316,9 +1374,11 @@
       "inert": false,
       "key": "segment1",
       "label": "New",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment1",
+      "radius": 7.0,
       "rect": [
         145.9,
         6.0,
@@ -1329,6 +1389,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -1336,9 +1397,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment1/#0",
+      "radius": 0.0,
       "rect": [
         167.21,
         15.88,
@@ -1347,9 +1410,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "New"
+      "text": "New",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1358,9 +1430,11 @@
       "inert": false,
       "key": "segment2",
       "label": "Best",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment2",
+      "radius": 7.0,
       "rect": [
         216.8,
         6.0,
@@ -1371,6 +1445,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -1378,9 +1453,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment2/#0",
+      "radius": 0.0,
       "rect": [
         238.25,
         15.88,
@@ -1389,9 +1466,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Best"
+      "text": "Best",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1400,9 +1486,11 @@
       "inert": false,
       "key": "segment3",
       "label": "Saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment3",
+      "radius": 7.0,
       "rect": [
         287.7,
         6.0,
@@ -1413,6 +1501,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -1420,9 +1509,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/feed-tabs/segment3/#0",
+      "radius": 0.0,
       "rect": [
         303.7,
         15.88,
@@ -1431,9 +1522,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Saved"
+      "text": "Saved",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1441,9 +1541,11 @@
       "focused": false,
       "inert": false,
       "key": "spacer",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/spacer",
+      "radius": 0.0,
       "rect": [
         366.59,
         24.0,
@@ -1454,6 +1556,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1461,9 +1564,11 @@
       "focused": false,
       "inert": false,
       "key": "trailing",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing",
+      "radius": 0.0,
       "rect": [
         1055.3,
         12.0,
@@ -1474,6 +1579,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1482,9 +1588,11 @@
       "inert": false,
       "key": "brand",
       "label": "Hacker News",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand",
+      "radius": 0.0,
       "rect": [
         1055.3,
         12.0,
@@ -1495,15 +1603,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ff6600ff",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand/#0",
+      "radius": 4.0,
       "rect": [
         1055.3,
         12.0,
@@ -1514,6 +1625,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#ffffffff",
       "fill": "#00000000",
@@ -1521,9 +1633,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand/#0/#0",
+      "radius": 0.0,
       "rect": [
         1059.77,
         17.75,
@@ -1532,9 +1646,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "HN"
+      "text": "HN",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 12.5,
+        "size": 10.0,
+        "tracking": 0.0,
+        "weight": 700.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -1542,9 +1665,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand/#1",
+      "radius": 0.0,
       "rect": [
         1085.3,
         15.88,
@@ -1553,9 +1678,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Hacker News"
+      "text": "Hacker News",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1563,9 +1697,11 @@
       "focused": false,
       "inert": false,
       "key": "main-row",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row",
+      "radius": 0.0,
       "rect": [
         0.0,
         48.0,
@@ -1576,16 +1712,20 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
+      "borderColor": "#ffffff0e",
       "fill": "#1c1d20ff",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
       "key": "main-pane",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane",
+      "radius": 8.0,
       "rect": [
         8.0,
         48.0,
@@ -1596,15 +1736,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0",
+      "radius": 0.0,
       "rect": [
         8.0,
         48.0,
@@ -1615,6 +1758,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1622,9 +1766,11 @@
       "focused": false,
       "inert": false,
       "key": "feed-list",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list",
+      "radius": 0.0,
       "rect": [
         8.0,
         48.0,
@@ -1635,6 +1781,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1642,9 +1789,11 @@
       "focused": false,
       "inert": false,
       "key": "feed-page-0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0",
+      "radius": 0.0,
       "rect": [
         8.0,
         48.0,
@@ -1655,6 +1804,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1662,9 +1812,11 @@
       "focused": false,
       "inert": false,
       "key": "line-0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0",
+      "radius": 0.0,
       "rect": [
         8.0,
         56.0,
@@ -1675,6 +1827,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#513321ff",
       "focusVisible": true,
@@ -1684,9 +1837,11 @@
       "itemSelected": true,
       "key": "story-1",
       "label": "Tesla to wind down Cybertruck production · 1057 points  ·  by PLenz  ·  1913 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1",
+      "radius": 6.0,
       "rect": [
         8.0,
         56.0,
@@ -1697,15 +1852,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         71.0,
@@ -1716,15 +1874,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         76.5,
@@ -1735,15 +1896,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         76.5,
@@ -1754,6 +1918,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#f48d2fff",
       "fill": "#00000000",
@@ -1762,9 +1927,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#1/#0/rank-1",
+      "radius": 0.0,
       "rect": [
         49.02,
         76.5,
@@ -1773,9 +1940,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "1"
+      "text": "1",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
@@ -1784,9 +1960,11 @@
       "inert": false,
       "key": "saved-dot-1",
       "label": "saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#1/saved-dot-1",
+      "radius": 3.0,
       "rect": [
         60.0,
         81.0,
@@ -1797,15 +1975,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         66.38,
@@ -1816,6 +1997,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -1824,9 +2006,11 @@
       "focused": false,
       "inert": false,
       "key": "title-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#2/title-1",
+      "radius": 0.0,
       "rect": [
         80.0,
         66.38,
@@ -1835,9 +2019,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Tesla to wind down Cybertruck production"
+      "text": "Tesla to wind down Cybertruck production",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -1845,9 +2038,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-0/story-1/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         86.63,
@@ -1856,9 +2051,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "1057 points  ·  by PLenz  ·  1913 comments"
+      "text": "1057 points  ·  by PLenz  ·  1913 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1866,9 +2070,11 @@
       "focused": false,
       "inert": false,
       "key": "line-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1",
+      "radius": 0.0,
       "rect": [
         8.0,
         114.0,
@@ -1879,6 +2085,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -1887,9 +2094,11 @@
       "inert": false,
       "key": "story-2",
       "label": "Libghostty 1.0 · 771 points  ·  by mfiguiere  ·  122 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2",
+      "radius": 6.0,
       "rect": [
         8.0,
         114.0,
@@ -1900,15 +2109,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         129.0,
@@ -1919,15 +2131,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         134.5,
@@ -1938,15 +2153,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         134.5,
@@ -1957,6 +2175,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -1965,9 +2184,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#1/#0/rank-2",
+      "radius": 0.0,
       "rect": [
         46.6,
         134.5,
@@ -1976,9 +2197,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "2"
+      "text": "2",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
@@ -1987,9 +2217,11 @@
       "inert": false,
       "key": "saved-dot-2",
       "label": "saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#1/saved-dot-2",
+      "radius": 3.0,
       "rect": [
         60.0,
         139.0,
@@ -2000,15 +2232,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         124.38,
@@ -2019,6 +2254,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2027,9 +2263,11 @@
       "focused": false,
       "inert": false,
       "key": "title-2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#2/title-2",
+      "radius": 0.0,
       "rect": [
         80.0,
         124.38,
@@ -2038,9 +2276,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Libghostty 1.0"
+      "text": "Libghostty 1.0",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2048,9 +2295,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-1/story-2/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         144.63,
@@ -2059,9 +2308,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "771 points  ·  by mfiguiere  ·  122 comments"
+      "text": "771 points  ·  by mfiguiere  ·  122 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2069,9 +2327,11 @@
       "focused": false,
       "inert": false,
       "key": "line-2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2",
+      "radius": 0.0,
       "rect": [
         8.0,
         172.0,
@@ -2082,6 +2342,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2090,9 +2351,11 @@
       "inert": false,
       "key": "story-3",
       "label": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost · 513 points  ·  by theanomaly  ·  122 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3",
+      "radius": 6.0,
       "rect": [
         8.0,
         172.0,
@@ -2103,15 +2366,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         187.0,
@@ -2122,15 +2388,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         192.5,
@@ -2141,15 +2410,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         192.5,
@@ -2160,6 +2432,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2168,9 +2441,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-3",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#1/#0/rank-3",
+      "radius": 0.0,
       "rect": [
         46.48,
         192.5,
@@ -2179,9 +2454,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "3"
+      "text": "3",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2189,9 +2473,11 @@
       "focused": false,
       "inert": false,
       "key": "unsaved-dot-3",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#1/unsaved-dot-3",
+      "radius": 0.0,
       "rect": [
         60.0,
         197.0,
@@ -2202,15 +2488,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         182.38,
@@ -2221,6 +2510,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2229,9 +2519,11 @@
       "focused": false,
       "inert": false,
       "key": "title-3",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#2/title-3",
+      "radius": 0.0,
       "rect": [
         80.0,
         182.38,
@@ -2240,9 +2532,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost"
+      "text": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2250,9 +2551,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-2/story-3/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         202.63,
@@ -2261,9 +2564,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "513 points  ·  by theanomaly  ·  122 comments"
+      "text": "513 points  ·  by theanomaly  ·  122 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2271,9 +2583,11 @@
       "focused": false,
       "inert": false,
       "key": "line-3",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3",
+      "radius": 0.0,
       "rect": [
         8.0,
         230.0,
@@ -2284,6 +2598,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2292,9 +2607,11 @@
       "inert": false,
       "key": "story-4",
       "label": "US FAA says it will phase out floppy disks from air traffic control by 2028 · 356 points  ·  by ChrisArchitect  ·  289 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4",
+      "radius": 6.0,
       "rect": [
         8.0,
         230.0,
@@ -2305,15 +2622,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         245.0,
@@ -2324,15 +2644,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         250.5,
@@ -2343,15 +2666,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         250.5,
@@ -2362,6 +2688,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2370,9 +2697,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-4",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#1/#0/rank-4",
+      "radius": 0.0,
       "rect": [
         46.13,
         250.5,
@@ -2381,9 +2710,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "4"
+      "text": "4",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2391,9 +2729,11 @@
       "focused": false,
       "inert": false,
       "key": "unsaved-dot-4",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#1/unsaved-dot-4",
+      "radius": 0.0,
       "rect": [
         60.0,
         255.0,
@@ -2404,15 +2744,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         240.38,
@@ -2423,6 +2766,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2431,9 +2775,11 @@
       "focused": false,
       "inert": false,
       "key": "title-4",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#2/title-4",
+      "radius": 0.0,
       "rect": [
         80.0,
         240.38,
@@ -2442,9 +2788,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "US FAA says it will phase out floppy disks from air traffic control by 2028"
+      "text": "US FAA says it will phase out floppy disks from air traffic control by 2028",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2452,9 +2807,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-3/story-4/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         260.63,
@@ -2463,9 +2820,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "356 points  ·  by ChrisArchitect  ·  289 comments"
+      "text": "356 points  ·  by ChrisArchitect  ·  289 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2473,9 +2839,11 @@
       "focused": false,
       "inert": false,
       "key": "line-4",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4",
+      "radius": 0.0,
       "rect": [
         8.0,
         288.0,
@@ -2486,6 +2854,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2494,9 +2863,11 @@
       "inert": false,
       "key": "story-5",
       "label": "Gemini Omni 1.2 Flash · 347 points  ·  by thisisauserid  ·  234 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5",
+      "radius": 6.0,
       "rect": [
         8.0,
         288.0,
@@ -2507,15 +2878,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         303.0,
@@ -2526,15 +2900,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         308.5,
@@ -2545,15 +2922,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         308.5,
@@ -2564,6 +2944,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2572,9 +2953,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-5",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#1/#0/rank-5",
+      "radius": 0.0,
       "rect": [
         46.76,
         308.5,
@@ -2583,9 +2966,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "5"
+      "text": "5",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2593,9 +2985,11 @@
       "focused": false,
       "inert": false,
       "key": "unsaved-dot-5",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#1/unsaved-dot-5",
+      "radius": 0.0,
       "rect": [
         60.0,
         313.0,
@@ -2606,15 +3000,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         298.38,
@@ -2625,6 +3022,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2633,9 +3031,11 @@
       "focused": false,
       "inert": false,
       "key": "title-5",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#2/title-5",
+      "radius": 0.0,
       "rect": [
         80.0,
         298.38,
@@ -2644,9 +3044,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Gemini Omni 1.2 Flash"
+      "text": "Gemini Omni 1.2 Flash",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2654,9 +3063,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-4/story-5/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         318.63,
@@ -2665,9 +3076,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "347 points  ·  by thisisauserid  ·  234 comments"
+      "text": "347 points  ·  by thisisauserid  ·  234 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2675,9 +3095,11 @@
       "focused": false,
       "inert": false,
       "key": "line-5",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5",
+      "radius": 0.0,
       "rect": [
         8.0,
         346.0,
@@ -2688,6 +3110,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2696,9 +3119,11 @@
       "inert": false,
       "key": "story-6",
       "label": "Firecracker VM Escape: PwnEscape Part 2 · 257 points  ·  by SerCe  ·  110 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6",
+      "radius": 6.0,
       "rect": [
         8.0,
         346.0,
@@ -2709,15 +3134,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         361.0,
@@ -2728,15 +3156,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         366.5,
@@ -2747,15 +3178,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         366.5,
@@ -2766,6 +3200,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2774,9 +3209,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-6",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#1/#0/rank-6",
+      "radius": 0.0,
       "rect": [
         46.44,
         366.5,
@@ -2785,9 +3222,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "6"
+      "text": "6",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
@@ -2796,9 +3242,11 @@
       "inert": false,
       "key": "saved-dot-6",
       "label": "saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#1/saved-dot-6",
+      "radius": 3.0,
       "rect": [
         60.0,
         371.0,
@@ -2809,15 +3257,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         356.38,
@@ -2828,6 +3279,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2836,9 +3288,11 @@
       "focused": false,
       "inert": false,
       "key": "title-6",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#2/title-6",
+      "radius": 0.0,
       "rect": [
         80.0,
         356.38,
@@ -2847,9 +3301,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Firecracker VM Escape: PwnEscape Part 2"
+      "text": "Firecracker VM Escape: PwnEscape Part 2",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2857,9 +3320,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-5/story-6/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         376.63,
@@ -2868,9 +3333,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "257 points  ·  by SerCe  ·  110 comments"
+      "text": "257 points  ·  by SerCe  ·  110 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2878,9 +3352,11 @@
       "focused": false,
       "inert": false,
       "key": "line-6",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6",
+      "radius": 0.0,
       "rect": [
         8.0,
         404.0,
@@ -2891,6 +3367,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2899,9 +3376,11 @@
       "inert": false,
       "key": "story-7",
       "label": "First steps in bare-metal programming using UEFI · 233 points  ·  by LaSombra  ·  46 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7",
+      "radius": 6.0,
       "rect": [
         8.0,
         404.0,
@@ -2912,15 +3391,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         419.0,
@@ -2931,15 +3413,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         424.5,
@@ -2950,15 +3435,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         424.5,
@@ -2969,6 +3457,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2977,9 +3466,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-7",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#1/#0/rank-7",
+      "radius": 0.0,
       "rect": [
         47.14,
         424.5,
@@ -2988,9 +3479,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "7"
+      "text": "7",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2998,9 +3498,11 @@
       "focused": false,
       "inert": false,
       "key": "unsaved-dot-7",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#1/unsaved-dot-7",
+      "radius": 0.0,
       "rect": [
         60.0,
         429.0,
@@ -3011,15 +3513,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         414.38,
@@ -3030,6 +3535,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3038,9 +3544,11 @@
       "focused": false,
       "inert": false,
       "key": "title-7",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#2/title-7",
+      "radius": 0.0,
       "rect": [
         80.0,
         414.38,
@@ -3049,9 +3557,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "First steps in bare-metal programming using UEFI"
+      "text": "First steps in bare-metal programming using UEFI",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3059,9 +3576,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-6/story-7/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         434.63,
@@ -3070,9 +3589,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "233 points  ·  by LaSombra  ·  46 comments"
+      "text": "233 points  ·  by LaSombra  ·  46 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3080,9 +3608,11 @@
       "focused": false,
       "inert": false,
       "key": "line-7",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7",
+      "radius": 0.0,
       "rect": [
         8.0,
         462.0,
@@ -3093,6 +3623,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3101,9 +3632,11 @@
       "inert": false,
       "key": "story-8",
       "label": "Every Mac comes with an (undocumented) family member classifier · 219 points  ·  by infwhispers  ·  106 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8",
+      "radius": 6.0,
       "rect": [
         8.0,
         462.0,
@@ -3114,15 +3647,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         477.0,
@@ -3133,15 +3669,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         482.5,
@@ -3152,15 +3691,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         482.5,
@@ -3171,6 +3713,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3179,9 +3722,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-8",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#1/#0/rank-8",
+      "radius": 0.0,
       "rect": [
         46.45,
         482.5,
@@ -3190,9 +3735,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "8"
+      "text": "8",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3200,9 +3754,11 @@
       "focused": false,
       "inert": false,
       "key": "unsaved-dot-8",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#1/unsaved-dot-8",
+      "radius": 0.0,
       "rect": [
         60.0,
         487.0,
@@ -3213,15 +3769,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         472.38,
@@ -3232,6 +3791,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3240,9 +3800,11 @@
       "focused": false,
       "inert": false,
       "key": "title-8",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#2/title-8",
+      "radius": 0.0,
       "rect": [
         80.0,
         472.38,
@@ -3251,9 +3813,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Every Mac comes with an (undocumented) family member classifier"
+      "text": "Every Mac comes with an (undocumented) family member classifier",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3261,9 +3832,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-7/story-8/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         492.63,
@@ -3272,9 +3845,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "219 points  ·  by infwhispers  ·  106 comments"
+      "text": "219 points  ·  by infwhispers  ·  106 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3282,9 +3864,11 @@
       "focused": false,
       "inert": false,
       "key": "line-8",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8",
+      "radius": 0.0,
       "rect": [
         8.0,
         520.0,
@@ -3295,6 +3879,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3303,9 +3888,11 @@
       "inert": false,
       "key": "story-9",
       "label": "Upload Your RAM · 180 points  ·  by susanthenerd  ·  129 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9",
+      "radius": 6.0,
       "rect": [
         8.0,
         520.0,
@@ -3316,15 +3903,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         535.0,
@@ -3335,15 +3925,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         540.5,
@@ -3354,15 +3947,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         540.5,
@@ -3373,6 +3969,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3381,9 +3978,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-9",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#1/#0/rank-9",
+      "radius": 0.0,
       "rect": [
         46.44,
         540.5,
@@ -3392,9 +3991,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "9"
+      "text": "9",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3402,9 +4010,11 @@
       "focused": false,
       "inert": false,
       "key": "unsaved-dot-9",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#1/unsaved-dot-9",
+      "radius": 0.0,
       "rect": [
         60.0,
         545.0,
@@ -3415,15 +4025,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         530.38,
@@ -3434,6 +4047,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3442,9 +4056,11 @@
       "focused": false,
       "inert": false,
       "key": "title-9",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#2/title-9",
+      "radius": 0.0,
       "rect": [
         80.0,
         530.38,
@@ -3453,9 +4069,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Upload Your RAM"
+      "text": "Upload Your RAM",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3463,9 +4088,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-8/story-9/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         550.63,
@@ -3474,9 +4101,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "180 points  ·  by susanthenerd  ·  129 comments"
+      "text": "180 points  ·  by susanthenerd  ·  129 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3484,9 +4120,11 @@
       "focused": false,
       "inert": false,
       "key": "line-9",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9",
+      "radius": 0.0,
       "rect": [
         8.0,
         578.0,
@@ -3497,6 +4135,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3505,9 +4144,11 @@
       "inert": false,
       "key": "story-10",
       "label": "Devvm.dev: One VM for every project · 169 points  ·  by luispa  ·  64 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10",
+      "radius": 6.0,
       "rect": [
         8.0,
         578.0,
@@ -3518,15 +4159,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         593.0,
@@ -3537,15 +4181,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         598.5,
@@ -3556,15 +4203,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         598.5,
@@ -3575,6 +4225,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3583,9 +4234,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-10",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#1/#0/rank-10",
+      "radius": 0.0,
       "rect": [
         41.27,
         598.5,
@@ -3594,9 +4247,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "10"
+      "text": "10",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3604,9 +4266,11 @@
       "focused": false,
       "inert": false,
       "key": "unsaved-dot-10",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#1/unsaved-dot-10",
+      "radius": 0.0,
       "rect": [
         60.0,
         603.0,
@@ -3617,15 +4281,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         588.38,
@@ -3636,6 +4303,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3644,9 +4312,11 @@
       "focused": false,
       "inert": false,
       "key": "title-10",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#2/title-10",
+      "radius": 0.0,
       "rect": [
         80.0,
         588.38,
@@ -3655,9 +4325,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Devvm.dev: One VM for every project"
+      "text": "Devvm.dev: One VM for every project",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3665,9 +4344,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-9/story-10/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         608.63,
@@ -3676,9 +4357,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "169 points  ·  by luispa  ·  64 comments"
+      "text": "169 points  ·  by luispa  ·  64 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3686,9 +4376,11 @@
       "focused": false,
       "inert": false,
       "key": "line-10",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10",
+      "radius": 0.0,
       "rect": [
         8.0,
         636.0,
@@ -3699,6 +4391,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3707,9 +4400,11 @@
       "inert": false,
       "key": "story-11",
       "label": "GitHub's new Git storage architecture · 168 points  ·  by DAlperin  ·  38 comments",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11",
+      "radius": 6.0,
       "rect": [
         8.0,
         636.0,
@@ -3720,15 +4415,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#0",
+      "radius": 1.0,
       "rect": [
         20.0,
         651.0,
@@ -3739,15 +4437,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         656.5,
@@ -3758,15 +4459,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         656.5,
@@ -3777,6 +4481,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3785,9 +4490,11 @@
       "focused": false,
       "inert": false,
       "key": "rank-11",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#1/#0/rank-11",
+      "radius": 0.0,
       "rect": [
         44.04,
         656.5,
@@ -3796,9 +4503,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "11"
+      "text": "11",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
@@ -3807,9 +4523,11 @@
       "inert": false,
       "key": "saved-dot-11",
       "label": "saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#1/saved-dot-11",
+      "radius": 3.0,
       "rect": [
         60.0,
         661.0,
@@ -3820,15 +4538,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#2",
+      "radius": 0.0,
       "rect": [
         80.0,
         646.38,
@@ -3839,6 +4560,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3847,9 +4569,11 @@
       "focused": false,
       "inert": false,
       "key": "title-11",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#2/title-11",
+      "radius": 0.0,
       "rect": [
         80.0,
         646.38,
@@ -3858,9 +4582,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "GitHub's new Git storage architecture"
+      "text": "GitHub's new Git storage architecture",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3868,9 +4601,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-list/feed-page-0/line-10/story-11/#2/#1",
+      "radius": 0.0,
       "rect": [
         80.0,
         666.63,
@@ -3879,18 +4614,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "168 points  ·  by DAlperin  ·  38 comments"
+      "text": "168 points  ·  by DAlperin  ·  38 comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff0e",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/#1",
+      "radius": 0.0,
       "rect": [
         8.0,
         709.0,
@@ -3901,6 +4647,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3908,9 +4655,11 @@
       "focused": false,
       "inert": false,
       "key": "feed-footer",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer",
+      "radius": 0.0,
       "rect": [
         8.0,
         710.0,
@@ -3921,15 +4670,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#0",
+      "radius": 0.0,
       "rect": [
         32.0,
         723.5,
@@ -3940,6 +4692,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3947,9 +4700,11 @@
       "focused": false,
       "inert": false,
       "label": "j k",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#0/#0",
+      "radius": 0.0,
       "rect": [
         32.0,
         724.0,
@@ -3960,6 +4715,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -3967,9 +4723,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#0/#0/key0",
+      "radius": 2.0,
       "rect": [
         32.0,
         724.0,
@@ -3980,6 +4738,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3987,9 +4746,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#0/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         725.5,
@@ -3998,9 +4759,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "J"
+      "text": "J",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4008,9 +4778,11 @@
       "focused": false,
       "inert": false,
       "key": "key1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#0/#0/key1",
+      "radius": 2.0,
       "rect": [
         48.33,
         724.0,
@@ -4021,6 +4793,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4028,9 +4801,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#0/#0/key1/#0",
+      "radius": 0.0,
       "rect": [
         52.33,
         725.5,
@@ -4039,9 +4814,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "K"
+      "text": "K",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4049,9 +4833,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#0/#1",
+      "radius": 0.0,
       "rect": [
         69.89,
         723.5,
@@ -4060,18 +4846,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "move"
+      "text": "move",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#1",
+      "radius": 0.0,
       "rect": [
         119.29,
         723.5,
@@ -4082,6 +4879,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4089,9 +4887,11 @@
       "focused": false,
       "inert": false,
       "label": "← →",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#1/#0",
+      "radius": 0.0,
       "rect": [
         119.29,
         724.0,
@@ -4102,6 +4902,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4109,9 +4910,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#1/#0/key0",
+      "radius": 2.0,
       "rect": [
         119.29,
         724.0,
@@ -4122,6 +4925,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4129,9 +4933,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#1/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         123.29,
         725.5,
@@ -4140,9 +4946,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "←"
+      "text": "←",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4150,9 +4965,11 @@
       "focused": false,
       "inert": false,
       "key": "key1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#1/#0/key1",
+      "radius": 2.0,
       "rect": [
         139.79,
         724.0,
@@ -4163,6 +4980,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4170,9 +4988,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#1/#0/key1/#0",
+      "radius": 0.0,
       "rect": [
         143.79,
         725.5,
@@ -4181,9 +5001,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "→"
+      "text": "→",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4191,9 +5020,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#1/#1",
+      "radius": 0.0,
       "rect": [
         164.29,
         723.5,
@@ -4202,18 +5033,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "column / page"
+      "text": "column / page",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#2",
+      "radius": 0.0,
       "rect": [
         264.25,
         723.5,
@@ -4224,6 +5066,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4231,9 +5074,11 @@
       "focused": false,
       "inert": false,
       "label": "s",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#2/#0",
+      "radius": 0.0,
       "rect": [
         264.25,
         724.0,
@@ -4244,6 +5089,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4251,9 +5097,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#2/#0/key0",
+      "radius": 2.0,
       "rect": [
         264.25,
         724.0,
@@ -4264,6 +5112,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4271,9 +5120,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#2/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         268.25,
         725.5,
@@ -4282,9 +5133,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "S"
+      "text": "S",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4292,9 +5152,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#2/#1",
+      "radius": 0.0,
       "rect": [
         285.36,
         723.5,
@@ -4303,18 +5165,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "save"
+      "text": "save",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#3",
+      "radius": 0.0,
       "rect": [
         330.17,
         723.5,
@@ -4325,6 +5198,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4332,9 +5206,11 @@
       "focused": false,
       "inert": false,
       "label": "n p",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#3/#0",
+      "radius": 0.0,
       "rect": [
         330.17,
         724.0,
@@ -4345,6 +5221,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4352,9 +5229,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#3/#0/key0",
+      "radius": 2.0,
       "rect": [
         330.17,
         724.0,
@@ -4365,6 +5244,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4372,9 +5252,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#3/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         334.17,
         725.5,
@@ -4383,9 +5265,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "N"
+      "text": "N",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4393,9 +5284,11 @@
       "focused": false,
       "inert": false,
       "key": "key1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#3/#0/key1",
+      "radius": 2.0,
       "rect": [
         348.49,
         724.0,
@@ -4406,6 +5299,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4413,9 +5307,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#3/#0/key1/#0",
+      "radius": 0.0,
       "rect": [
         352.49,
         725.5,
@@ -4424,9 +5320,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "P"
+      "text": "P",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4434,9 +5339,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#3/#1",
+      "radius": 0.0,
       "rect": [
         369.55,
         723.5,
@@ -4445,18 +5352,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "page"
+      "text": "page",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#4",
+      "radius": 0.0,
       "rect": [
         416.39,
         723.5,
@@ -4467,6 +5385,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4474,9 +5393,11 @@
       "focused": false,
       "inert": false,
       "label": "1 4",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#4/#0",
+      "radius": 0.0,
       "rect": [
         416.39,
         724.0,
@@ -4487,6 +5408,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4494,9 +5416,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#4/#0/key0",
+      "radius": 2.0,
       "rect": [
         416.39,
         724.0,
@@ -4507,6 +5431,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4514,9 +5439,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#4/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         421.11,
         725.5,
@@ -4525,9 +5452,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "1"
+      "text": "1",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4535,9 +5471,11 @@
       "focused": false,
       "inert": false,
       "key": "key1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#4/#0/key1",
+      "radius": 2.0,
       "rect": [
         432.39,
         724.0,
@@ -4548,6 +5486,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4555,9 +5494,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#4/#0/key1/#0",
+      "radius": 0.0,
       "rect": [
         436.39,
         725.5,
@@ -4566,9 +5507,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "4"
+      "text": "4",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4576,9 +5526,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#4/#1",
+      "radius": 0.0,
       "rect": [
         453.61,
         723.5,
@@ -4587,18 +5539,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "tabs"
+      "text": "tabs",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/#5",
+      "radius": 0.0,
       "rect": [
         496.45,
         731.0,
@@ -4609,6 +5572,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4617,9 +5581,11 @@
       "inert": false,
       "key": "page-stepper",
       "label": "Page 1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/page-stepper",
+      "radius": 0.0,
       "rect": [
         1088.0,
         722.0,
@@ -4630,6 +5596,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4637,9 +5604,11 @@
       "focused": false,
       "inert": false,
       "label": "Previous page",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/page-stepper/#0",
+      "radius": 4.0,
       "rect": [
         1088.0,
         722.0,
@@ -4650,6 +5619,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4657,9 +5627,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/page-stepper/#0/#0",
+      "radius": 0.0,
       "rect": [
         1094.6,
         723.5,
@@ -4668,18 +5640,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "‹"
+      "text": "‹",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/page-stepper/#1",
+      "radius": 0.0,
       "rect": [
         1108.0,
         723.5,
@@ -4690,6 +5673,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#f48d2fff",
       "fill": "#00000000",
@@ -4697,9 +5681,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/page-stepper/#1/#0",
+      "radius": 0.0,
       "rect": [
         1115.51,
         723.5,
@@ -4708,9 +5694,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "1"
+      "text": "1",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -4718,9 +5713,11 @@
       "focused": false,
       "inert": false,
       "label": "Next page",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/page-stepper/#2",
+      "radius": 4.0,
       "rect": [
         1130.0,
         722.0,
@@ -4731,6 +5728,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4738,9 +5736,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/#0/feed-footer/page-stepper/#2/#0",
+      "radius": 0.0,
       "rect": [
         1136.6,
         723.5,
@@ -4749,9 +5749,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "›"
+      "text": "›",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4760,9 +5769,11 @@
       "inert": false,
       "key": "inspector-pane",
       "label": "Inspector",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane",
+      "radius": 0.0,
       "rect": [
         1180.0,
         48.0,
@@ -4773,6 +5784,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4780,9 +5792,11 @@
       "focused": false,
       "inert": false,
       "key": "pane-content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 0.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content",
+      "radius": 0.0,
       "rect": [
         1180.0,
         48.0,
@@ -4793,6 +5807,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4800,9 +5815,11 @@
       "focused": false,
       "inert": false,
       "key": "pane-body",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 0.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body",
+      "radius": 0.0,
       "rect": [
         1180.0,
         48.0,
@@ -4813,15 +5830,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 0.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/#0",
+      "radius": 0.0,
       "rect": [
         1180.0,
         48.0,
@@ -4832,6 +5852,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4840,9 +5861,11 @@
       "inert": false,
       "key": "toast-region",
       "label": "Notifications",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/toast-region",
+      "radius": 0.0,
       "rect": [
         828.0,
         654.0,
@@ -4853,6 +5876,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#121314ff",
       "focusVisible": false,
@@ -4861,9 +5885,11 @@
       "inert": false,
       "key": "toast-saved",
       "label": "Saved · Press 4 for Saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/toast-region/toast-saved",
+      "radius": 8.0,
       "rect": [
         828.0,
         654.0,
@@ -4871,9 +5897,28 @@
         44.0
       ],
       "role": "status",
-      "scale": 1.0
+      "scale": 1.0,
+      "shadows": [
+        {
+          "blur": 0.0,
+          "color": "#ffffff0d",
+          "inset": false,
+          "spread": 0.5,
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "blur": 8.0,
+          "color": "#0000006b",
+          "inset": false,
+          "spread": 0.0,
+          "x": 0.0,
+          "y": 4.0
+        }
+      ]
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4881,9 +5926,11 @@
       "focused": false,
       "inert": false,
       "key": "top",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/toast-region/toast-saved/top",
+      "radius": 0.0,
       "rect": [
         840.0,
         666.0,
@@ -4894,6 +5941,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4901,9 +5949,11 @@
       "focused": false,
       "inert": false,
       "key": "icon",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/toast-region/toast-saved/top/icon",
+      "radius": 0.0,
       "rect": [
         840.0,
         666.0,
@@ -4914,6 +5964,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
@@ -4922,9 +5973,11 @@
       "inert": false,
       "key": "toast-dot",
       "label": "saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/toast-region/toast-saved/top/icon/toast-dot",
+      "radius": 3.0,
       "rect": [
         845.0,
         673.0,
@@ -4935,6 +5988,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4942,9 +5996,11 @@
       "focused": false,
       "inert": false,
       "key": "content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/toast-region/toast-saved/top/content",
+      "radius": 0.0,
       "rect": [
         868.0,
         666.0,
@@ -4955,6 +6011,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -4963,9 +6020,11 @@
       "focused": false,
       "inert": false,
       "key": "title",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/toast-region/toast-saved/top/content/title",
+      "radius": 0.0,
       "rect": [
         868.0,
         666.0,
@@ -4974,7 +6033,15 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Saved · Press 4 for Saved"
+      "text": "Saved · Press 4 for Saved",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 20.0,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     }
   ],
   "reduced_motion": false,

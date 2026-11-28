@@ -33,9 +33,10 @@ AT_REST_MS=1000
 SPATIAL='frame,offset,scale,rotation,travel,scroll'
 # Off macOS the geometry differs (font metrics, layout rounding, GPU rounding), so the tree
 # comparison is semantic: keys, paths, roles, labels, text and focus flags, with no rects or
-# paint values. macOS compares the trees byte-for-byte, which is the stronger claim.
+# paint values. Code text names the platform's monospace face, so the font family goes too.
+# macOS compares the trees byte-for-byte, which is the stronger claim.
 SEMANTIC='del(.t, .anim_t, .animating, .time_scale, .viewport, .scale)
-  | .elements |= map(del(.rect, .scale, .opacity, .blur, .fill, .color, .loopPhase))
+  | .elements |= map(del(.rect, .scale, .opacity, .blur, .fill, .color, .loopPhase, .textStyle.family))
   | .accessibility |= walk(if type == "object" then del(.bounds) else . end)'
 if [ "${HN_EXACT_TREES:-}" = 1 ]; then
   EXACT_TREES=1

@@ -2106,6 +2106,7 @@
   "dark_system": true,
   "elements": [
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2113,9 +2114,11 @@
       "focused": false,
       "inert": false,
       "key": "kit-root",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -2126,6 +2129,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#121314ff",
       "focusVisible": false,
@@ -2133,9 +2137,11 @@
       "focused": false,
       "inert": false,
       "key": "window",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -2146,6 +2152,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#121314ff",
       "focusVisible": false,
@@ -2153,9 +2160,11 @@
       "focused": false,
       "inert": false,
       "key": "shell",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -2166,6 +2175,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2173,9 +2183,11 @@
       "focused": false,
       "inert": false,
       "key": "split",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -2186,6 +2198,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2193,9 +2206,11 @@
       "focused": false,
       "inert": false,
       "key": "main-column",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -2206,6 +2221,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2213,9 +2229,11 @@
       "focused": false,
       "inert": false,
       "key": "toolbar",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar",
+      "radius": 0.0,
       "rect": [
         0.0,
         0.0,
@@ -2226,6 +2244,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2233,9 +2252,11 @@
       "focused": false,
       "inert": false,
       "key": "leading",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading",
+      "radius": 0.0,
       "rect": [
         75.0,
         16.5,
@@ -2246,6 +2267,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2253,9 +2275,11 @@
       "focused": false,
       "inert": false,
       "key": "story-toolbar",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/story-toolbar",
+      "radius": 0.0,
       "rect": [
         75.0,
         16.5,
@@ -2266,6 +2290,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2274,9 +2299,11 @@
       "inert": false,
       "key": "story-saved",
       "label": "Saved",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/story-toolbar/story-saved",
+      "radius": 0.0,
       "rect": [
         75.0,
         16.5,
@@ -2287,6 +2314,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
@@ -2294,9 +2322,11 @@
       "focused": false,
       "inert": false,
       "key": "story-saved-dot",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/story-toolbar/story-saved/story-saved-dot",
+      "radius": 3.0,
       "rect": [
         75.0,
         21.0,
@@ -2307,6 +2337,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2314,9 +2345,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/leading/story-toolbar/story-saved/#1",
+      "radius": 0.0,
       "rect": [
         87.0,
         16.5,
@@ -2325,9 +2358,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Saved"
+      "text": "Saved",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2335,9 +2377,11 @@
       "focused": false,
       "inert": false,
       "key": "spacer",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/spacer",
+      "radius": 0.0,
       "rect": [
         130.52,
         24.0,
@@ -2348,6 +2392,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2355,9 +2400,11 @@
       "focused": false,
       "inert": false,
       "key": "trailing",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing",
+      "radius": 0.0,
       "rect": [
         1055.3,
         12.0,
@@ -2368,6 +2415,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2376,9 +2424,11 @@
       "inert": false,
       "key": "brand",
       "label": "Hacker News",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand",
+      "radius": 0.0,
       "rect": [
         1055.3,
         12.0,
@@ -2389,15 +2439,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ff6600ff",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand/#0",
+      "radius": 4.0,
       "rect": [
         1055.3,
         12.0,
@@ -2408,6 +2461,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#ffffffff",
       "fill": "#00000000",
@@ -2415,9 +2469,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand/#0/#0",
+      "radius": 0.0,
       "rect": [
         1059.77,
         17.75,
@@ -2426,9 +2482,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "HN"
+      "text": "HN",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 12.5,
+        "size": 10.0,
+        "tracking": 0.0,
+        "weight": 700.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2436,9 +2501,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/toolbar/trailing/brand/#1",
+      "radius": 0.0,
       "rect": [
         1085.3,
         15.88,
@@ -2447,9 +2514,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Hacker News"
+      "text": "Hacker News",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2457,9 +2533,11 @@
       "focused": false,
       "inert": false,
       "key": "main-row",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row",
+      "radius": 0.0,
       "rect": [
         0.0,
         48.0,
@@ -2470,16 +2548,20 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
+      "borderColor": "#ffffff0e",
       "fill": "#1c1d20ff",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
       "key": "main-pane",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane",
+      "radius": 8.0,
       "rect": [
         8.0,
         48.0,
@@ -2490,6 +2572,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2497,9 +2580,11 @@
       "focused": false,
       "inert": false,
       "key": "story-main",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main",
+      "radius": 0.0,
       "rect": [
         8.0,
         48.0,
@@ -2510,6 +2595,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2517,9 +2603,11 @@
       "focused": false,
       "inert": false,
       "key": "article-pane",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane",
+      "radius": 0.0,
       "rect": [
         8.0,
         48.0,
@@ -2530,6 +2618,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2537,9 +2626,11 @@
       "focused": false,
       "inert": false,
       "key": "article-content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-content",
+      "radius": 0.0,
       "rect": [
         8.0,
         48.0,
@@ -2550,6 +2641,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#1c1d20ff",
       "focusVisible": false,
@@ -2557,9 +2649,11 @@
       "focused": false,
       "inert": false,
       "key": "article-header",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-content/article-header",
+      "radius": 0.0,
       "rect": [
         36.0,
         62.0,
@@ -2570,6 +2664,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2578,9 +2673,11 @@
       "focused": false,
       "inert": false,
       "key": "article-title",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-content/article-header/article-title",
+      "radius": 0.0,
       "rect": [
         36.0,
         62.0,
@@ -2589,18 +2686,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Libghostty 1.0"
+      "text": "Libghostty 1.0",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 26.25,
+        "size": 21.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-content/article-header/#1",
+      "radius": 0.0,
       "rect": [
         36.0,
         96.25,
@@ -2611,6 +2719,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2619,9 +2728,11 @@
       "focused": false,
       "inert": false,
       "key": "article-meta",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-content/article-header/#1/article-meta",
+      "radius": 0.0,
       "rect": [
         36.0,
         96.25,
@@ -2630,9 +2741,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "mfiguiere  ·  771 points  ·  122 comments  ·  example.com"
+      "text": "mfiguiere  ·  771 points  ·  122 comments  ·  example.com",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#1c1d20ff",
       "focusVisible": false,
@@ -2640,9 +2760,11 @@
       "focused": false,
       "inert": false,
       "key": "article-fallback",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-fallback",
+      "radius": 0.0,
       "rect": [
         8.0,
         121.25,
@@ -2653,6 +2775,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2660,9 +2783,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-fallback/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         129.25,
@@ -2671,9 +2796,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "live page unavailable — showing extracted text"
+      "text": "live page unavailable — showing extracted text",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2681,9 +2815,11 @@
       "focused": false,
       "inert": false,
       "key": "article-scroll",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll",
+      "radius": 0.0,
       "rect": [
         8.0,
         152.25,
@@ -2694,6 +2830,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2701,9 +2838,11 @@
       "focused": false,
       "inert": false,
       "key": "article-body-content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content",
+      "radius": 0.0,
       "rect": [
         8.0,
         152.25,
@@ -2714,6 +2853,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2721,9 +2861,11 @@
       "focused": false,
       "inert": false,
       "key": "article-body",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body",
+      "radius": 0.0,
       "rect": [
         36.0,
         166.25,
@@ -2734,15 +2876,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         166.25,
@@ -2753,6 +2898,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2761,9 +2907,11 @@
       "focused": false,
       "inert": false,
       "key": "b0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b0",
+      "radius": 0.0,
       "rect": [
         36.0,
         166.25,
@@ -2772,9 +2920,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Today we are splitting ⁦Ghostty's⁩ core into a library. The app you run keeps its window, its fonts and its configuration; the terminal underneath becomes something another program can embed."
+      "text": "Today we are splitting ⁦Ghostty's⁩ core into a library. The app you run keeps its window, its fonts and its configuration; the terminal underneath becomes something another program can embed.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2783,10 +2940,12 @@
       "focused": false,
       "inert": false,
       "key": "b1",
+      "layerOpacity": 1.0,
       "level": 2,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b1",
+      "radius": 0.0,
       "rect": [
         36.0,
         257.45,
@@ -2795,9 +2954,18 @@
       ],
       "role": "heading",
       "scale": 1.0,
-      "text": "The surface is deliberately small"
+      "text": "The surface is deliberately small",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 24.0,
+        "size": 15.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2806,9 +2974,11 @@
       "focused": false,
       "inert": false,
       "key": "b2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b2",
+      "radius": 0.0,
       "rect": [
         36.0,
         291.45,
@@ -2817,19 +2987,31 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "A host hands libghostty a native surface and a size, and gets back a grid of cells it can draw however it likes. Input arrives as an event queue, not as callbacks into the ⁦host's⁩ event loop."
+      "text": "A host hands libghostty a native surface and a size, and gets back a grid of cells it can draw however it likes. Input arrives as an event queue, not as callbacks into the ⁦host's⁩ event loop.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
+      "borderColor": "#ffffff0e",
       "fill": "#121314ff",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
       "key": "b3",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b3",
+      "radius": 6.0,
       "rect": [
         36.0,
         370.66,
@@ -2840,6 +3022,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2847,9 +3030,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b3/#0",
+      "radius": 0.0,
       "rect": [
         48.5,
         383.16,
@@ -2858,9 +3043,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "pub const Surface = struct {\n    grid: *Grid,\n    size: Size,\n    input: *EventQueue,\n\n    pub fn resize(self: *Surface, size: Size) void {\n        self.size = size;\n        self.grid.reflow(size);\n    }\n};"
+      "text": "pub const Surface = struct {\n    grid: *Grid,\n    size: Size,\n    input: *EventQueue,\n\n    pub fn resize(self: *Surface, size: Size) void {\n        self.size = size;\n        self.grid.reflow(size);\n    }\n};",
+      "textStyle": {
+        "family": ".SF NS Mono",
+        "italic": false,
+        "lineHeight": 20.0,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2869,9 +3063,11 @@
       "focused": false,
       "inert": false,
       "key": "b4",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b4",
+      "radius": 0.0,
       "rect": [
         36.0,
         619.66,
@@ -2880,9 +3076,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "What does not change:"
+      "text": "What does not change:",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2890,9 +3095,11 @@
       "focused": false,
       "inert": false,
       "key": "b5",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5",
+      "radius": 0.0,
       "rect": [
         36.0,
         654.05,
@@ -2903,6 +3110,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2910,9 +3118,11 @@
       "focused": false,
       "inert": false,
       "key": "i0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i0",
+      "radius": 0.0,
       "rect": [
         36.0,
         654.05,
@@ -2923,6 +3133,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -2930,9 +3141,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i0/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         654.05,
@@ -2941,18 +3154,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "•"
+      "text": "•",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i0/#1",
+      "radius": 0.0,
       "rect": [
         68.0,
         654.05,
@@ -2963,6 +3187,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -2971,9 +3196,11 @@
       "focused": false,
       "inert": false,
       "key": "b0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i0/#1/b0",
+      "radius": 0.0,
       "rect": [
         68.0,
         654.05,
@@ -2982,9 +3209,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "the parser, and its ⁦escape-sequence⁩ coverage"
+      "text": "the parser, and its ⁦escape-sequence⁩ coverage",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -2992,9 +3228,11 @@
       "focused": false,
       "inert": false,
       "key": "i1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i1",
+      "radius": 0.0,
       "rect": [
         36.0,
         680.45,
@@ -3005,6 +3243,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3012,9 +3251,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i1/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         680.45,
@@ -3023,18 +3264,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "•"
+      "text": "•",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i1/#1",
+      "radius": 0.0,
       "rect": [
         68.0,
         680.45,
@@ -3045,6 +3297,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3053,9 +3306,11 @@
       "focused": false,
       "inert": false,
       "key": "b0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i1/#1/b0",
+      "radius": 0.0,
       "rect": [
         68.0,
         680.45,
@@ -3064,9 +3319,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "the ⁦renderer's⁩ cell model"
+      "text": "the ⁦renderer's⁩ cell model",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3074,9 +3338,11 @@
       "focused": false,
       "inert": false,
       "key": "i2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i2",
+      "radius": 0.0,
       "rect": [
         36.0,
         706.85,
@@ -3087,6 +3353,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3094,9 +3361,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i2/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         706.85,
@@ -3105,18 +3374,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "•"
+      "text": "•",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i2/#1",
+      "radius": 0.0,
       "rect": [
         68.0,
         706.85,
@@ -3127,6 +3407,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3135,9 +3416,11 @@
       "focused": false,
       "inert": false,
       "key": "b0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b5/i2/#1/b0",
+      "radius": 0.0,
       "rect": [
         68.0,
         706.85,
@@ -3146,9 +3429,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "the configuration language"
+      "text": "the configuration language",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3157,9 +3449,11 @@
       "focused": false,
       "inert": false,
       "key": "b6",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b6",
+      "radius": 0.0,
       "rect": [
         36.0,
         741.25,
@@ -3168,9 +3462,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "What does: everything that used to assume it owned a window."
+      "text": "What does: everything that used to assume it owned a window.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3178,9 +3481,11 @@
       "focused": false,
       "inert": false,
       "key": "b7",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b7",
+      "radius": 0.0,
       "rect": [
         36.0,
         779.65,
@@ -3191,15 +3496,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b7/#0",
+      "radius": 1.0,
       "rect": [
         36.0,
         779.65,
@@ -3210,15 +3518,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b7/#1",
+      "radius": 0.0,
       "rect": [
         38.0,
         779.65,
@@ -3229,6 +3540,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3237,9 +3549,11 @@
       "focused": false,
       "inert": false,
       "key": "b0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b7/#1/b0",
+      "radius": 0.0,
       "rect": [
         50.0,
         779.65,
@@ -3248,9 +3562,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "An event queue instead of callbacks is the whole design in one sentence."
+      "text": "An event queue instead of callbacks is the whole design in one sentence.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3259,9 +3582,11 @@
       "focused": false,
       "inert": false,
       "key": "b8",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/main-pane/story-main/article-pane/article-scroll/article-body-content/article-body/#0/b8",
+      "radius": 0.0,
       "rect": [
         36.0,
         840.45,
@@ -3270,9 +3595,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "The ABI is versioned by struct size, so an embedder built against an older header keeps working until it asks for a field that did not exist yet."
+      "text": "The ABI is versioned by struct size, so an embedder built against an older header keeps working until it asks for a field that did not exist yet.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 22.4,
+        "size": 14.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3281,9 +3615,11 @@
       "inert": false,
       "key": "inspector-pane",
       "label": "Inspector",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -3294,6 +3630,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3301,9 +3638,11 @@
       "focused": false,
       "inert": false,
       "key": "pane-content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -3314,6 +3653,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3321,9 +3661,11 @@
       "focused": false,
       "inert": false,
       "key": "pane-body",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -3334,6 +3676,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3341,9 +3684,11 @@
       "focused": false,
       "inert": false,
       "key": "inspector-stage",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -3354,6 +3699,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3361,9 +3707,11 @@
       "focused": false,
       "inert": false,
       "key": "inspector",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -3374,6 +3722,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3381,9 +3730,11 @@
       "focused": false,
       "inert": false,
       "key": "inspector-content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -3394,7 +3745,9 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
+      "borderColor": "#ffffff0d",
       "fill": "#1c1d20ff",
       "focusVisible": false,
       "focusable": false,
@@ -3402,9 +3755,11 @@
       "inert": false,
       "key": "summary-card",
       "label": "Summary",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card",
+      "radius": 8.0,
       "rect": [
         651.0,
         48.0,
@@ -3415,6 +3770,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3422,9 +3778,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-open",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open",
+      "radius": 0.0,
       "rect": [
         651.0,
         48.0,
@@ -3435,6 +3793,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3442,9 +3801,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-header",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-header",
+      "radius": 0.0,
       "rect": [
         665.0,
         62.0,
@@ -3455,6 +3816,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3463,9 +3825,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-title",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-header/summary-title",
+      "radius": 0.0,
       "rect": [
         665.0,
         62.0,
@@ -3474,18 +3838,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Summary"
+      "text": "Summary",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-header/#1",
+      "radius": 0.0,
       "rect": [
         733.3,
         70.13,
@@ -3496,6 +3871,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3503,9 +3879,11 @@
       "focused": false,
       "inert": false,
       "label": "Hide summary",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-header/#2",
+      "radius": 4.0,
       "rect": [
         1109.57,
         62.13,
@@ -3516,6 +3894,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3524,9 +3903,11 @@
       "focused": false,
       "inert": false,
       "key": "label",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-header/#2/label",
+      "radius": 0.0,
       "rect": [
         1117.57,
         62.63,
@@ -3535,9 +3916,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Hide"
+      "text": "Hide",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3546,9 +3936,11 @@
       "inert": false,
       "key": "summary-scroll",
       "label": "Summary content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll",
+      "radius": 0.0,
       "rect": [
         665.0,
         88.25,
@@ -3559,15 +3951,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0",
+      "radius": 0.0,
       "rect": [
         665.0,
         88.25,
@@ -3578,15 +3973,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#0",
+      "radius": 0.0,
       "rect": [
         665.0,
         88.25,
@@ -3597,6 +3995,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3605,10 +4004,12 @@
       "focused": false,
       "inert": false,
       "key": "article-summary-heading",
+      "layerOpacity": 1.0,
       "level": 3,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#0/article-summary-heading",
+      "radius": 0.0,
       "rect": [
         665.0,
         88.25,
@@ -3617,9 +4018,18 @@
       ],
       "role": "heading",
       "scale": 1.0,
-      "text": "Article"
+      "text": "Article",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 14.38,
+        "size": 11.5,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3627,9 +4037,11 @@
       "focused": false,
       "inert": false,
       "key": "article-summary-body",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#0/article-summary-body",
+      "radius": 0.0,
       "rect": [
         665.0,
         108.63,
@@ -3640,6 +4052,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3647,9 +4060,11 @@
       "focused": false,
       "inert": false,
       "key": "article-summary-result",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#0/article-summary-body/article-summary-result",
+      "radius": 0.0,
       "rect": [
         665.0,
         108.63,
@@ -3660,6 +4075,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3667,9 +4083,11 @@
       "focused": false,
       "inert": false,
       "key": "article-summary-content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#0/article-summary-body/article-summary-result/article-summary-content",
+      "radius": 0.0,
       "rect": [
         665.0,
         108.63,
@@ -3680,6 +4098,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3688,9 +4107,11 @@
       "focused": false,
       "inert": false,
       "key": "article-summary",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#0/article-summary-body/article-summary-result/article-summary-content/article-summary",
+      "radius": 0.0,
       "rect": [
         665.0,
         108.63,
@@ -3699,18 +4120,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "The article describes Libghostty and its design."
+      "text": "The article describes Libghostty and its design.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1",
+      "radius": 0.0,
       "rect": [
         665.0,
         138.88,
@@ -3721,6 +4153,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -3729,10 +4162,12 @@
       "focused": false,
       "inert": false,
       "key": "discussion-summary-heading",
+      "layerOpacity": 1.0,
       "level": 3,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-heading",
+      "radius": 0.0,
       "rect": [
         665.0,
         138.88,
@@ -3741,9 +4176,18 @@
       ],
       "role": "heading",
       "scale": 1.0,
-      "text": "Discussion"
+      "text": "Discussion",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 14.38,
+        "size": 11.5,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3751,9 +4195,11 @@
       "focused": false,
       "inert": false,
       "key": "discussion-summary-body",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body",
+      "radius": 0.0,
       "rect": [
         665.0,
         159.25,
@@ -3764,6 +4210,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3771,9 +4218,11 @@
       "focused": false,
       "inert": false,
       "key": "discussion-summary-result",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result",
+      "radius": 0.0,
       "rect": [
         665.0,
         159.25,
@@ -3784,6 +4233,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3791,9 +4241,11 @@
       "focused": false,
       "inert": false,
       "key": "discussion-summary-content",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content",
+      "radius": 0.0,
       "rect": [
         665.0,
         159.25,
@@ -3804,6 +4256,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3811,9 +4264,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-points",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points",
+      "radius": 0.0,
       "rect": [
         665.0,
         159.25,
@@ -3824,6 +4279,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3831,9 +4287,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-point-0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-0",
+      "radius": 0.0,
       "rect": [
         665.0,
         159.25,
@@ -3844,6 +4302,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#f48d2fff",
       "fill": "#00000000",
@@ -3851,9 +4310,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-0/#0",
+      "radius": 0.0,
       "rect": [
         665.0,
         159.25,
@@ -3862,9 +4323,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "•"
+      "text": "•",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3873,9 +4343,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-text-0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-0/summary-text-0",
+      "radius": 0.0,
       "rect": [
         680.31,
         159.25,
@@ -3884,9 +4356,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "libghostty splits Ghostty's core out of the app so another frontend can embed the terminal without the macOS shell. [1] [2]"
+      "text": "libghostty splits Ghostty's core out of the app so another frontend can embed the terminal without the macOS shell. [1] [2]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3894,9 +4375,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-point-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-1",
+      "radius": 0.0,
       "rect": [
         665.0,
         201.75,
@@ -3907,6 +4390,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#f48d2fff",
       "fill": "#00000000",
@@ -3914,9 +4398,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-1/#0",
+      "radius": 0.0,
       "rect": [
         665.0,
         201.75,
@@ -3925,9 +4411,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "•"
+      "text": "•",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3936,9 +4431,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-text-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-1/summary-text-1",
+      "radius": 0.0,
       "rect": [
         680.31,
         201.75,
@@ -3947,9 +4444,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "The ABI is deliberately narrow: a surface, a grid of cells and an input queue, with no windowing or font policy in the library. [3]"
+      "text": "The ABI is deliberately narrow: a surface, a grid of cells and an input queue, with no windowing or font policy in the library. [3]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -3957,9 +4463,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-point-2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-2",
+      "radius": 0.0,
       "rect": [
         665.0,
         244.25,
@@ -3970,6 +4478,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#f48d2fff",
       "fill": "#00000000",
@@ -3977,9 +4486,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-2/#0",
+      "radius": 0.0,
       "rect": [
         665.0,
         244.25,
@@ -3988,9 +4499,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "•"
+      "text": "•",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -3999,9 +4519,11 @@
       "focused": false,
       "inert": false,
       "key": "summary-text-2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-2/summary-text-2",
+      "radius": 0.0,
       "rect": [
         680.31,
         244.25,
@@ -4010,9 +4532,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Commenters split on whether a stable C ABI is worth the loss of Zig's comptime ergonomics inside the core. [4] [5]"
+      "text": "Commenters split on whether a stable C ABI is worth the loss of Zig's comptime ergonomics inside the core. [4] [5]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4020,9 +4551,11 @@
       "focused": false,
       "inert": false,
       "key": "discussion-scroll",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll",
+      "radius": 0.0,
       "rect": [
         651.0,
         300.75,
@@ -4033,6 +4566,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4040,9 +4574,11 @@
       "focused": false,
       "inert": false,
       "key": "discussion",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion",
+      "radius": 0.0,
       "rect": [
         651.0,
         300.75,
@@ -4053,6 +4589,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#121314ff",
       "focusVisible": false,
@@ -4060,9 +4597,11 @@
       "focused": false,
       "inert": false,
       "key": "discussion-header",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header",
+      "radius": 0.0,
       "rect": [
         651.0,
         300.75,
@@ -4073,6 +4612,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4081,9 +4621,11 @@
       "inert": false,
       "key": "trail",
       "label": "Thread trail",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail",
+      "radius": 0.0,
       "rect": [
         653.0,
         306.75,
@@ -4094,6 +4636,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4102,9 +4645,11 @@
       "inert": false,
       "key": "trail-901",
       "label": "Back to tptacek",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-901",
+      "radius": 3.0,
       "rect": [
         653.0,
         306.75,
@@ -4115,6 +4660,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4122,9 +4668,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-901/#0",
+      "radius": 0.0,
       "rect": [
         653.0,
         306.75,
@@ -4133,9 +4681,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "tptacek"
+      "text": "tptacek",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4143,9 +4700,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/#1",
+      "radius": 0.0,
       "rect": [
         702.15,
         306.75,
@@ -4154,9 +4713,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "›"
+      "text": "›",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4165,9 +4733,11 @@
       "inert": false,
       "key": "trail-9010",
       "label": "Back to kstrauser",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-9010",
+      "radius": 3.0,
       "rect": [
         712.95,
         306.75,
@@ -4178,6 +4748,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4185,9 +4756,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-9010/#0",
+      "radius": 0.0,
       "rect": [
         712.95,
         306.75,
@@ -4196,9 +4769,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "kstrauser"
+      "text": "kstrauser",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4206,9 +4788,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/#3",
+      "radius": 0.0,
       "rect": [
         772.98,
         306.75,
@@ -4217,9 +4801,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "›"
+      "text": "›",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4228,9 +4821,11 @@
       "inert": false,
       "key": "trail-90100",
       "label": "Back to simonw",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-90100",
+      "radius": 3.0,
       "rect": [
         783.79,
         306.75,
@@ -4241,6 +4836,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4248,9 +4844,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-90100/#0",
+      "radius": 0.0,
       "rect": [
         783.79,
         306.75,
@@ -4259,9 +4857,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "simonw"
+      "text": "simonw",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4269,9 +4876,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/#5",
+      "radius": 0.0,
       "rect": [
         834.35,
         306.75,
@@ -4280,9 +4889,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "›"
+      "text": "›",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4291,9 +4909,11 @@
       "inert": false,
       "key": "trail-901000",
       "label": "Back to dang",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-901000",
+      "radius": 3.0,
       "rect": [
         845.16,
         306.75,
@@ -4304,6 +4924,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4311,9 +4932,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-901000/#0",
+      "radius": 0.0,
       "rect": [
         845.16,
         306.75,
@@ -4322,9 +4945,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "dang"
+      "text": "dang",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4332,9 +4964,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/#7",
+      "radius": 0.0,
       "rect": [
         880.05,
         306.75,
@@ -4343,9 +4977,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "›"
+      "text": "›",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -4354,9 +4997,11 @@
       "focused": false,
       "inert": false,
       "key": "trail-9010000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/trail/trail-9010000",
+      "radius": 0.0,
       "rect": [
         890.85,
         306.75,
@@ -4365,9 +5010,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "tptacek"
+      "text": "tptacek",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4376,9 +5030,11 @@
       "inert": false,
       "key": "discussion-focus",
       "label": "Turn focus mode off",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/discussion-focus",
+      "radius": 4.0,
       "rect": [
         1096.56,
         304.25,
@@ -4389,6 +5045,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4397,9 +5054,11 @@
       "focused": false,
       "inert": false,
       "key": "label",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-header/discussion-focus/label",
+      "radius": 0.0,
       "rect": [
         1106.56,
         308.25,
@@ -4408,9 +5067,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Focus on"
+      "text": "Focus on",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 12.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4418,9 +5086,11 @@
       "focused": false,
       "inert": false,
       "key": "discussion-rows",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows",
+      "radius": 0.0,
       "rect": [
         651.0,
         329.75,
@@ -4431,6 +5101,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "expanded": true,
       "fill": "#00000000",
@@ -4440,10 +5111,12 @@
       "inert": false,
       "key": "comment-901000",
       "label": "Comment by dang",
+      "layerOpacity": 1.0,
       "level": 1,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000",
+      "radius": 6.0,
       "rect": [
         651.0,
         329.75,
@@ -4454,6 +5127,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4461,9 +5135,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-who-901000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-who-901000",
+      "radius": 0.0,
       "rect": [
         659.0,
         337.75,
@@ -4474,15 +5150,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-who-901000/#0",
+      "radius": 0.0,
       "rect": [
         659.0,
         337.75,
@@ -4493,6 +5172,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4501,9 +5181,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-chevron-901000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-who-901000/#0/comment-chevron-901000",
+      "radius": 0.0,
       "rect": [
         659.0,
         337.75,
@@ -4514,6 +5196,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4522,9 +5205,11 @@
       "inert": false,
       "key": "comment-disclosure-901000",
       "label": "Hide replies",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-who-901000/#0/comment-disclosure-901000",
+      "radius": 4.0,
       "rect": [
         655.0,
         333.75,
@@ -4535,6 +5220,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -4543,9 +5229,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-author-901000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-who-901000/comment-author-901000",
+      "radius": 0.0,
       "rect": [
         685.0,
         339.63,
@@ -4554,9 +5242,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "dang"
+      "text": "dang",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4565,9 +5262,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-age-901000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-who-901000/comment-age-901000",
+      "radius": 0.0,
       "rect": [
         722.66,
         340.25,
@@ -4576,18 +5275,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "50 minutes ago"
+      "text": "50 minutes ago",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-who-901000/#3",
+      "radius": 0.0,
       "rect": [
         817.14,
         347.75,
@@ -4598,6 +5308,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4606,9 +5317,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-text-901000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-901000/comment-text-901000",
+      "radius": 0.0,
       "rect": [
         685.0,
         361.75,
@@ -4617,9 +5330,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "The library owns the grid; the host owns the surface. Fonts are the host's, which is why the cell metrics come in through the surface rather than through the config."
+      "text": "The library owns the grid; the host owns the surface. Fonts are the host's, which is why the cell metrics come in through the surface rather than through the config.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "expanded": true,
       "fill": "#00000000",
@@ -4630,10 +5352,12 @@
       "itemSelected": true,
       "key": "comment-9010000",
       "label": "Comment by tptacek",
+      "layerOpacity": 1.0,
       "level": 2,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000",
+      "radius": 6.0,
       "rect": [
         651.0,
         420.5,
@@ -4644,6 +5368,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#f48d2fff",
       "focusVisible": false,
@@ -4651,9 +5376,11 @@
       "focused": false,
       "inert": false,
       "key": "focus-rail-9010000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/focus-rail-9010000",
+      "radius": 0.0,
       "rect": [
         665.0,
         420.5,
@@ -4664,6 +5391,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4671,9 +5399,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-who-9010000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-who-9010000",
+      "radius": 0.0,
       "rect": [
         672.0,
         428.5,
@@ -4684,15 +5414,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-who-9010000/#0",
+      "radius": 0.0,
       "rect": [
         672.0,
         428.5,
@@ -4703,6 +5436,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4711,9 +5445,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-chevron-9010000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-who-9010000/#0/comment-chevron-9010000",
+      "radius": 0.0,
       "rect": [
         672.0,
         428.5,
@@ -4724,6 +5460,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4732,9 +5469,11 @@
       "inert": false,
       "key": "comment-disclosure-9010000",
       "label": "Hide replies",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-who-9010000/#0/comment-disclosure-9010000",
+      "radius": 4.0,
       "rect": [
         668.0,
         424.5,
@@ -4745,6 +5484,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -4753,9 +5493,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-author-9010000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-who-9010000/comment-author-9010000",
+      "radius": 0.0,
       "rect": [
         698.0,
         430.38,
@@ -4764,9 +5506,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "tptacek"
+      "text": "tptacek",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4775,9 +5526,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-age-9010000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-who-9010000/comment-age-9010000",
+      "radius": 0.0,
       "rect": [
         751.48,
         431.0,
@@ -4786,18 +5539,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "44 minutes ago"
+      "text": "44 minutes ago",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-who-9010000/#3",
+      "radius": 0.0,
       "rect": [
         846.73,
         438.5,
@@ -4808,6 +5572,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -4816,9 +5581,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-text-9010000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010000/comment-text-9010000",
+      "radius": 0.0,
       "rect": [
         698.0,
         452.5,
@@ -4827,9 +5594,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "That is the right line, but it means the host has to do shaping and fallback, and that is where most of the bugs in a terminal actually live."
+      "text": "That is the right line, but it means the host has to do shaping and fallback, and that is where most of the bugs in a terminal actually live.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4838,10 +5614,12 @@
       "inert": false,
       "key": "comment-90100000",
       "label": "Comment by kstrauser",
+      "layerOpacity": 1.0,
       "level": 3,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000",
+      "radius": 6.0,
       "rect": [
         651.0,
         495.0,
@@ -4852,6 +5630,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#a2a5aa80",
       "focusVisible": false,
@@ -4859,9 +5638,11 @@
       "focused": false,
       "inert": false,
       "key": "guide-90100000-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/guide-90100000-1",
+      "radius": 0.0,
       "rect": [
         665.0,
         495.0,
@@ -4872,6 +5653,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#a2a5aa80",
       "focusVisible": false,
@@ -4879,9 +5661,11 @@
       "focused": false,
       "inert": false,
       "key": "guide-90100000-2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/guide-90100000-2",
+      "radius": 0.0,
       "rect": [
         678.0,
         495.0,
@@ -4892,6 +5676,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -4899,9 +5684,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-who-90100000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/comment-who-90100000",
+      "radius": 0.0,
       "rect": [
         685.0,
         503.0,
@@ -4912,15 +5699,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/comment-who-90100000/#0",
+      "radius": 0.0,
       "rect": [
         685.0,
         503.0,
@@ -4931,6 +5721,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -4939,9 +5730,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-author-90100000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/comment-who-90100000/comment-author-90100000",
+      "radius": 0.0,
       "rect": [
         711.0,
         504.88,
@@ -4950,9 +5743,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "kstrauser"
+      "text": "kstrauser",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -4961,9 +5763,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-age-90100000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/comment-who-90100000/comment-age-90100000",
+      "radius": 0.0,
       "rect": [
         776.59,
         505.5,
@@ -4972,18 +5776,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "40 minutes ago"
+      "text": "40 minutes ago",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/comment-who-90100000/#3",
+      "radius": 0.0,
       "rect": [
         871.7,
         513.0,
@@ -4994,6 +5809,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5002,9 +5818,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-text-90100000",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100000/comment-text-90100000",
+      "radius": 0.0,
       "rect": [
         711.0,
         527.0,
@@ -5013,9 +5831,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Shaping is the part I would happily hand to HarfBuzz and never think about again."
+      "text": "Shaping is the part I would happily hand to HarfBuzz and never think about again.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5024,10 +5851,12 @@
       "inert": false,
       "key": "comment-90100001",
       "label": "Comment by simonw",
+      "layerOpacity": 1.0,
       "level": 3,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001",
+      "radius": 6.0,
       "rect": [
         651.0,
         569.5,
@@ -5038,6 +5867,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#a2a5aa80",
       "focusVisible": false,
@@ -5045,9 +5875,11 @@
       "focused": false,
       "inert": false,
       "key": "guide-90100001-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/guide-90100001-1",
+      "radius": 0.0,
       "rect": [
         665.0,
         569.5,
@@ -5058,6 +5890,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#a2a5aa80",
       "focusVisible": false,
@@ -5065,9 +5898,11 @@
       "focused": false,
       "inert": false,
       "key": "guide-90100001-2",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/guide-90100001-2",
+      "radius": 0.0,
       "rect": [
         678.0,
         569.5,
@@ -5078,6 +5913,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5085,9 +5921,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-who-90100001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/comment-who-90100001",
+      "radius": 0.0,
       "rect": [
         685.0,
         577.5,
@@ -5098,15 +5936,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/comment-who-90100001/#0",
+      "radius": 0.0,
       "rect": [
         685.0,
         577.5,
@@ -5117,6 +5958,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -5125,9 +5967,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-author-90100001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/comment-who-90100001/comment-author-90100001",
+      "radius": 0.0,
       "rect": [
         711.0,
         579.38,
@@ -5136,9 +5980,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "simonw"
+      "text": "simonw",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5147,9 +6000,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-age-90100001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/comment-who-90100001/comment-age-90100001",
+      "radius": 0.0,
       "rect": [
         766.03,
         580.0,
@@ -5158,18 +6013,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "38 minutes ago"
+      "text": "38 minutes ago",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/comment-who-90100001/#3",
+      "radius": 0.0,
       "rect": [
         860.6,
         587.5,
@@ -5180,6 +6046,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5188,9 +6055,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-text-90100001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-90100001/comment-text-90100001",
+      "radius": 0.0,
       "rect": [
         711.0,
         601.5,
@@ -5199,9 +6068,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Until you need a fallback chain for emoji and the shaping library disagrees with the system about which font wins."
+      "text": "Until you need a fallback chain for emoji and the shaping library disagrees with the system about which font wins.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5210,10 +6088,12 @@
       "inert": false,
       "key": "comment-9010001",
       "label": "Comment by jmillikin",
+      "layerOpacity": 1.0,
       "level": 2,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001",
+      "radius": 6.0,
       "rect": [
         651.0,
         644.0,
@@ -5224,6 +6104,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#a2a5aa80",
       "focusVisible": false,
@@ -5231,9 +6112,11 @@
       "focused": false,
       "inert": false,
       "key": "guide-9010001-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001/guide-9010001-1",
+      "radius": 0.0,
       "rect": [
         665.0,
         644.0,
@@ -5244,6 +6127,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5251,9 +6135,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-who-9010001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001/comment-who-9010001",
+      "radius": 0.0,
       "rect": [
         672.0,
         652.0,
@@ -5264,15 +6150,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001/comment-who-9010001/#0",
+      "radius": 0.0,
       "rect": [
         672.0,
         652.0,
@@ -5283,6 +6172,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5291,9 +6181,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-author-9010001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001/comment-who-9010001/comment-author-9010001",
+      "radius": 0.0,
       "rect": [
         698.0,
         653.88,
@@ -5302,9 +6194,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "jmillikin"
+      "text": "jmillikin",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5313,9 +6214,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-age-9010001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001/comment-who-9010001/comment-age-9010001",
+      "radius": 0.0,
       "rect": [
         751.48,
         654.5,
@@ -5324,18 +6227,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "42 minutes ago"
+      "text": "42 minutes ago",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001/comment-who-9010001/#3",
+      "radius": 0.0,
       "rect": [
         846.24,
         662.0,
@@ -5346,6 +6260,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5354,9 +6269,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-text-9010001",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010001/comment-text-9010001",
+      "radius": 0.0,
       "rect": [
         698.0,
         676.0,
@@ -5365,9 +6282,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "The versioning story is the part I would want written down before anyone embeds this. Struct size is fine until someone reorders a field."
+      "text": "The versioning story is the part I would want written down before anyone embeds this. Struct size is fine until someone reorders a field.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5376,10 +6302,12 @@
       "inert": false,
       "key": "comment-9010002",
       "label": "Comment by dang",
+      "layerOpacity": 1.0,
       "level": 2,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002",
+      "radius": 6.0,
       "rect": [
         651.0,
         718.5,
@@ -5390,6 +6318,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#a2a5aa80",
       "focusVisible": false,
@@ -5397,9 +6326,11 @@
       "focused": false,
       "inert": false,
       "key": "guide-9010002-1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002/guide-9010002-1",
+      "radius": 0.0,
       "rect": [
         665.0,
         718.5,
@@ -5410,6 +6341,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5417,9 +6349,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-who-9010002",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002/comment-who-9010002",
+      "radius": 0.0,
       "rect": [
         672.0,
         726.5,
@@ -5430,15 +6364,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002/comment-who-9010002/#0",
+      "radius": 0.0,
       "rect": [
         672.0,
         726.5,
@@ -5449,6 +6386,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5457,9 +6395,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-author-9010002",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002/comment-who-9010002/comment-author-9010002",
+      "radius": 0.0,
       "rect": [
         698.0,
         728.38,
@@ -5468,9 +6408,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "dang"
+      "text": "dang",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 600.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5479,9 +6428,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-age-9010002",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002/comment-who-9010002/comment-age-9010002",
+      "radius": 0.0,
       "rect": [
         735.66,
         729.0,
@@ -5490,18 +6441,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "36 minutes ago"
+      "text": "36 minutes ago",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002/comment-who-9010002/#3",
+      "radius": 0.0,
       "rect": [
         830.24,
         736.5,
@@ -5512,6 +6474,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5520,9 +6483,11 @@
       "focused": false,
       "inert": false,
       "key": "comment-text-9010002",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/discussion-scroll/discussion/discussion-rows/comment-9010002/comment-text-9010002",
+      "radius": 0.0,
       "rect": [
         698.0,
         750.5,
@@ -5531,9 +6496,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Versioning by struct size is the one thing here I would copy from Vulkan without hesitation."
+      "text": "Versioning by struct size is the one thing here I would copy from Vulkan without hesitation.",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5541,9 +6515,11 @@
       "focused": false,
       "inert": false,
       "key": "pane-open",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-open",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -5554,6 +6530,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5561,9 +6538,11 @@
       "focused": false,
       "inert": false,
       "key": "pane-open-main",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-open-main",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -5574,6 +6553,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5582,9 +6562,11 @@
       "inert": false,
       "key": "inspector-grip",
       "label": "Resize inspector",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 0.019999999552965164,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/inspector-grip",
+      "radius": 0.0,
       "rect": [
         637.0,
         48.0,
@@ -5595,15 +6577,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff0e",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/#1",
+      "radius": 0.0,
       "rect": [
         0.0,
         719.0,
@@ -5614,6 +6599,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5621,9 +6607,11 @@
       "focused": false,
       "inert": false,
       "key": "story-footer",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer",
+      "radius": 0.0,
       "rect": [
         0.0,
         720.0,
@@ -5634,6 +6622,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5642,9 +6631,11 @@
       "inert": false,
       "key": "story-back",
       "label": "Back to feed",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/story-back",
+      "radius": 4.0,
       "rect": [
         24.0,
         722.0,
@@ -5655,6 +6646,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5662,9 +6654,11 @@
       "focused": false,
       "inert": false,
       "label": "Esc",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/story-back/#0",
+      "radius": 0.0,
       "rect": [
         32.0,
         733.0,
@@ -5675,6 +6669,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -5682,9 +6677,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/story-back/#0/key0",
+      "radius": 2.0,
       "rect": [
         32.0,
         733.0,
@@ -5695,6 +6692,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5702,9 +6700,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/story-back/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         36.0,
         734.5,
@@ -5713,9 +6713,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Esc"
+      "text": "Esc",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -5723,9 +6732,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/story-back/#1",
+      "radius": 0.0,
       "rect": [
         64.91,
         732.5,
@@ -5734,18 +6745,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Back to feed"
+      "text": "Back to feed",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#1",
+      "radius": 0.0,
       "rect": [
         162.6,
         732.5,
@@ -5756,6 +6778,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5763,9 +6786,11 @@
       "focused": false,
       "inert": false,
       "label": "j k",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#1/#0",
+      "radius": 0.0,
       "rect": [
         162.6,
         733.0,
@@ -5776,6 +6801,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -5783,9 +6809,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#1/#0/key0",
+      "radius": 2.0,
       "rect": [
         162.6,
         733.0,
@@ -5796,6 +6824,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5803,9 +6832,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#1/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         166.6,
         734.5,
@@ -5814,9 +6845,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "J"
+      "text": "J",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -5824,9 +6864,11 @@
       "focused": false,
       "inert": false,
       "key": "key1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#1/#0/key1",
+      "radius": 2.0,
       "rect": [
         178.93,
         733.0,
@@ -5837,6 +6879,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5844,9 +6887,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#1/#0/key1/#0",
+      "radius": 0.0,
       "rect": [
         182.93,
         734.5,
@@ -5855,9 +6900,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "K"
+      "text": "K",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5865,9 +6919,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#1/#1",
+      "radius": 0.0,
       "rect": [
         200.49,
         732.5,
@@ -5876,18 +6932,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "move"
+      "text": "move",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#2",
+      "radius": 0.0,
       "rect": [
         249.89,
         732.5,
@@ -5898,6 +6965,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -5905,9 +6973,11 @@
       "focused": false,
       "inert": false,
       "label": "Tab",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#2/#0",
+      "radius": 0.0,
       "rect": [
         249.89,
         733.0,
@@ -5918,6 +6988,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -5925,9 +6996,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#2/#0/key0",
+      "radius": 2.0,
       "rect": [
         249.89,
         733.0,
@@ -5938,6 +7011,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5945,9 +7019,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#2/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         253.89,
         734.5,
@@ -5956,9 +7032,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "Tab"
+      "text": "Tab",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -5966,9 +7051,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#2/#1",
+      "radius": 0.0,
       "rect": [
         283.31,
         732.5,
@@ -5977,18 +7064,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "citation"
+      "text": "citation",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#3",
+      "radius": 0.0,
       "rect": [
         343.8,
         732.5,
@@ -5999,6 +7097,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -6006,9 +7105,11 @@
       "focused": false,
       "inert": false,
       "label": "⇧ S",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#3/#0",
+      "radius": 0.0,
       "rect": [
         343.8,
         733.0,
@@ -6019,6 +7120,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -6026,9 +7128,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#3/#0/key0",
+      "radius": 2.0,
       "rect": [
         343.8,
         733.0,
@@ -6039,6 +7143,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6046,9 +7151,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#3/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         347.8,
         734.5,
@@ -6057,9 +7164,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "⇧"
+      "text": "⇧",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -6067,9 +7183,11 @@
       "focused": false,
       "inert": false,
       "key": "key1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#3/#0/key1",
+      "radius": 2.0,
       "rect": [
         365.39,
         733.0,
@@ -6080,6 +7198,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6087,9 +7206,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#3/#0/key1/#0",
+      "radius": 0.0,
       "rect": [
         369.39,
         734.5,
@@ -6098,9 +7219,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "S"
+      "text": "S",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6108,9 +7238,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#3/#1",
+      "radius": 0.0,
       "rect": [
         386.5,
         732.5,
@@ -6119,18 +7251,29 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "summary"
+      "text": "summary",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#4",
+      "radius": 0.0,
       "rect": [
         458.05,
         732.5,
@@ -6141,6 +7284,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -6148,9 +7292,11 @@
       "focused": false,
       "inert": false,
       "label": "r",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#4/#0",
+      "radius": 0.0,
       "rect": [
         458.05,
         733.0,
@@ -6161,6 +7307,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -6168,9 +7315,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#4/#0/key0",
+      "radius": 2.0,
       "rect": [
         458.05,
         733.0,
@@ -6181,6 +7330,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6188,9 +7338,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#4/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         462.05,
         734.5,
@@ -6199,9 +7351,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "R"
+      "text": "R",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6209,9 +7370,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/#4/#1",
+      "radius": 0.0,
       "rect": [
         479.18,
         732.5,
@@ -6220,9 +7383,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "refresh comments"
+      "text": "refresh comments",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 15.0,
+        "size": 12.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -6231,9 +7403,11 @@
       "inert": false,
       "key": "article-open-original",
       "label": "Open in browser",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original",
+      "radius": 4.0,
       "rect": [
         601.73,
         730.0,
@@ -6244,15 +7418,18 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original/#0",
+      "radius": 0.0,
       "rect": [
         611.73,
         733.0,
@@ -6263,6 +7440,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#00000000",
       "focusVisible": false,
@@ -6270,9 +7448,11 @@
       "focused": false,
       "inert": false,
       "label": "⇧ O",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original/#0/#0",
+      "radius": 0.0,
       "rect": [
         611.73,
         733.0,
@@ -6283,6 +7463,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -6290,9 +7471,11 @@
       "focused": false,
       "inert": false,
       "key": "key0",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original/#0/#0/key0",
+      "radius": 2.0,
       "rect": [
         611.73,
         733.0,
@@ -6303,6 +7486,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6310,9 +7494,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original/#0/#0/key0/#0",
+      "radius": 0.0,
       "rect": [
         615.73,
         734.5,
@@ -6321,9 +7507,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "⇧"
+      "text": "⇧",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "fill": "#ffffff16",
       "focusVisible": false,
@@ -6331,9 +7526,11 @@
       "focused": false,
       "inert": false,
       "key": "key1",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original/#0/#0/key1",
+      "radius": 2.0,
       "rect": [
         633.33,
         733.0,
@@ -6344,6 +7541,7 @@
       "scale": 1.0
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6351,9 +7549,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original/#0/#0/key1/#0",
+      "radius": 0.0,
       "rect": [
         637.33,
         734.5,
@@ -6362,9 +7562,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "O"
+      "text": "O",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 11.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 500.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#a2a5aaff",
       "fill": "#00000000",
@@ -6372,9 +7581,11 @@
       "focusable": false,
       "focused": false,
       "inert": false,
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/story-footer/article-open-original/#0/#1",
+      "radius": 0.0,
       "rect": [
         655.77,
         734.0,
@@ -6383,9 +7594,18 @@
       ],
       "role": "text",
       "scale": 1.0,
-      "text": "browser ↗"
+      "text": "browser ↗",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 12.0,
+        "size": 11.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -6395,9 +7615,11 @@
       "inert": false,
       "key": "cite-0",
       "label": "Read comment by tptacek",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-0/summary-text-0#link-0",
+      "radius": 0.0,
       "rect": [
         958.9,
         175.75,
@@ -6406,9 +7628,18 @@
       ],
       "role": "button",
       "scale": 1.0,
-      "text": "[1]"
+      "text": "[1]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -6418,9 +7649,11 @@
       "inert": false,
       "key": "cite-1",
       "label": "Read comment by kstrauser",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-0/summary-text-0#link-1",
+      "radius": 0.0,
       "rect": [
         977.33,
         175.75,
@@ -6429,9 +7662,18 @@
       ],
       "role": "button",
       "scale": 1.0,
-      "text": "[2]"
+      "text": "[2]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -6441,9 +7683,11 @@
       "inert": false,
       "key": "cite-2",
       "label": "Read comment by jmillikin",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-1/summary-text-1#link-0",
+      "radius": 0.0,
       "rect": [
         966.6,
         218.25,
@@ -6452,9 +7696,18 @@
       ],
       "role": "button",
       "scale": 1.0,
-      "text": "[3]"
+      "text": "[3]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -6464,9 +7717,11 @@
       "inert": false,
       "key": "cite-3",
       "label": "Read comment by simonw",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-2/summary-text-2#link-0",
+      "radius": 0.0,
       "rect": [
         918.98,
         260.75,
@@ -6475,9 +7730,18 @@
       ],
       "role": "button",
       "scale": 1.0,
-      "text": "[4]"
+      "text": "[4]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     },
     {
+      "backdropBlur": 0.0,
       "blur": 0.0,
       "color": "#eff0f2ff",
       "fill": "#00000000",
@@ -6487,9 +7751,11 @@
       "inert": false,
       "key": "cite-4",
       "label": "Read comment by dang",
+      "layerOpacity": 1.0,
       "loopPhase": null,
       "opacity": 1.0,
       "path": "kit-root/window/shell/split/main-column/main-row/inspector-pane/pane-content/pane-body/inspector-stage/inspector/inspector-content/summary-card/summary-open/summary-scroll/#0/#1/discussion-summary-body/discussion-summary-result/discussion-summary-content/summary-points/summary-point-2/summary-text-2#link-1",
+      "radius": 0.0,
       "rect": [
         940.52,
         260.75,
@@ -6498,7 +7764,15 @@
       ],
       "role": "button",
       "scale": 1.0,
-      "text": "[5]"
+      "text": "[5]",
+      "textStyle": {
+        "family": "Inter",
+        "italic": false,
+        "lineHeight": 16.25,
+        "size": 13.0,
+        "tracking": 0.0,
+        "weight": 400.0
+      }
     }
   ],
   "reduced_motion": false,
